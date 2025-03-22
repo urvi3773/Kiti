@@ -1,0 +1,109 @@
+
+
+/* Privacy Policy Container */
+.privacy-policy-section {
+    background-color: #fff;
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #480f69;
+    background-color: #C8A1E0;
+}
+
+/* Headings */
+.privacy-policy-section h1 {
+    text-align: center;
+    color: #480f69;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.privacy-policy-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #480f69;
+    padding-bottom: 8px;
+}
+
+/* Lists */
+.privacy-policy-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.privacy-policy-section ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+.privacy-policy-section ul li strong {
+    font-weight: bold;
+    color: #480f69;
+}
+
+/* Links */
+.privacy-policy-section a {
+    color: #480f69;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.privacy-policy-section a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styling */
+.button {
+    background-color:  #C8A1E0;
+    color: #fff;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Section Box Styling */
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #480f69;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .privacy-policy-section {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .privacy-policy-section h1 {
+        font-size: 28px;
+    }
+
+    .privacy-policy-section h2 {
+        font-size: 20px;
+    }
+
+    .privacy-policy-section ul li {
+        font-size: 16px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}

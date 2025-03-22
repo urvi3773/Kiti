@@ -1,0 +1,225 @@
+@import url('./font.css');
+
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    /* Soft cream background */
+    color: black;
+    /* Black text for high contrast */
+}
+
+/* Main Address Section Styling */
+.address {
+    max-width: 800px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 40px;
+    background: #F8EDE3;
+    border-radius: 15px;
+    border: 2px solid #480F69;
+    /* Deep purple border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.address:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.address h1 {
+    font-size: 2.2rem;
+    text-align: left;
+    color: #480F69;
+    /* Deep purple for header */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Radio Button Section */
+.Add_op {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 10px;
+    /* Soft lavender pink background for radio buttons */
+    border-radius: 8px;
+    border: 2px solid #480F69;
+    /* Deep purple border */
+    transition: background-color 0.3s ease;
+}
+
+.Add_op:hover {
+    background-color: #480F69;
+    /* Deep purple background on hover */
+    color: white;
+    /* White text when hovered */
+}
+
+.address section form input[type="radio"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #480F69;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.address section form input[type="radio"]:checked {
+    border-color: #914abe;
+    /* Vibrant purple when checked */
+    background-color: #480F69;
+    /* Deep purple color when selected */
+}
+
+/* Form Layout */
+.address section form .Name {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 15px;
+    padding: 20px;
+    /* Soft lavender pink background for form */
+    border-radius: 8px;
+}
+
+.address section form .Name label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: black;
+    /* Black text for labels */
+    margin-bottom: 15px;
+}
+
+.address section form .Name label input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #480F69;
+    /* Deep purple borders for inputs */
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 5px;
+    transition: border 0.3s ease;
+}
+
+.address section form .Name label input:focus {
+    border-color: #914abe;
+    /* Vibrant purple on focus */
+    outline: none;
+}
+
+/* Adjust for larger screens */
+@media (min-width: 768px) {
+    .address section form .Name {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Form Button Section */
+.address section .form_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.address section .form_bottom .cart_link {
+    font-size: 1.1rem;
+    color: #480F69;
+    /* Deep purple for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.address section .form_bottom .cart_link:hover {
+    color: #914abe;
+    /* Vibrant purple on hover */
+}
+
+.address section .form_bottom .form_btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    color: white;
+    background-color: #480F69;
+    /* Deep purple background */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.address section .form_bottom .form_btn:hover {
+    background-color: #914abe;
+    /* Vibrant purple background on hover */
+    color: white;
+    transform: translateY(-2px);
+}
+
+.address section .form_bottom .form_btn:active {
+    transform: translateY(2px);
+}
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+
+    .address {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .address section form .Name {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "F_Name"
+            "L_Name"
+            "address"
+            "address-2"
+            "City"
+            "state"
+            "Country"
+            "Pincode";
+    }
+
+    .address section .form_bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .address section .form_bottom .cart_link {
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .address section .form_bottom .form_btn {
+        width: 100%;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .address section form .Name {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.in-Disable{
+    background: rgb(86, 83, 83);
+    color: black;
+}

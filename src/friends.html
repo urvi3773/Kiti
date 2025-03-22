@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiti-The korean jwellery</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="../script/fillter.js"></script>
+    <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <!-- NavBar -->
+            <nav>
+                <div class="marquee">
+                    <marquee>
+                        Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
+                    </marquee>
+                </div>
+                <div class="navUp">
+                    <!-- Logo -->
+                    <div class="navLogo">
+                        <a href="../index.html"><img src="../jimages/kitilogo/kk3.png" alt="" height="130px"
+                                width="130px"></a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" />
+                        <span class="search-placeholder"></span>
+                    </div>
+
+                    <!-- Navigation Icons -->
+                    <div class="nav-container">
+                        <div class="nav-icons">
+                            <button class="nav-button" id="homeButton">
+                                <a href="../index.html"><i class="fa-solid fa-house fa-2x" class="nav-icon"></i></a>
+                                <span class="nav-label">Home</span>
+                            </button>
+                            <button class="nav-button" id="wishlistButton">
+                                <a href="./wishlist.html"><i class="fa-regular fa-heart fa-2x" class="nav-icon"></i></a>
+                                <span class="nav-label">Wishlist</span>
+                            </button>
+                            <button class="nav-button" id="cartButton">
+                                <a href="./addcart.html"><i class="fa-solid fa-cart-shopping fa-2x"
+                                        class="nav-icon"></i></a>
+                                <span class="nav-label">Cart</span>
+                            </button>
+
+                            <div class="navbar-item-account">
+                                <button class="nav-button" id="accountButton">
+                                    <i class="fa-regular fa-user fa-2x" class="nav-icon"></i>
+                                    <span class="nav-label">Account</span>
+                                </button>
+
+                                <div class="dropdown-account">
+                                    <h2 class="dropdown-header-account">MY ACCOUNT</h2>
+
+                                    <div class="dropdown-buttons-account">
+                                        <a href="./login.html"><button class="button-login"
+                                                onclick="window.location.href='./login.html'">LOG
+                                                IN</button></a>
+                                        <a href="./register.html"><button class="button-signup"
+                                                onclick="window.location.href='./signup.html'">SIGN
+                                                UP</button></a>
+                                    </div>
+                                    <p class="dropdown-contact-text">
+                                        CLICK HERE TO <a href="./contactus.html" class="dropdown-contact-link">CONTACT
+                                            US</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-main-container">
+                                <button class="nav-button" id="pincodetButton">
+                                    <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+                                    <span class="nav-label">Pincode</span>
+                                </button>
+
+                                <div class="dropdown-pincode-box" id="pincodeSection">
+                                    <h1 class="dropdown-title">PIN Code Locator</h1>
+
+                                    <div class="dropdown-input-group">
+                                        <input type="text" id="pincodeInput1" placeholder="Enter PIN Code"
+                                            maxlength="6">
+                                        <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+                                    </div>
+                                    <div class="dropdown-message" id="message1"></div>
+                                    <div class="dropdown-location-container" id="locationContainer"
+                                        style="display: none;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png"
+                                            alt="Location Icon" class="dropdown-location-icon">
+                                        <span id="locationText1"></span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="navbar">
+                    <div class="menu">
+                        <a href="./alljewellery.html">All JEWELLERY</a>
+                    </div>
+                    <div class="menu">
+                        <a href="./necklace.html">
+                            NECKLACE <span class="arrow">&#9650;</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="./goldnecklace.html">GOLD</a>
+                            <a href="./silvernecklace.html">SILVER</a>
+                            <a href="./dimondnecklace.html">DIAMOND</a>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="./rings.html">
+                            RINGS <span class="arrow">&#9650;</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="./goldring.html">GOLD</a>
+                            <a href="./silverring.html">SILVER</a>
+                            <a href="./dimondring.html">DIAMOND</a>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="./earings.html">
+                            EARINGS <span class="arrow">&#9650;</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="./goldearings.html">GOLD</a>
+                            <a href="./silverearings.html">SILVER</a>
+                            <a href="./preciousearings.html">PRECIOUS</a>
+                            <a href="./aesthenticearings.html">AESTHENITC</a>
+                            <a href="./traditionalearings.html">TRADITIONAL</a>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="./braclet.html">
+                            BRACLET <span class="arrow">&#9650;</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="./goldbraclet.html">GOLD</a>
+                            <a href="./silverbraclet.html">SILVER</a>
+                            <a href="./aesthenticbraclet.html">AESTHENITC</a>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="./gifting.html">GIFTING</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <h1 class="page-title">For Friends</h1>
+
+        <div class="filter-sort-bar">
+            <!-- Price Filter -->
+            <div class="dropdown dropdown-price">
+                <button class="dropdown-btn">Price<span class="arrow">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="#" data-filter="price" data-value="2,000 - 4,000">₹2,000 - ₹4,000</a>
+                    <a href="#" data-filter="price" data-value="5,000 - 7,000">₹5,000 - ₹7,000</a>
+                    <a href="#" data-filter="price" data-value="8,000 - 10,000">₹8,000 - ₹10,000</a>
+                    <a href="#" data-filter="price" data-value="11,000 - 13,000">₹11,000 - ₹13,000</a>
+                </div>
+            </div>
+
+
+            <!-- Category Filter -->
+            <div class="dropdown dropdown-category">
+                <button class="dropdown-btn">Category<span class="arrow">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="#" data-filter="category" data-value="gold">Gold</a>
+                    <a href="#" data-filter="category" data-value="silver">Silver</a>
+                    <a href="#" data-filter="category" data-value="diamond">Diamond</a>
+                </div>
+            </div>
+
+
+            <!-- Reset Button -->
+            <button class="reset-btn">Reset Filters</button>
+        </div>
+
+
+        <!--  jewellery -->
+
+        <div class="Jewellery-section">
+
+            <div class="Jewellery-item" data-price="6,999" data-shop-for="friends" data-category="aesthentic Bracelet">
+                <img src="/jimages/bracelet/aesthentic/e6.jpg"></a>
+                <h4>Green Jade and Gold Bracelet</h4>
+                <div class="price">₹6,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,599" data-shop-for="friends" data-category="aesthentic Bracelet">
+                <img src="/jimages/bracelet/aesthentic/e30.jpg"></a>
+                <h4> Pure Radiance Bracelet</h4>
+                <div class="price">₹4,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="7,999" data-shop-for="friends" data-category="aesthentic Bracelet">
+                <img src="/jimages/bracelet/aesthentic/e19.jpeg"></a>
+                <h4> Celestial Dreams Bracelet</h4>
+                <div class="price">₹7,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,699" data-shop-for="friends" data-category="aesthentic Bracelet">
+                <img src="/jimages/bracelet/aesthentic/e22.jpeg"></a>
+                <h4> Bluebell Bloom Bracelet</h4>
+                <div class="price">₹4,699</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="6,999" data-shop-for="friends" data-category="aesthentic Bracelet">
+                <img src="/jimages/bracelet/aesthentic/e29.jpeg"></a>
+                <h4>Pearl & Stone Harmony Bracelet</h4>
+                <div class="price">₹6,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="7,999" data-shop-for="friends" data-category="aesthentic Bracelet">
+                <img src="/jimages/bracelet/aesthentic/e40.jpg"></a>
+                <h4>Heartfelt Charm Bracelet</h4>
+                <div class="price">₹7,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="7,599" data-shop-for="friends" data-category="aesthentic Bracelet">
+                <img src="/jimages/bracelet/aesthentic/e43.jpg"></a>
+                <h4>Rebel Heart Gothic Grace Bracelet</h4>
+                <div class="price">₹7,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="5,399" data-shop-for="friends" data-category="aesthentic Bracelet">
+                <img src="/jimages/bracelet/aesthentic/e46.jpg"></a>
+                <h4>Beaded & Flower bracelet</h4>
+                <div class="price">₹5,399</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+            <div class="Jewellery-item" data-price="9,999" data-shop-for="friends" data-category="aesthentic">
+                <img src="/jimages/earring/aesthentic/a3.jpg"></a>
+                <h4>V-Elegance Pearl Earrings</h4>
+                <div class="price">₹9,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="11,999" data-shop-for="friends" data-category="aesthentic">
+                <img src="/jimages/earring/aesthentic/a7.jpg"></a>
+                <h4>Heartfelt Pink Earrings</h4>
+                <div class="price">₹11,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="8,599" data-shop-for="friends" data-category="aesthentic">
+                <img src="/jimages/earring/aesthentic/a12.jpg"></a>
+                <h4>Golden Whisper Drops Earrings</h4>
+                <div class="price">₹8,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="7,699" data-shop-for="friends" data-category="aesthentic">
+                <img src="/jimages/earring/aesthentic/a16.jpg"></a>
+                <h4>Triple Pearl Dangle Earrings</h4>
+                <div class="price">₹7,699</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="8,999" data-shop-for="friends" data-category="aesthentic">
+                <img src="/jimages/earring/aesthentic/a18.jpg"></a>
+                <h4>Melting Beauty Drops Earrings</h4>
+                <div class="price">₹8,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="7,599" data-shop-for="friends" data-category="aesthentic">
+                <img src="/jimages/earring/aesthentic/a26.jpg"></a>
+                <h4>Eclectic Pearl & Gold Earrings</h4>
+                <div class="price">₹7,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="6,999" data-shop-for="friends" data-category="aesthentic">
+                <img src="/jimages/earring/aesthentic/a28.jpg"></a>
+                <h4>Boho Pearl & Gold Earrings</h4>
+                <div class="price">₹6,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="1,099" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b35.jpg" alt="earring">
+                <h4>White Pearls Choker Beautiful Korean Style Ribbon Bow Choker Necklace</h4>
+                <div class="price">₹1,099</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="16,799" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b16.jpg" alt="earring">
+                <h4>Tied with Love Ring</h4>
+                <div class="price">₹16,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="27,499" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b20.jpg" alt="earring">
+                <h4>Carovo Gold Bow Necklace</h4>
+                <div class="price">₹27,499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="26,899" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b25.jpg" alt="earring">
+                <h4>Aura Bond Bracelet</h4>
+                <div class="price">₹26,899</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="39,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b38.jpg" alt="earring">
+                <h4>Shimmering Beautiful Necklace Combo</h4>
+                <div class="price">₹39,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="38,799" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b43.jpg" alt="earring">
+                <h4>Vintage Ribbon Studs</h4>
+                <div class="price">₹38,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b46.jpg" alt="earring">
+                <h4>Silver Ribbon Bow Drop Earrings</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="10,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b50.jpg" alt="earring">
+                <h4>French Light Luxury Tulip Flower Earrings</h4>
+                <div class="price">₹10,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="8,499" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b53.jpg" alt="earring">
+                <h4>Bowknot Heart Earrings</h4>
+                <div class="price">₹8,499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="38,799" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b57.jpg" alt="earring">
+                <h4>Dainty Stud Earrings</h4>
+                <div class="price">₹38,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="2,399" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b63.jpg" alt="earring">
+                <h4>Treandy MInimal White Pearl Earrings</h4>
+                <div class="price">₹2,399</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="12,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b67.jpg" alt="earring">
+                <h4>Heartthrob Earrings</h4>
+                <div class="price">₹12,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="16,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b70.jpg" alt="earring">
+                <h4>Deepfall Signature Bow Bangle</h4>
+                <div class="price">₹16,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="2,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b72.jpg" alt="earring">
+                <h4>Princess Fairy Bow Ring</h4>
+                <div class="price">₹2,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="6,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b76.jpg" alt="earring">
+                <h4>Chic Celestial Opal Bowknot Ear Cuff Chain Earrings</h4>
+                <div class="price">₹6,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,699" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b78.jpg" alt="earring">
+                <h4>Sparkling Bow Stud Earrings</h4>
+                <div class="price">₹4,699</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="5,099" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b82.jpg" alt="earring">
+                <h4>Diamond Heart Ring</h4>
+                <div class="price">₹5,099</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b85.jpg" alt="earring">
+                <h4>Natural Amethyst & Peridot Bow Knot Ring</h4>
+                <div class="price">₹4,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,499" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b88.jpg" alt="earring">
+                <h4>Voylla Sterling Silver Plated Red Stone Heart Ring</h4>
+                <div class="price">₹4,499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,399" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b91.jpg" alt="earring">
+                <h4>Emerald Sterling Silver Ring</h4>
+                <div class="price">₹4,399</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,699" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b95.jpg" alt="earring">
+                <h4>Green Stone Emerald Silver Ring</h4>
+                <div class="price">₹4,699</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,999" data-shop-for="friends" data-category="bow collection">
+                <img src="\jimages\bow\b98.jpg" alt="earring">
+                <h4>Pink Diamond and Silver Ring</h4>
+                <div class="price">₹4,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="12,799" data-shop-for="friends"
+                data-category="butterfly collection">
+                <img src="/jimages/butterfly/b7.jpg"></a>
+                <h4>Simple Skinny Butterfly Ring</h4>
+                <div class="price">₹12,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="28,499" data-shop-for="friends"
+                data-category="butterfly collection">
+                <img src="/jimages/butterfly/b13.jpg"></a>
+                <h4>Salty Stainless Steel Design Necklace</h4>
+                <div class="price">₹28,499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="33,499" data-shop-for="friends"
+                data-category="butterfly collection">
+                <img src="/jimages/butterfly/b21.jpg"></a>
+                <h4>Gold Dragonfly Necklace</h4>
+                <div class="price">₹33,499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="30,099" data-shop-for="friends"
+                data-category="butterfly collection">
+                <img src="/jimages/butterfly/b28.jpg"></a>
+                <h4>Light Fashion Crystal Butterfly Bracelet</h4>
+                <div class="price">₹30,099</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="9,999" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b34.jpg"></a>
+                <h4>Butterfly Kisses Bracelet</h4>
+                <div class="price">₹9,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="14,599" data-shop-for="friends"
+                data-category="butterfly collection">
+                <img src="/jimages/butterfly/b39.jpg"></a>
+                <h4>Light Pink Butterfly Bracelet</h4>
+                <div class="price">₹14,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="13,999" data-shop-for="friends"
+                data-category="butterfly collection">
+                <img src="/jimages/butterfly/b44.jpg"></a>
+                <h4>Timeless Butterfly Bracelet</h4>
+                <div class="price">₹13,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="13,599" data-shop-for="friends"
+                data-category="butterfly collection">
+                <img src="/jimages/butterfly/b48.jpg"></a>
+                <h4>Delicate Pearl with Butterfly Bracelet </h4>
+                <div class="price">₹13,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="7,999" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b53.jpg"></a>
+                <h4>Black Onyx Butterfly Jewelry Set</h4>
+                <div class="price">₹7,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b57.jpg"></a>
+                <h4>Fluttering Elegance set</h4>
+                <div class="price">₹4,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b62.jpg"></a>
+                <h4>Delicate Wings Collection</h4>
+                <div class="price">₹4,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b67.jpg"></a>
+                <h4>Silver Butterfly Elegance</h4>
+                <div class="price">₹4,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="3,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b71.jpg"></a>
+                <h4>Glimmering Night Sky</h4>
+                <div class="price">₹3,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b75.jpg"></a>
+                <h4>Rose Quartz Butterfly Elegance</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="3,999" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b82.jpg"></a>
+                <h4>Purple Butterfly Delight</h4>
+                <div class="price">₹3,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="1,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b86.jpg"></a>
+                <h4>Glimmering Butterfly Delight</h4>
+                <div class="price">₹1,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="3,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b90.jpg"></a>
+                <h4>Radiant Wing Charm</h4>
+                <div class="price">₹3,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="4,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b94.jpg"></a>
+                <h4>Blushing Butterfly Charms</h4>
+                <div class="price">₹4,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="2,799" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b99.jpg"></a>
+                <h4>Violet Winged Delight</h4>
+                <div class="price">₹2,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="2,999" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b103.jpg"></a>
+                <h4>Blushing Butterfly Delight</h4>
+                <div class="price">₹2,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="2,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b107.jpg"></a>
+                <h4>Radiant Winged Elegance</h4>
+                <div class="price">₹2,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="1,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b111.jpg"></a>
+                <h4>Mystical Wing Whispers</h4>
+                <div class="price">₹1,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="1,999" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b115.jpg"></a>
+                <h4>Luminous Opuntia Creations</h4>
+                <div class="price">₹1,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="2,999" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b123.jpg"></a>
+                <h4>Twilight Butterfly Bliss</h4>
+                <div class="price">₹2,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="1,599" data-shop-for="friends" data-category="butterfly collection">
+                <img src="/jimages/butterfly/b127.jpg"></a>
+                <h4>Mystic Garden Enchanted Wingscape</h4>
+                <div class="price">₹1,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me23.jpeg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me4.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me6.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me7.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me8.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me9.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me11.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me10.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me12.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me13.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me14.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me15.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me16.jpeg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me17.jpeg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me18.jpeg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me19.jpeg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me20.jpeg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me21.jpeg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me22.jpeg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="gold">
+                <img src="/jimages/combo/earring/me24.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="36,999" data-shop-for="friends" data-category="dimond necklace">
+                <img src="../jimages/necklace/dimond/d10.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹36,999</div>
+                <a href="../src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="../src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="62,999" data-shop-for="friends" data-category="diamond">
+                <img src="../jimages/ring/dimond/d4.jpg"></a>
+                <h4>Water Lily Ring</h4>
+                <div class="price">₹62,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="69,999" data-shop-for="friends" data-category="diamond">
+                <img src="../jimages/ring/dimond/d7.jpg"></a>
+                <h4> One and Only Ring</h4>
+                <div class="price">₹69,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="62,999" data-shop-for="friends" data-category="diamond">
+                <img src="../jimages/ring/dimond/d13.jpg"></a>
+                <h4>Onyx Ring</h4>
+                <div class="price">₹62,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="59,599" data-shop-for="friends" data-category="diamond">
+                <img src="../jimages/ring/dimond/d16.jpg"></a>
+                <h4>Quartz Accent Ring</h4>
+                <div class="price">₹59,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="75,599" data-shop-for="friends" data-category="diamond">
+                <img src="../jimages/ring/dimond/d21.jpg"></a>
+                <h4>Gemstone Heart Ring</h4>
+                <div class="price">₹75,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="79,999" data-shop-for="friends" data-category="diamond">
+                <img src="../jimages/ring/dimond/d26.jpg"></a>
+                <h4>Emerald Vine Ring</h4>
+                <div class="price">₹79,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="76,999" data-shop-for="friends" data-category="diamond">
+                <img src="../jimages/ring/dimond/d31.jpg"></a>
+                <h4>Rutilated Quartz Ring</h4>
+                <div class="price">₹76,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="71,599" data-shop-for="friends" data-category="diamond">
+                <img src="../jimages/ring/dimond/d36.jpg"></a>
+                <h4>Lunar Whisper Ring</h4>
+                <div class="price">₹71,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+            <div class="Jewellery-item" data-price="25,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f.jpg">
+                <h4>Sparkling Pink Tulip Earrings</h4>
+                <p class="price">₹25,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="26,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f6.jpg">
+                <h4>Pastel Petal Earrings</h4>
+                <p class="price">₹26,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="16,799" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f28.jpg">
+                <h4>Opalescent Hearts Earrings</h4>
+                <p class="price">₹16,799</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="54,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f15.jpg">
+                <h4>Bellflower Bracelet</h4>
+                <p class="price">₹54,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="13,,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f17.jpg">
+                <h4>Pink Floral with Green Stone Necklace</h4>
+                <p class="price">₹35,699</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="8,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f27.jpg">
+                <h4>Mystical Floral Ring</h4>
+                <p class="price">₹8,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="59,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f33.jpg">
+                <h4>White Rose & Pearls Necklace</h4>
+                <p class="price">₹59,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="22,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f48.jpg">
+                <h4>Mini Sunflower Bracelet</h4>
+                <p class="price">₹22,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="28,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f50.jpg">
+                <h4>Love Bloom Ring</h4>
+                <p class="price">₹28,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="49,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f53.jpg">
+                <h4>Gemstone Flower Ring</h4>
+                <p class="price">₹49,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="51,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f58.jpg">
+                <h4>Enchanted Bloom Earrings</h4>
+                <p class="price">₹51,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="47,599" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f63.jpg">
+                <h4>Pearl Bud Earrings</h4>
+                <p class="price">₹47,599</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="50,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f65.jpg">
+                <h4>Spring Awakening Earrings</h4>
+                <p class="price">₹50,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="29,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f67.jpg">
+                <h4>Clay Sunflower Earrings</h4>
+                <p class="price">₹29,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="20,999" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f73.jpg">
+                <h4>Toggle Tulip Pearl Bracelet</h4>
+                <p class="price">₹20,999</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="43,799" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f77.jpg">
+                <h4>Ethereal Bloom Earrings</h4>
+                <p class="price">₹43,799</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="31,899" data-shop-for="Friends" data-category="floral collection">
+                <img src="../jimages/floral/f79.jpg">
+                <h4>Baby Blue Tulips Earrings</h4>
+                <p class="price">₹31,899</p>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="59,799" data-shop-for="friend" data-category="gold">
+                <img src="/jimages/bracelet/gold/g25.jpeg"></a>
+                <h4>Adjustable Bar Bracelet</h4>
+                <div class="price">₹59,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="71,899" data-shop-for="friend" data-category="gold">
+                <img src="/jimages/bracelet/gold/g31.jpeg"></a>
+                <h4>Crystal Flower Bracelet</h4>
+                <div class="price">₹71,899</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="43,999" data-shop-for="friend" data-category="gold">
+                <img src="/jimages/bracelet/gold/g13.jpg"></a>
+                <h4>Gold Heart Charm Bracelet</h4>
+                <div class="price">₹43,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="42,999" data-shop-for="friend" data-category="gold">
+                <img src="/jimages/bracelet/gold/g9.jpg"></a>
+                <h4>Multi-Chain Pearl Bracelet</h4>
+                <div class="price">₹42,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="38,999" data-shop-for="friend" data-category="gold">
+                <img src="/jimages/bracelet/gold/g15.jpg"></a>
+                <h4>Star and Moon Charm Bracelet</h4>
+                <div class="price">₹38,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="57,699" data-shop-for="friend" data-category="gold">
+                <img src="/jimages/bracelet/gold/g22.jpg"></a>
+                <h4>Pave Heart Link Bracelet</h4>
+                <div class="price">₹57,699</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="48,899" data-shop-for="friend" data-category="gold">
+                <img src="../jimages/earring/gold/g9.jpg"></a>
+                <h4>Braided Hoop Earrings</h4>
+                <div class="price">₹48,899</div>
+                <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="../wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="31,999" data-shop-for="friend" data-category="gold">
+                <img src="../jimages/earring/gold/g19.jpg"></a>
+                <h4>Tied Hoop Earrings</h4>
+                <div class="price">₹31,999</div>
+                <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="../wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="39,999" data-shop-for="friend" data-category="gold">
+                <img src="../jimages/earring/gold/g20.jpg"></a>
+                <h4>Odd Circle and Pearl Earrings</h4>
+                <div class="price">₹39,999</div>
+                <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="../wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="71,999" data-shop-for="friend" data-category="gold">
+                <img src="../jimages/earring/gold/g27.jpg"></a>
+                <h4>Gold Spiral Earrings</h4>
+                <div class="price">₹71,999</div>
+                <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="../wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="45,999" data-shop-for="friend" data-category="gold">
+                <img src="../jimages/earring/gold/g34.jpg"></a>
+                <h4>Layered Pearl Hoop Earrings</h4>
+                <div class="price">₹45,999</div>
+                <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="../wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+            <div class="Jewellery-item" data-price="35199" data-shop-for="friends" data-category="gold">
+                <a href="rings.html"><img src="/jimages/necklace/gold/g4.jpg" alt="Diamond Ring"></a>
+                <h4>love knot necklace</h4>
+                <div class="price">₹35199</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="51399" data-shop-for="friends" data-category="gold">
+                <a href="rings.html"><img src="/jimages/necklace/gold/g6.jpg" alt="Diamond Ring"></a>
+                <h4>Silver Heart Pendant Necklace</h4>
+                <div class="price">₹51399</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="49999" data-shop-for="friends" data-category="gold">
+                <a href="earings.html"><img src="/jimages/necklace/gold/g9.jpg" alt="earring"></a>
+                <h4>Gold Bow Tie Necklace</h4>
+                <div class="price">₹49999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="58499" data-shop-for="friends" data-category="gold">
+                <a href="braclet.html"><img src="/jimages/necklace/gold/g17.jpg" alt="Bracelet"></a>
+                <h4>Shimmering Pearl Choker Necklace</h4>
+                <div class="price">₹58499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="36999" data-shop-for="friends" data-category="gold">
+                <a href="braclet.html"><img src="/jimages/necklace/gold/g22.jpg" alt="Bracelet"></a>
+                <h4>Gold Ball Chain Necklace</h4>
+                <div class="price">₹36999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="57299" data-shop-for="friends" data-category="gold">
+                <a href="braclet.html"><img src="/jimages/necklace/gold/g25.jpg" alt="Bracelet"></a>
+                <h4>"Kararmaz Paslanmaz Necklace</h4>
+                <div class="price">₹57299</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="59099" data-shop-for="friends" data-category="gold">
+                <a href="braclet.html"><img src="/jimages/necklace/gold/g29.jpg" alt="Bracelet"></a>
+                <h4>Pink Floral Heart Design Necklace</h4>
+                <div class="price">₹59099</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="19899" data-shop-for="friends" data-category="gold">
+                <a href="braclet.html"><img src="/jimages/necklace/gold/g35.jpg" alt="Bracelet"></a>
+                <h4>White Saprkling Pearls Necklace</h4>
+                <div class="price">₹19899</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+            <div class="Jewellery-item" data-price="31,599" data-shop-for="friends" data-category="preciousearings">
+                <img src="/jimages/earring/precious/p13.jpg"></a>
+                <h4>Pink Heart Bow Earrings</h4>
+                <div class="price">₹31,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="8,999" data-shop-for="friends" data-category="preciousearings">
+                <img src="/jimages/earring/precious/p1.jpg"></a>
+                <h4>White Flower Eamrald Earring</h4>
+                <div class="price">₹8,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="19,499" data-shop-for="friends" data-category="preciousearings">
+                <img src="/jimages/earring/precious/p17.jpg"></a>
+                <h4>Red Bar and Bow Earrings</h4>
+                <div class="price">₹19,499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="28,999" data-shop-for="friends" data-category="preciousearings">
+                <img src="/jimages/earring/precious/p24.jpg"></a>
+                <h4>Dangling Rose Petal Earrings</h4>
+                <div class="price">₹28,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="19,499" data-shop-for="friends" data-category="preciousearings">
+                <img src="/jimages/earring/precious/p30.jpeg"></a>
+                <h4>Elegant Tulip Earrings</h4>
+                <div class="price">₹19,499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="237,999" data-shop-for="friends" data-category="preciousearings">
+                <img src="/jimages/earring/precious/p32.jpeg"></a>
+                <h4>Bold Floral Earrings</h4>
+                <div class="price">₹37,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="7,999" data-shop-for="friends" data-category="preciousearings">
+                <img src="/jimages/earring/precious/p37.jpeg"></a>
+                <h4>Sparkling Heart Earrings</h4>
+                <div class="price">₹7,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+            <div class="Jewellery-item" data-price="19,799" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r4.jpg"></a>
+                <h4>Green Cord Jade Bracelet</h4>
+                <div class="price">₹19,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="37,999" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r11.jpg"></a>
+                <h4>Rabbit Pendant Necklace</h4>
+                <div class="price">₹37,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="51,399" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r20.jpg"></a>
+                <h4>Tiny Bunny Ring</h4>
+                <div class="price">₹51,399</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="37,899" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r25.jpg"></a>
+                <h4>Wrap Around Rabbit Ring</h4>
+                <div class="price">₹37,899</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r33.jpg"></a>
+                <h4>Colorful Rabbit Earrings Collection</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="4,099" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r37.jpg"></a>
+                <h4>White Face Rabbit Earrings</h4>
+                <div class="price">₹4,099</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="47,599" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r44.jpg"></a>
+                <h4>Rabbit and Moon Earrings</h4>
+                <div class="price">₹47,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="34,699" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r45.jpg"></a>
+                <h4>Pink Emarald Rabbit Necklace</h4>
+                <div class="price">₹34,699</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="27,999" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r50.jpg"></a>
+                <h4>Rabbit and Carrot Bracelet</h4>
+                <div class="price">₹27,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="51,999" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r55.jpg"></a>
+                <h4>Beaded Rabbit Bracelet</h4>
+                <div class="price">₹51,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="9,799" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r58.jpg"></a>
+                <h4>Secret Garden Bunny Earrings</h4>
+                <div class="price">₹9,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="15,999" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r65.jpg"></a>
+                <h4>Rabbit and Alice Circel Earrings</h4>
+                <div class="price">₹55,499</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="43,599" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r71.jpg"></a>
+                <h4>Bunny Pink Drop Earrings</h4>
+                <div class="price">₹43,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="61,599" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r73.jpg"></a>
+                <h4>Cloud Flutter Necklace</h4>
+                <div class="price">₹61,599</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="19,999" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r90.jpg"></a>
+                <h4>Dainty Bunny Earrings</h4>
+                <div class="price">₹19,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="8,799" data-shop-for="friends" data-category="rabbitcollcetion">
+                <img src="/jimages/rabbit/r27.jpg"></a>
+                <h4>Leaping Bunny Ring</h4>
+                <div class="price">₹8,799</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+            <div class="Jewellery-item" data-price="5,999" data-shop-for="friend" data-category="gold">
+                <img src="jimages/earring/silver/s10.jpg"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹5,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="no-results hidden">No results found.</div>
+
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fa-solid fa-diamond diamond-icon" title="Back To Top"></i>
+    </div>
+
+
+    <!-- Footer Section -->
+
+    <footer>
+        <div class="footer-container">
+
+            <!-- Footer Logo -->
+            <div class="col">
+                <a href="index.html"><img src="../jimages/kitilogo/kk3.png" alt="Your Jewelry Brand Logo"></a>
+
+
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+
+            </div>
+
+
+            <!-- Explore Links -->
+            <div class="footer-links">
+                <h2>Explore</h2><br>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="Customerreviews.html">Customer Reviews</a></li>
+                </ul>
+            </div>
+
+            <!-- Customer Service Links -->
+            <div class="footer-links">
+                <h2>Customer Service</h2><br>
+                <ul>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="returnpolicy.html">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h2>Get in Touch</h2>
+                <div class="contact-mail">
+                    <p>Email: <a href="mailto:kitijewellery25@gmail.com">kitijewellery25@gmail.com</a></p>
+                </div>
+                <div class="contact-details">
+                    <i class="fa fa-location"></i>
+                    <p>F-201 , Krishna avenu <br> Vesu, Surat</p>
+                </div>
+                <div class="contact-details">
+                    <i class="fa fa-phone"></i>
+                    <p>+91 63550 22182</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form">
+                    <form action="">
+                        <input type="text" placeholder="Email here...">
+                        <button><i class="fa fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Newsletter Signup -->
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 [kiti-korean jwellery]. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

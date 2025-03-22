@@ -1,0 +1,250 @@
+.Main_payment {
+  display: flex;
+  justify-content: center;
+}
+
+.Main_payment .left_main_payment {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #fff;
+  border-right: 2px solid #aaa9a9;
+  padding: 0 14rem;
+}
+
+.Main_payment .left_main_payment .left_sub_1 h2 {
+  font-weight: 400;
+  font-size: 1.1rem;
+  padding: 15px 0;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_1 {
+  background: #cfcaf5;
+  border: 0;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_2 {
+  background: #d9c8ee;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_1_l {
+  display: flex;
+  gap: 20px;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_1_l i {
+  color: #000000;
+  background: #fff;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 11px;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_1_l i span h3 {
+  font-weight: 500;
+  font-size: 1rem;
+  padding-bottom: 5px;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_1_l i span p {
+  font-weight: 400;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_1_r a {
+  color: #ff00f2;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_1_r input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 20px;
+  background: #fff;
+  outline: none;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_cont_1_r input[type=checkbox]:checked {
+  background: #a407ff;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_data {
+  padding: 25px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  background: #f4e8f5;
+  border-radius: 15px;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_data .left_data_l {
+  font-size: 0.8rem;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_data .left_data_l .left_data_l_b {
+  font-weight: 500;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_data .left_data_l .left_data_l_b span {
+  color: #4400ff;
+  font-weight: 400;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_data .left_data_l .left_data_l_Add {
+  font-weight: 300;
+  width: 150px;
+  padding: 10px 0;
+}
+
+.Main_payment .left_main_payment .left_sub_1 .left_data .left_data_r a {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ff00f2;
+}
+
+.Main_payment .left_main_payment .left_sub_1 button {
+  width: 100%;
+  padding: 15px;
+  margin: 30px 0;
+  border: 0;
+  border-radius: 15px;
+  font-size: 1.1rem;
+}
+
+.Main_payment .right_main_payment {
+  padding: 0 6rem;
+  background: #f0f3f2;
+}
+
+.Main_payment .right_main_payment .right_sub_1 {
+  margin-top: 50px;
+}
+
+.Main_payment .right_main_payment .right_sub_1 h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_item {
+  padding: 30px 0;
+  display: flex;
+  border-bottom: 2px solid #cac7c7;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_item img {
+  width: 150px;
+  margin-right: 50px;
+  border: 1px solid #ccc7c7;
+  border-radius: 5px;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_item h3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #635d5d;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_item p {
+  font-size: 1.1rem;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_item p .R_Cross {
+  font-size: 1.1rem;
+  text-decoration: line-through;
+  color: #858a84;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_item .R_del {
+  margin-top: 20px;
+  color: #8400ff;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_item h4 {
+  margin-top: 10px;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_count {
+  padding: 15px 0;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_count .r_price_dic {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_count .r_price_dic p {
+  font-size: 1rem;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_count .r_price_dic .R_sub_dis {
+  color: #4400ff;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_count .r_price_dic .r_t_b {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_count .r_under {
+  padding-bottom: 20px;
+  border-bottom: 2px solid #cac7c7;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_contect {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_contect a {
+  color: rgb(140, 0, 255);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_contect p {
+  width: 320px;
+  margin: 20px auto;
+  font-size: 0.9rem;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_contect .icon {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_contect .icon .icon_sub {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Main_payment .right_main_payment .right_sub_1 .right_sub_contect .icon i {
+  font-size: 1.1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+  background: #000;
+}
+
+.Main_payment .left_main_payment,
+.Main_payment .right_main_payment {
+  width: 50%;
+  padding-bottom: 2rem;
+}
+
+/*# sourceMappingURL=S_Payment.css.map */

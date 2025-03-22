@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiti-The korean jwellery</title>
+  <link rel="stylesheet" href="../main.css">
+  <script src="../script/fillter.js"></script>
+  <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <!-- NavBar -->
+      <nav>
+        <div class="marquee">
+          <marquee>
+            Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
+          </marquee>
+        </div>
+        <div class="navUp">
+          <!-- Logo -->
+          <div class="navLogo">
+            <a href="../index.html"><img src="../jimages/kitilogo/kk3.png" alt="" height="130px" width="130px"></a>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <input type="text" class="search-input" />
+            <span class="search-placeholder"></span>
+          </div>
+
+          <!-- Navigation Icons -->
+          <div class="nav-container">
+            <div class="nav-icons">
+              <button class="nav-button" id="homeButton">
+                <a href="../index.html"><i class="fa-solid fa-house fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Home</span>
+              </button>
+              <button class="nav-button" id="wishlistButton">
+                <a href="./wishlist.html"><i class="fa-regular fa-heart fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Wishlist</span>
+              </button>
+              <button class="nav-button" id="cartButton">
+                <a href="./addcart.html"><i class="fa-solid fa-cart-shopping fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Cart</span>
+              </button>
+
+              <div class="navbar-item-account">
+                <button class="nav-button" id="accountButton">
+                  <i class="fa-regular fa-user fa-2x" class="nav-icon"></i>
+                  <span class="nav-label">Account</span>
+                </button>
+
+                <div class="dropdown-account">
+                  <h2 class="dropdown-header-account">MY ACCOUNT</h2>
+
+                  <div class="dropdown-buttons-account">
+                    <a href="./login.html"><button class="button-login"
+                        onclick="window.location.href='./login.html'">LOG
+                        IN</button></a>
+                    <a href="./register.html"><button class="button-signup"
+                        onclick="window.location.href='./signup.html'">SIGN
+                        UP</button></a>
+                  </div>
+                  <p class="dropdown-contact-text">
+                    CLICK HERE TO <a href="./contactus.html" class="dropdown-contact-link">CONTACT
+                      US</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="dropdown-main-container">
+                <button class="nav-button" id="pincodetButton">
+                  <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+                  <span class="nav-label">Pincode</span>
+                </button>
+
+                <div class="dropdown-pincode-box" id="pincodeSection">
+                  <h1 class="dropdown-title">PIN Code Locator</h1>
+
+                  <div class="dropdown-input-group">
+                    <input type="text" id="pincodeInput1" placeholder="Enter PIN Code" maxlength="6">
+                    <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+                  </div>
+                  <div class="dropdown-message" id="message1"></div>
+                  <div class="dropdown-location-container" id="locationContainer" style="display: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png" alt="Location Icon"
+                      class="dropdown-location-icon">
+                    <span id="locationText1"></span>
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="navbar">
+          <div class="menu">
+            <a href="./alljewellery.html">All JEWELLERY</a>
+          </div>
+          <div class="menu">
+            <a href="./necklace.html">
+              NECKLACE <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./goldnecklace.html">GOLD</a>
+              <a href="./silvernecklace.html">SILVER</a>
+              <a href="./dimondnecklace.html">DIAMOND</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="./rings.html">
+              RINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./goldring.html">GOLD</a>
+              <a href="./silverring.html">SILVER</a>
+              <a href="./dimondring.html">DIAMOND</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="./earings.html">
+              EARINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./goldearings.html">GOLD</a>
+              <a href="./silverearings.html">SILVER</a>
+              <a href="./preciousearings.html">PRECIOUS</a>
+              <a href="./aesthenticearings.html">AESTHENITC</a>
+              <a href="./traditionalearings.html">TRADITIONAL</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="./braclet.html">
+              BRACLET <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./goldbraclet.html">GOLD</a>
+              <a href="./silverbraclet.html">SILVER</a>
+              <a href="./aesthenticbraclet.html">AESTHENITC</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="./gifting.html">GIFTING</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="contact-container">
+      <h1>CONTACT US</h1>
+      <h2>FILL THE DETAILS AND ENJOY SHOPPING</h2>
+      <p>
+        Please fill in your details below and submit your message. We will get back to you shortly!
+      </p>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <!-- Popup for success message -->
+    <div class="popup" id="popup">
+      <h3>Submission Successful!</h3>
+      <p>Thank you for reaching out. Your message has been received, and we will contact you soon.</p>
+      <button id="close-popup">Close</button>
+    </div>
+
+
+
+    <div class="back-to-top" id="backToTop">
+      <i class="fa-solid fa-diamond diamond-icon" title="Back To Top"></i>
+    </div>
+
+    <!-- Footer Section -->
+
+    <script src="../script/contactus.js"></script>
+    <footer>
+      <div class="footer-container">
+
+        <!-- Footer Logo -->
+        <div class="col">
+          <a href="./index.html"><img src="./jimages/kitilogo/kk3.png" alt="Your Jewelry Brand Logo"></a>
+
+
+          <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+
+        </div>
+
+
+        <!-- Explore Links -->
+        <div class="footer-links">
+          <h2>Explore</h2><br>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./src/aboutus.html">About Us</a></li>
+            <li><a href="./src/contactus.html">Contact Us</a></li>
+            <li><a href="./src/customerreviews.html">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Service Links -->
+        <div class="footer-links">
+          <h2>Customer Service</h2><br>
+          <ul>
+            <li><a href="./src/shipping&delivery.html">Shipping & Delivery</a></li>
+            <li><a href="./src/returns&exchanges.html">Returns & Exchanges</a></li>
+            <li><a href="./src/privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="./src/terms&conditions.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-contact">
+          <h2>Get in Touch</h2>
+          <div class="contact-mail">
+            <p>Email: <a href="mailto:kitijewellery25@gmail.com">kitijewellery25@gmail.com</a></p>
+          </div>
+          <div class="contact-details">
+            <i class="fa fa-location"></i>
+            <p>F-201 , Krishna avenu Vesu, Surat</p>
+          </div>
+          <div class="contact-details">
+            <i class="fa fa-phone"></i>
+            <p>+91 63550 22182</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form">
+            <form action="">
+              <input type="text" placeholder="Email here...">
+              <button><i class="fa fa-paper-plane"></i></button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Newsletter Signup -->
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 [kiti-korean jwellery]. All rights reserved.</p>
+      </div>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust height based on content */
+  margin: 20px 0; /* Add top and bottom margins */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Prevent vertical scrolling */
+  white-space: nowrap; /* Keep slides in a single row */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scroll-snap-type: x mandatory; /* Ensure slides snap into place */
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
+}
+
+/* Individual Slide */
+.slide {
+  display: inline-block;
+  width: 200px; /* Fixed width for consistent size */
+  height: 300px; /* Fixed height for consistent size */
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px;
+  margin-right: 15px; /* Space between slides */
+  scroll-snap-align: start; /* Snap alignment for smooth scrolling */
+  background-color: #F8EDE3; /* Optional: Add a background for visibility */
+  border-radius: 10px; /* Optional: Rounded corners for the slide */
+}
+
+/* Image Styles */
+.category img {
+  width: 100%; /* Fill the width of the slide */
+  height: 250px; /* Fixed height for images */
+  object-fit: cover; /* Maintain aspect ratio and fill container */
+  border-radius: 10px; /* Rounded corners */
+  margin-top: 10px;
+}
+
+/* Category Text */
+.category h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2; /* Proper spacing for text */
+  height: 50px; /* Fixed height for consistent alignment */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+  white-space: nowrap; /* Prevent text wrapping */
+}

@@ -1,0 +1,39 @@
+/* account*/
+
+  
+.navElementText {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color:  #C8A1E0;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 15px 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+.dropdown-content a:hover {
+    background-color:  #C8A1E0;
+    color: white;
+  }
+  
+.navElementText:hover .dropdown-content {
+    display: block;
+  }

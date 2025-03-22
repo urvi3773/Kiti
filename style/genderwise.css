@@ -1,0 +1,52 @@
+h1 {
+  margin-bottom: 20px;
+  color: black;
+  font-size: 40px;
+  text-align: center; /* Center the heading */
+}
+
+.gallery-container {
+  position: relative;
+  margin-bottom: 100px;
+  width: 100%;
+  overflow: hidden; /* Prevents overflow */
+  padding: 0 20px; /* Adds space on the left and right */
+  display: flex;
+  justify-content: center; /* Centers the gallery content horizontally */
+}
+
+.gallery-track {
+  display: grid; /* Switch to grid layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 images per row for larger screens */
+  gap: 20px; /* Space between items */
+  width: auto; /* Shrinks the grid to fit its content */
+  justify-content: center; /* Centers the grid items */
+}
+
+.gallery-item {
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border-radius: 20px; /* Adjusted border-radius for better visibility */
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%; /* Full width of the grid item */
+  height: 350px; /* Madam size: fixed height for portrait-like display */
+  border-radius: 20px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.gallery-caption {
+  background-color: #674188;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5; /* Adjusted for better text readability */
+}

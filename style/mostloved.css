@@ -1,0 +1,67 @@
+/*most loved jewllery images*/
+
+.Jewellery-section-main {
+  max-width: 1800px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-position: center; /* Center the image */
+  width: 100%; /* Container width */
+}
+
+.Jewellery-section-main h1 {
+  color: black;
+  position: relative;
+  cursor: pointer;
+ float: center;
+ font-size: 50px;
+}
+
+.Jewellery-section-item-main {
+  display: inline-block;
+  margin-bottom: 80px;
+}
+
+
+.Jewellery-item-main {
+  border: 1px solid black;
+  margin: 40px;
+  padding-right: 5px;
+  display: inline-block;
+  width: 400px;
+  height: 300px;
+  border-radius: 90px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  box-shadow: 0 14px 28px #c8c0cc,
+  0 10px 10px #d7d4d9;
+  transition: .4s;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+
+.Jewellery-item-main:hover {
+  box-shadow: 0 10px 20px #281e2f,
+  0 3px 6px  #281e2f;
+  transform: scale(1.1);
+}
+
+.Jewellery-item-main img {
+
+  height: 110%;
+  width: 110%;
+  border-radius: 90px;
+  box-shadow: 0 3px 6px #78707d,
+  0 3px 6px #c8c0cc;
+  transform: translate(0px, -8px);
+  margin: 0 auto;
+  display: inline-block;
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiti-The korean jwellery</title>
+    <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <!-- NavBar -->
+            <nav>
+                <div class="marquee">
+                    <marquee>
+                        Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
+                    </marquee>
+                </div>
+                <div class="navUp">
+                    <!-- Logo -->
+                    <div class="navLogo">
+                        <a href="index.html"><img src="/jimages/kitilogo/kk3.png" alt="" height="130px"
+                                width="130px"></a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" />
+                        <span class="search-placeholder"></span>
+                    </div>
+
+                    <!-- Navigation Icons -->
+                    <div class="nav-container">
+                        <div class="nav-icons">
+                            <button class="nav-button" id="homeButton">
+                                <a href="index.html"><i class="fa-solid fa-house fa-2x" class="nav-icon"></i></a>
+                                <span class="nav-label">Home</span>
+                            </button>
+                            <button class="nav-button" id="wishlistButton">
+                                <a href="/src/wishlist.html"><i class="fa-regular fa-heart fa-2x"
+                                        class="nav-icon"></i></a>
+                                <span class="nav-label">Wishlist</span>
+                            </button>
+                            <button class="nav-button" id="cartButton">
+                                <a href="/src/addcart.html"><i class="fa-solid fa-cart-shopping fa-2x"
+                                        class="nav-icon"></i></a>
+                                <span class="nav-label">Cart</span>
+                            </button>
+                        </div>
+
+                        <div class="navbar-container">
+                            <!-- Account Dropdown -->
+                            <div class="navbar-item-account">
+                                <button class="navbar-account-button">
+                                    <i class="fa-regular fa-user fa-2x"></i>
+                                    <span>Account</span>
+                                </button>
+                                <div class="dropdown-account">
+                                    <h2 class="dropdown-header-account">MY ACCOUNT</h2>
+
+                                    <div class="dropdown-buttons-account">
+                                        <a href="/src/login.html"><button class="button-account button-login"
+                                                onclick="window.location.href='login.html'">LOG IN</button></a>
+                                        <a href="/src/register.html"><button class="button-account button-signup"
+                                                onclick="window.location.href='signup.html'">SIGN UP</button></a>
+                                    </div>
+                                    <p class="dropdown-contact-text">
+                                        CLICK HERE TO <a href="/src/contactus.html"
+                                            class="dropdown-contact-link">CONTACT US</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dropdown location -->
+
+                        <div class="dropdown-main-container">
+                            <div class="dropdown-container">
+                                <div class="location-icon">
+                                    <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+                                    <div class="icon-popup">Pincode</div>
+                                </div>
+                                <div class="dropdown-content-box">
+                                    <h1 class="dropdown-title">PIN Code Locator</h1>
+                                    <div class="dropdown-input-group">
+                                        <input type="text" id="pincodeInput" placeholder="Enter PIN Code" maxlength="6">
+                                        <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+                                    </div>
+                                    <div class="dropdown-message" id="message"></div>
+                                    <div class="dropdown-location-container" id="locationContainer"
+                                        style="display: none;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png"
+                                            alt="Location Icon" class="dropdown-location-icon">
+                                        <span id="locationText"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="navbar">
+                    <div class="menu">
+                        <a href="src/alljewellery.html">All JEWELLERY</a>
+                    </div>
+                    <div class="menu">
+                        <a href="src/necklace.html">
+                            NECKLACE <span class="arrow">&#9650;</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="src/goldnecklace.html">GOLD</a>
+                            <a href="src/silvernecklace.html">SILVER</a>
+                            <a href="src/dimondnecklace.html">DIAMOND</a>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="src/rings.html">
+                            RINGS <span class="arrow">&#9650;</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="src/goldring.html">GOLD</a>
+                            <a href="src/silverring.html">SILVER</a>
+                            <a href="src/dimondring.html">DIAMOND</a>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="src/earings.html">
+                            EARINGS <span class="arrow">&#9650;</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="src/goldearings.html">GOLD</a>
+                            <a href="src/silverearings.html">SILVER</a>
+                            <a href="src/preciousearings.html">PRECIOUS</a>
+                            <a href="src/aesthenticearings.html">AESTHENITC</a>
+                            <a href="src/traditionalearings.html">TRADITIONAL</a>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="src/braclet.html">
+                            BRACLET <span class="arrow">&#9650;</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="src/goldbraclet.html">GOLD</a>
+                            <a href="src/silverbraclet.html">SILVER</a>
+                            <a href="src/aesthenticbraclet.html">AESTHENITC</a>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <a href="src/gifting.html">GIFTING</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Jewellery Section (Product List) -->
+        <div class="Jewellery-section">
+            <!-- Product 1 -->
+            <div class="Jewellery-item" data-price="41,999" data-shop-for="sister" data-category="dimond necklace"
+                onclick="showProductDetails('Gold Layered Pendant Necklace', '41,999', 'A beautiful gold layered pendant necklace perfect for any occasion.', '/jimages/necklace/dimond/d1.jpg', 'Gold, 18 Inches', 'Material: Gold  Length: 18 Inches  Weight: 22g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d1.jpg"
+                        alt="Gold Layered Pendant Necklace"></a>
+                <h4>Gold Layered Pendant Necklace</h4>
+                <div class="price">₹41,999</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="36,999" data-shop-for="mother" data-category="dimond necklace"
+                onclick="showProductDetails('Blue Gemstone Layered Pendant Necklace', '36,999', 'A beautiful blue gemstone necklace that adds a touch of elegance to any outfit.', '/jimages/necklace/dimond/d2.jpg', 'Blue Gemstone, 16 Inches', 'Material: Blue Gemstone, Length: 16 Inches, Weight: 20g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d2.jpg"
+                        alt="Blue Gemstone Layered Pendant Necklace"></a>
+                <h4>Blue Gemstone Layered Pendant Necklace</h4>
+                <div class="price">₹36,999</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="39,999" data-shop-for="wife" data-category="dimond necklace"
+                onclick="showProductDetails('Purple Flower Pendant Necklace', '39,999', 'A chic purple flower pendant necklace perfect for any special occasion.', '/jimages/necklace/dimond/d3.jpg', 'Purple Flower, 18 Inches', 'Material: Purple Flower, Length: 18 Inches, Weight: 21g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d3.jpg"
+                        alt="Purple Flower Pendant Necklace"></a>
+                <h4>Purple Flower Pendant Necklace</h4>
+                <div class="price">₹39,999</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="37,599" data-shop-for="sister" data-category="dimond necklace"
+                onclick="showProductDetails('Ocean Wave Necklace', '37,599', 'A beautiful ocean wave necklace that captures the essence of the sea.', '/jimages/necklace/dimond/d4.jpg', 'Ocean Wave, 16 Inches', 'Material: Ocean Wave, Length: 16 Inches, Weight: 18g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d4.jpg"
+                        alt="Ocean Wave Necklace"></a>
+                <h4>Ocean Wave Necklace</h4>
+                <div class="price">₹37,599</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="51,599" data-shop-for="mother" data-category="dimond necklace"
+                onclick="showProductDetails('Marquise Diamond Necklace', '51,599', 'A stunning marquise diamond necklace that adds sophistication to any outfit.', '/jimages/necklace/dimond/d5.jpg', 'Marquise Diamond, 18 Inches', 'Material: Marquise Diamond, Length: 18 Inches, Weight: 24g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d5.jpg"
+                        alt="Marquise Diamond Necklace"></a>
+                <h4>Marquise Diamond Necklace</h4>
+                <div class="price">₹51,599</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="25,799" data-shop-for="sister" data-category="dimond necklace"
+                onclick="showProductDetails('Aevino Vintage Necklace', '25,799', 'A vintage-inspired Aevino necklace with a timeless design.', '/jimages/necklace/dimond/d6.jpg', 'Vintage Design, 18 Inches', 'Material: Vintage, Length: 18 Inches, Weight: 20g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d6.jpg"
+                        alt="Aevino Vintage Necklace"></a>
+                <h4>Aevino Vintage Necklace</h4>
+                <div class="price">₹25,799</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="51,699" data-shop-for="wife" data-category="dimond necklace"
+                onclick="showProductDetails('Gemstone Waterfall Necklace', '51,699', 'A stunning gemstone waterfall necklace with a luxurious design.', '/jimages/necklace/dimond/d7.jpg', 'Gemstone Waterfall, 20 Inches', 'Material: Gemstone, Length: 20 Inches, Weight: 25g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d7.jpg"
+                        alt="Gemstone Waterfall Necklace"></a>
+                <h4>Gemstone Waterfall Necklace</h4>
+                <div class="price">₹51,699</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="12,999" data-shop-for="mother" data-category="dimond necklace"
+                onclick="showProductDetails('Celestial Necklace', '12,999', 'A celestial-themed necklace that brings a touch of the stars to your look.', '/jimages/necklace/dimond/d8.jpg', 'Celestial Design, 18 Inches', 'Material: Celestial, Length: 18 Inches, Weight: 15g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d8.jpg" alt="Celestial Necklace"></a>
+                <h4>Celestial Necklace</h4>
+                <div class="price">₹12,999</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="21,599" data-shop-for="sister" data-category="dimond necklace"
+                onclick="showProductDetails('Violet Heart Elegance Necklace', '21,599', 'A beautiful violet heart necklace that adds elegance to any look.', '/jimages/necklace/dimond/d9.jpg', 'Violet Heart, 16 Inches', 'Material: Violet Heart, Length: 16 Inches, Weight: 18g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d9.jpg"
+                        alt="Violet Heart Elegance Necklace"></a>
+                <h4>Violet Heart Elegance Necklace</h4>
+                <div class="price">₹21,599</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="36,999" data-shop-for="friends" data-category="dimond necklace"
+                onclick="showProductDetails('Rose Pendant Necklace', '36,999', 'A delicate rose pendant necklace that makes a perfect gift for a loved one.', '/jimages/necklace/dimond/d10.jpg', 'Rose, 18 Inches', 'Material: Rose, Length: 18 Inches, Weight: 20g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d10.jpg"
+                        alt="Rose Pendant Necklace"></a>
+                <h4>Rose Pendant Necklace</h4>
+                <div class="price">₹36,999</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="41,999" data-shop-for="sister" data-category="dimond necklace"
+                onclick="showProductDetails('Stunning Butterfly Necklace', '41,999', 'A stunning butterfly necklace that adds a touch of elegance to any outfit.', '/jimages/necklace/dimond/d11.jpg', 'Butterfly, 16 Inches', 'Material: Butterfly, Length: 16 Inches, Weight: 22g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d11.jpg"
+                        alt="Stunning Butterfly Necklace"></a>
+                <h4>Stunning Butterfly Necklace</h4>
+                <div class="price">₹41,999</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+            <div class="Jewellery-item" data-price="37,999" data-shop-for="mother" data-category="dimond necklace"
+                onclick="showProductDetails('Puffed Heart Necklace', '37,999', 'A puffed heart necklace that symbolizes love and affection.', '/jimages/necklace/dimond/d12.jpg', 'Puffed Heart, 18 Inches', 'Material: Puffed Heart, Length: 18 Inches, Weight: 19g')">
+                <a href="/src/productpage.html"><img src="/jimages/necklace/dimond/d12.jpg"
+                        alt="Puffed Heart Necklace"></a>
+                <h4>Puffed Heart Necklace</h4>
+                <div class="price">₹37,999</div>
+                <a href="src/addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+        </div>
+
+        <script>
+            // Function to store product details in localStorage
+            function showProductDetails(name, price, description, image, size, specifications) {
+                localStorage.setItem('productName', name);
+                localStorage.setItem('productPrice', price);
+                localStorage.setItem('productDescription', description);
+                localStorage.setItem('productImage', image);
+                localStorage.setItem('productSize', size);
+                localStorage.setItem('productSpecifications', specifications);
+
+                // Redirect to the product details page
+                window.location.href = 'productpage.html'; // Change this URL if necessary
+            }
+        </script>
+
+
+        <!-- Footer Section -->
+
+        <footer>
+            <div class="footer-container">
+
+                <!-- Footer Logo -->
+                <div class="col">
+                    <a href="/index.html"><img src="/jimages/kitilogo/kk3.png" alt="Your Jewelry Brand Logo"></a>
+
+
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+
+
+                <!-- Explore Links -->
+                <div class="footer-links">
+                    <h2>Explore</h2><br>
+                    <ul>
+                        <li><a href="src/home.html">Home</a></li>
+                        <li><a href="src/aboutus.html">About Us</a></li>
+                        <li><a href="src/contactus.html">Contact Us</a></li>
+                        <li><a href="src/Customerreviews.html">Customer Reviews</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service Links -->
+                <div class="footer-links">
+                    <h2>Customer Service</h2><br>
+                    <ul>
+                        <li><a href="#">Shipping & Delivery</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="src/returnpolicy.html">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-mail">
+                        <p>Email: <a href="src/mailto:kitijewellery25@gmail.com">kitijewellery25@gmail.com</a></p>
+                    </div>
+                    <div class="contact-details">
+                        <i class="fa fa-location"></i>
+                        <p>F-201 , Krishna avenu Vesu, Surat</p>
+                    </div>
+                    <div class="contact-details">
+                        <i class="fa fa-phone"></i>
+                        <p>+91 63550 22182</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form">
+                        <form action="">
+                            <input type="text" placeholder="Email here...">
+                            <button><i class="fa fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- Newsletter Signup -->
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 [kiti-korean jwellery]. All rights reserved.</p>
+            </div>
+
+        </footer>
+
+</body>
+
+</html>

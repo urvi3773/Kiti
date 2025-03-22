@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart & Checkout</title>
+    <link rel="stylesheet" href="../main.css">
+
+
+    <style>
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .cart-section,
+        .checkout-section {
+            width: 48%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .step.active {
+            background: #007bff;
+            color: #fff;
+        }
+
+        #checkout-content {
+            padding: 10px;
+            min-height: 250px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        .checkout-btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .checkout-btn button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkout-btn button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Cart Section -->
+        <div class="cart-section">
+            <h2>Your Cart</h2>
+            <div class="cart-item">
+                <img src="product.jpg" alt="Product Image" width="100">
+                <div>
+                    <h3>Product Name</h3>
+                    <p>Price: ₹1,999</p>
+                    <label>Quantity:</label>
+                    <input type="number" value="1" min="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Section -->
+        <div class="checkout-section">
+            <h2>Checkout</h2>
+            <div class="steps">
+                <div class="step active" onclick="loadStep('./src/login.html', 0)">1. Login</div>
+                <div class="step" onclick="loadStep('./src/S_Address.html', 1)">2. Shipping</div>
+                <div class="step" onclick="loadStep('./src/gift.html', 2)">3. Gift</div>
+                <div class="step" onclick="loadStep('./src/payment.html', 3)">4. Payment</div>
+            </div>
+
+            <div id="checkout-content">
+
+                <main>
+                    <div class="login-container">
+                        <h2>Login to Kiti</h2>
+                        <form>
+                            <input type="email" placeholder="Enter Email" id="userInput" autocomplete="email" required>
+                            <input type="password" placeholder="Enter Password" id="passwordInput"
+                                autocomplete="current-password" required>
+
+                            <a href="./forgot-password.html" class="forgot-password">Forgot Password?</a>
+
+                            <button id="Submit" type="submit">CONTINUE TO LOGIN</button>
+                        </form>
+
+                        <div class="social-login">
+                            <img src="../jimages/google.png" alt="Google Login" onclick="googleLoginPopup()">
+                            <!-- <img src="../jimages/Facebook.png" alt="Facebook Login" onclick="facebookLoginPopup()"> -->
+                        </div>
+
+                        <p>
+                            New to Kiti? <a href="register.html" onclick="createAccountPopup()">Create an Account</a>
+                        </p>
+
+                        <div class="terms">
+                            By continuing, you agree to Kiti's <a href="./terms&conditions.html"
+                                onclick="termsPopup()">Terms &
+                                Conditions</a> and <a href="./privacypolicy.html" onclick="privacyPopup()">Privacy
+                                Policy</a>.
+                        </div>
+
+                    </div>
+                </main>
+                <div class="checkout-btn">
+                    <button class="form-btn" onclick="showStep(2)">Next: Shipping</button>
+                </div>
+
+
+                <!-- Main Address Section -->
+                <main class="address">
+                    <h1>Billing Address</h1>
+                    <section>
+                        <form id="billingForm">
+                            <!-- Radio Buttons with value attributes -->
+                            <label class="Add_op">
+                                <input type="radio" name="Address_option" value="same"> Same as Shipping Address
+                            </label>
+                            <label class="Add_op">
+                                <input type="radio" name="Address_option" value="different"> Use a different billing
+                                address
+                            </label>
+
+                            <div class="Name">
+                                <label for="f_name" class="F_Name_g">
+                                    First Name :
+                                    <input type="text" id="f_name" class="name" placeholder="Enter your First Name"
+                                        required>
+                                </label>
+
+                                <label for="l_name" class="L_Name_g">
+                                    Last Name :
+                                    <input type="text" id="l_name" class="name" placeholder="Enter your Last Name"
+                                        required>
+                                </label>
+
+                                <label for="Address" class="add_g">
+                                    Address :
+                                    <input type="text" id="Address" class="name" placeholder="Enter your Address"
+                                        required>
+                                </label>
+
+                                <label for="Add-2" class="add-2_g">
+                                    Apt, Suite, House.No, etc :
+                                    <input type="text" id="Add-2" class="name"
+                                        placeholder="Apt, Suite, etc. (optional)">
+                                </label>
+
+                                <label for="city" class="City_g">
+                                    City :
+                                    <input type="text" id="city" class="name" placeholder="Enter your City" required>
+                                </label>
+
+                                <label for="country" class="Country_g">
+                                    Country :
+                                    <input type="text" id="country" class="name" placeholder="Enter your Country"
+                                        required>
+                                </label>
+
+                                <label for="state" class="state_g">
+                                    State :
+                                    <input type="text" id="state" class="name" placeholder="Enter your State" required>
+                                </label>
+
+                                <label for="pincode" class="Pincode_g">
+                                    Postal Code :
+                                    <input type="text" id="pincode" class="name" placeholder="Enter your Postal Code"
+                                        required>
+                                </label>
+                            </div>
+                        </form>
+
+                        <!-- <div class="form_bottom">
+                            <a class="cart_link" href="./S_addcart.html">
+                                <i class="fa-solid fa-angle-left"></i> Return to Shipping method
+                            </a>
+                            <a href="./gift.html">
+                                <button class="form_btn">Next</button>
+                            </a>
+                        </div> -->
+                    </section>
+                </main>
+                <div class="checkout-btn">
+                    <button class="form-btn" onclick="showStep(1)">Back: Login</button>
+                    <button class="form-btn" onclick="showStep(3)">Next: Gift</button>
+                </div>
+
+                <div class="gift-container">
+                    <h2>Choose Gift Wrap <span style="color: #5a3e85;">(Free)</span></h2>
+                    <div class="gift-wraps">
+                        <div class="gift-wrap" onclick="selectWrap(this)">
+                            <img src="../jimages/wrap1.jpg" alt="Warm Hugs">
+                            <p>Warm Hugs</p>
+                        </div>
+                        <div class="gift-wrap" onclick="selectWrap(this)">
+                            <img src="../jimages/wrap2.jpg" alt="Purple Sun">
+                            <p>Purple Sun</p>
+                        </div>
+                        <div class="gift-wrap" onclick="selectWrap(this)">
+                            <img src="../jimages/wrap3.jpg" alt="Fairy Tales">
+                            <p>Fairy Tales</p>
+                        </div>
+                    </div>
+
+                    <h2>Add Personalised Note <span style="color: #5a3e85;">(Optional)</span></h2>
+                    <textarea class="note" placeholder="Type something here..." maxlength="250"></textarea>
+
+                    <div class="recipient-section">
+                        <h2>Who is the gift for?</h2>
+                        <div class="recipient-buttons">
+                            <button onclick="selectRecipient(this)">Wife</button>
+                            <button onclick="selectRecipient(this)">Mother</button>
+                            <button onclick="selectRecipient(this)">Sister</button>
+                            <button onclick="selectRecipient(this)">Friend</button>
+                        </div>
+                    </div>
+
+                    <button class="proceed-btn" onclick="storeGiftData()">PROCEED TO PAYMENT</button>
+                </div>
+
+                <div class="overlay" id="overlay"></div>
+                <div class="popup" id="popup">
+                    <h3>Gift Added Successfully!</h3>
+                    <button onclick="closePopup()">Close</button>
+                </div>
+                <div class="checkout-btn">
+                    <button class="form-btn" onclick="showStep(3)">Back: Gift</button>
+                    <button class="form-btn" type="submit">Complete Payment</button>
+                </div>
+                <!-- Main -->
+
+                <!-- <main class="Main_payment">
+                    <div class="left_main_payment">
+                        <section class="left_sub_1">
+
+                            <h2>Prefrred Payment Options</h2>
+                            <h2>Gift cards</h2>
+
+                            <div class="left_cont_1">
+                                <div class="left_cont_1_l">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    <span>
+                                        <h3>Have a gift card?</h3>
+                                        <p>Avail addional discount with gift cards</p>
+                                    </span>
+                                </div>
+                                <div class="left_cont_1_r">
+                                    <a href="#">Add</a>
+                                </div>
+                            </div>
+
+                            <h2>Payment Options</h2>
+
+                            <div class="left_cont_1 left_cont_2">
+                                <div class="left_cont_1_l">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                    <span>
+                                        <h3>Have a gift card?</h3>
+                                        <p>Avail addional discount with gift cards</p>
+                                    </span>
+                                </div>
+                                <div class="left_cont_1_r">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+
+                            <button class="S_btn-grad">PAY NOW</button>
+
+                            <div class="left_data">
+                                <div class="left_data_l">
+                                    <p class="left_data_l_b">Ravindrabhai chauhan </p>
+                                    <p class="left_data_l_Add">122 Krishna park Surat,Gujarat, 395010 india</p>
+                                    <p class="left_data_l_b">Phone: +91 9099743239</p>
+                                    <p class="left_data_l_b">Addreess Type: <span>Home</span></p>
+                                </div>
+                                <div class="left_data_r">
+                                    <a href="#">Edit</a>
+                                </div>
+                            </div>
+
+                            <div class="left_data">
+                                <div class="left_data_l">
+                                    <p class="left_data_l_b">No Gift wrap added</p>
+                                    <p class="left_data_l_b">No Gift message</p>
+                                </div>
+                                <div class="left_data_r">
+                                    <a href="#">Edit</a>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+
+                    <div class="right_main_payment">
+                        <section class="right_sub_1">
+                            <h2>Order Summery</h2>
+                            <div class="right_sub_item">
+                                <img src="../jimages/earring/gold/g13.jpg" alt="">
+
+                                <div>
+                                    <h3>Glamorous Floral Earrings</h3>
+                                    <h3>SR02845-YGP900</h3>
+                                    <h4>Quantity - 1</h4>
+
+                                    <p class="R_del"> Expected Delivery by - 15th Feb</p>
+                                    <p>₹45,999 <span class="R_Cross">₹47,499</span></p>
+                                </div>
+                            </div>
+
+                            <div class="right_sub_count">
+                                <div class="r_price_dic">
+                                    <p>SubTotal </p>
+                                    <p>₹ 29 , 234</p>
+                                </div>
+                                <div class="r_price_dic">
+                                    <p>Cart Discount</p>
+                                    <p class="R_sub_dis">- ₹ 5 , 500</p>
+                                </div>
+                                <div class="r_price_dic r_under">
+                                    <p>Shipiing charges (Standard)</p>
+                                    <p class="R_sub_dis">FREE</p>
+                                </div>
+                                <div class="r_price_dic">
+                                    <p class="r_t_b">Total Cost</p>
+                                    <p class="r_t_b">- ₹ 5 , 500</p>
+                                </div>
+
+                            </div>
+
+                            <div class="right_sub_contect">
+                                <a href="">Need Help ?</a>
+                                <p>We're available by phone +91 00000 00000 (Toll Free) every day, 9 A.M to 1.A.M IST
+                                    (Mon - Sun)
+                                </p>
+
+                                <div class="icon">
+                                    <div class="icon_sub">
+                                        <i class="fa-solid fa-phone"></i>
+                                        Call
+                                    </div>
+                                    <div class="icon_sub">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        Whatsapp
+                                    </div>
+                                    <div class="icon_sub">
+                                        <i class="fa-regular fa-envelope"></i>
+                                        Email
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                </main> -->
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadStep(page, step) {
+            console.log("Loading step:", page);  // Debugging Log
+
+            fetch(page)
+                .then(response => {
+                    console.log("Response status:", response.status);  // Check if response is OK
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    console.log("Loaded content:", data);  // Show what is being loaded
+                    document.getElementById("checkout-content").innerHTML = data;
+
+                    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+                    document.querySelectorAll('.step')[step].classList.add('active');
+                })
+                .catch(error => console.error('Error loading step:', error));
+        }
+
+        // Load first step (Login) by default
+        document.addEventListener("DOMContentLoaded", function () {
+            loadStep('src/login.html', 0);
+        });
+    </script>
+
+</body>
+
+</html>

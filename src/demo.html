@@ -1,0 +1,106 @@
+<div class="Jewellery-section">
+  <!-- Product 1 -->
+  <div class="Jewellery-item" data-price="41,999" data-shop-for="sister" data-category="dimond necklace">
+    <a href="./productpage.html"><img src="../jimages/necklace/dimond/d1.jpg" alt="Gold Layered Pendant Necklace"></a>
+    <h4>Gold Layered Pendant Necklace</h4>
+    <div class="price">₹41,999</div>
+    <a href="./addcart.html"><button class="order-btn">Add Cart</button></a>
+    <!-- Add to Wishlist with Login Check -->
+    <button class="wishlist-btn"
+      onclick="addToWishlist('Gold Layered Pendant Necklace', '41,999', '../jimages/necklace/dimond/d1.jpg');">&#10084;</button>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="Jewellery-item" data-price="36,999" data-shop-for="mother" data-category="dimond necklace">
+    <a href="./productpage.html"><img src="../jimages/necklace/dimond/d2.jpg"
+        alt="Blue Gemstone Layered Pendant Necklace"></a>
+    <h4>Blue Gemstone Layered Pendant Necklace</h4>
+    <div class="price">₹36,999</div>
+    <a href="./addcart.html"><button class="order-btn">Add Cart</button></a>
+    <!-- Add to Wishlist with Login Check -->
+    <button class="wishlist-btn"
+      onclick="addToWishlist('Blue Gemstone Layered Pendant Necklace', '36,999', '../jimages/necklace/dimond/d2.jpg');">&#10084;</button>
+  </div>
+
+  <!-- Add more products similarly -->
+
+</div>
+
+<!-- Login Popup Section -->
+<div class="login-container" id="login-popup">
+  <input type="text" placeholder="Enter Mobile Number or Email" id="userInput">
+  <button onclick="login()">CONTINUE TO LOGIN</button>
+
+  <div class="social-login">
+    <img src="../jimages/google.png" alt="Google Login" onclick="googleLoginPopup()">
+    <img src="../jimages/Facebook.png" alt="Facebook Login" onclick="facebookLoginPopup()">
+  </div>
+
+  <p>
+    New to kiti? <a href="./register.html" onclick="createAccountPopup()">Create an Account</a>
+  </p>
+
+  <div class="terms">
+    By continuing you agree to kiti's <a href="#" onclick="termsPopup()">terms and conditions</a> & <a href="#"
+      onclick="privacyPopup()">privacy policy</a>
+  </div>
+</div>
+
+<script>
+  let isLoggedIn = false; // Set this flag based on actual login status (could be stored in cookies/localStorage/sessionStorage)
+  let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  // Function to handle login
+  function login() {
+    const userInput = document.getElementById('userInput').value;
+    if (userInput.trim() === '') {
+      alert('Please enter your mobile number or email.');
+    } else {
+      isLoggedIn = true;
+      localStorage.setItem('isLoggedIn', 'true'); // Save login status
+      alert(`Proceeding with: ${userInput}`);
+      document.getElementById('login-popup').style.display = 'none'; // Hide login popup
+    }
+  }
+
+  // Function to add product to wishlist
+  function addToWishlist(productName, productPrice, productImage) {
+    if (!isLoggedIn) {
+      document.getElementById('login-popup').style.display = 'block'; // Show login popup if not logged in
+      return;
+    }
+
+    const product = {
+      name: productName,
+      price: productPrice,
+      image: productImage
+    };
+
+    // Add the product to wishlist if not already added
+    if (!wishlist.find(item => item.name === productName)) {
+      wishlist.push(product);
+      localStorage.setItem('wishlist', JSON.stringify(wishlist));
+      alert(`${productName} has been added to your wishlist!`);
+    } else {
+      alert('This product is already in your wishlist!');
+    }
+  }
+
+  // Example social login buttons (not implemented yet)
+  function googleLoginPopup() {
+    alert('Google Login is not implemented yet.');
+  }
+
+  function facebookLoginPopup() {
+    alert('Facebook Login is not implemented yet.');
+  }
+
+  // Functions for terms and privacy popups (not implemented)
+  function termsPopup() {
+    alert('Terms and Conditions popup is not implemented yet.');
+  }
+
+  function privacyPopup() {
+    alert('Privacy Policy popup is not implemented yet.');
+  }
+</script>

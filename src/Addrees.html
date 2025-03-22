@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart & Checkout Demo</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="../style/S_main.css" />
+    <style>
+        /* Base styles with cream background and deep purple accents */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7efe5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* Container splits into two columns on large screens, stacks on small screens */
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Card sections */
+        .cart-section,
+        .checkout-section {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #480f69;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(72, 15, 105, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .cart-section h2,
+        .checkout-section h2 {
+            margin-top: 0;
+            color: #480f69;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Cart item styling */
+        .cart-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-item:hover {
+            transform: translateX(5px);
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .cart-item h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #480f69;
+        }
+
+        .cart-item p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        /* Remove button styling */
+        .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .remove-btn:hover {
+            background: #e60000;
+        }
+
+        /* Extra style to display gift wrap info in cart items */
+        .gift-wrap-info {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #480f69;
+        }
+
+        /* Total Price styling */
+        .total-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 15px;
+            color: #480f69;
+        }
+
+        /* Animation effect for total price */
+        .animate-total {
+            animation: pulse 1s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Steps Navigation */
+        .steps-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .steps-nav button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            background: #C8A1E0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .steps-nav button:hover:not(.locked) {
+            background: #480f69;
+            transform: scale(1.05);
+        }
+
+        .steps-nav button.active {
+            background: #480f69;
+            color: #f7efe5;
+        }
+
+        .steps-nav button.locked {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* Steps */
+        .step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        /* Form styling */
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #480f69;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #C8A1E0;
+            outline: none;
+        }
+
+        /* Checkout buttons */
+        .checkout-btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .checkout-btn button {
+            padding: 10px 20px;
+            background: #480f69;
+            color: #f7efe5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            font-size: 1rem;
+            margin: 5px;
+        }
+
+        .checkout-btn button:hover {
+            background: #C8A1E0;
+            transform: translateY(-3px);
+        }
+
+        /* Gift Wrap Image Cards */
+        .gift-wraps {
+            display: flex;
+            gap: 10px;
+            justify-content: space-around;
+            margin-bottom: 15px;
+        }
+
+        .gift-wrap {
+            border: 2px solid #480f69;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, border 0.3s ease;
+            background-color: #fff;
+        }
+
+        .gift-wrap img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gift-wrap p {
+            text-align: center;
+            margin: 8px 0;
+            color: #480f69;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .gift-wrap.selected {
+            border: 2px solid #C8A1E0;
+            transform: scale(1.05);
+        }
+
+        /* Address Options (Billing Address Step) */
+        .address-options {
+            margin: 20px 0;
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .address-options input[type="radio"] {
+            display: none;
+        }
+
+        .address-options label {
+            font-size: 1rem;
+            cursor: pointer;
+            color: #480f69;
+            padding: 10px 15px;
+            border: 2px solid #480f69;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: #f7efe5;
+        }
+
+        .address-options input[type="radio"]:checked+label {
+            background: #480f69;
+            color: #f7efe5;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Disabled style for read-only fields */
+        .in-Disable {
+            background: #eee;
+            cursor: not-allowed;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .cart-section,
+            .checkout-section {
+                width: 100%;
+            }
+
+            .steps-nav button {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            .gift-wrap img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Cart Section -->
+        <div class="cart-section">
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div id="total-price" class="total-price"></div>
+        </div>
+        <!-- Checkout Section -->
+        <div class="checkout-section">
+            <!-- Top Navigation (Steps) -->
+            <div class="steps-nav">
+                <button id="step-nav-0" onclick="navigateTo(0)">1. Login</button>
+                <button id="step-nav-1" onclick="navigateTo(1)">2. Billing Address</button>
+                <button id="step-nav-2" onclick="navigateTo(2)">3. Gift Wrap</button>
+                <button id="step-nav-3" onclick="navigateTo(3)">4. Payment</button>
+            </div>
+            <!-- Step Container -->
+            <div id="step-container">
+                <!-- Step 0: Login -->
+                <div class="step" id="step-0">
+                    <h2>Login to Continue</h2>
+                    <form id="loginForm">
+                        <input type="email" id="userInput" placeholder="Enter Email" required />
+                        <input type="password" id="passwordInput" placeholder="Enter Password" required />
+                        <div class="checkout-btn">
+                            <button type="submit">Login</button>
+                            <br>
+                            New to Kiti? <a  href="register.html">Create an Account</a>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- Step 1: Billing Address -->
+                <div class="step" id="step-1">
+                    <h2>Billing Address</h2>
+                    <!-- Address Options: Same as Shipping or Enter New -->
+                    <div class="address-options">
+                        <input type="radio" id="optionSame" name="address_option" value="same" checked>
+                        <label for="optionSame">Same as Shipping Address</label>
+                        <input type="radio" id="optionDiff" name="address_option" value="new">
+                        <label for="optionDiff">Use a different billing address</label>
+                    </div>
+                    <form id="billingForm">
+                        <input type="text" id="f_name" placeholder="First Name" required />
+                        <input type="text" id="l_name" placeholder="Last Name" required />
+                        <input type="text" id="Address" placeholder="Address" required />
+                        <input type="text" id="Add-2" placeholder="Address 2 (Optional)" />
+                        <input type="text" id="city" placeholder="City" required />
+                        <input type="text" id="state" placeholder="State" required />
+                        <input type="text" id="country" placeholder="Country" required />
+                        <input type="text" id="pincode" placeholder="Postal Code" required />
+                        <div class="checkout-btn">
+                            <button type="button" id="back-login-btn" onclick="showStep(0)">Back: Login</button>
+                            <button type="button" onclick="storeBillingAddress()">Next: Gift Wrap</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Step 2: Gift Wrap -->
+                <div class="step" id="step-2">
+                    <h2>Choose Gift Wrap (Free)</h2>
+                    <div class="gift-wraps" id="gift-wraps">
+                        <div class="gift-wrap" onclick="selectWrap(this, 'Warm Hugs')">
+                            <img src="../jimages/wrap1.jpg" alt="Warm Hugs">
+                            <p>Warm Hugs</p>
+                        </div>
+                        <div class="gift-wrap" onclick="selectWrap(this, 'Purple Sun')">
+                            <img src="../jimages/wrap2.jpg" alt="Purple Sun">
+                            <p>Purple Sun</p>
+                        </div>
+                        <div class="gift-wrap" onclick="selectWrap(this, 'Fairy Tales')">
+                            <img src="../jimages/wrap3.jpg" alt="Fairy Tales">
+                            <p>Fairy Tales</p>
+                        </div>
+                    </div>
+                    <textarea id="giftNote" placeholder="Add Personalised Note (Optional)" rows="4"></textarea>
+                    <div class="checkout-btn">
+                        <button type="button" onclick="storeGiftData()">Next: Payment</button>
+                        <button type="button" onclick="showStep(1)">Back: Billing Address</button>
+                    </div>
+                </div>
+                <!-- Step 3: Payment -->
+                <div class="step" id="step-3">
+                    <h2>Payment</h2>
+                    <p>This is a demo – payment options would go here.</p>
+                    <div class="checkout-btn">
+                        <button type="button" onclick="completePayment()">Complete Payment</button>
+                        <button type="button" onclick="showStep(2)">Back: Gift Wrap</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Use demo.js as the module file -->
+    <script type="module" src="../script/Addrees.js"></script>
+</body>
+
+</html>

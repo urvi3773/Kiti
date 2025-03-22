@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korean Jewellery</title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="./script/register.js"></script>
+  <script src="./script/login.js"></script>
+  <script src="./script/fillter.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <!-- NavBar -->
+      <nav>
+        <div class="marquee">
+          <marquee>
+            Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
+          </marquee>
+        </div>
+        <div class="navUp">
+          <!-- Logo -->
+          <div class="navLogo">
+            <a href="./index.html"><img src="./jimages/kitilogo/kk3.png" alt="" height="130px" width="130px"></a>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <input type="text" class="search-input" />
+            <span class="search-placeholder"></span>
+          </div>
+
+          <!-- Navigation Icons -->
+          <div class="nav-container">
+            <div class="nav-icons">
+              <button class="nav-button" id="homeButton">
+                <a href="./index.html"><i class="fa-solid fa-house fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Home</span>
+              </button>
+              <button class="nav-button" id="wishlistButton">
+                <a href="./src/wishlist.html"><i class="fa-regular fa-heart fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Wishlist</span>
+              </button>
+              <button class="nav-button" id="cartButton">
+                <a href="./src/addcart.html"><i class="fa-solid fa-cart-shopping fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Cart</span>
+              </button>
+
+              <div class="navbar-item-account">
+                <button class="nav-button" id="accountButton">
+                  <i class="fa-regular fa-user fa-2x" class="nav-icon"></i>
+                  <span class="nav-label">Account</span>
+                </button>
+
+                <div class="dropdown-account">
+                  <h2 class="dropdown-header-account">MY ACCOUNT</h2>
+
+                  <div class="dropdown-buttons-account">
+                    <a href="./src/login.html"><button class="button-login"
+                        onclick="window.location.href='./src/login.html'">LOG
+                        IN</button></a>
+                    <a href="./src/register.html"><button class="button-signup"
+                        onclick="window.location.href='./src/signup.html'">SIGN
+                        UP</button></a>
+                  </div>
+                  <p class="dropdown-contact-text">
+                    CLICK HERE TO <a href="./src/contactus.html" class="dropdown-contact-link">CONTACT
+                      US</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="dropdown-main-container">
+                <button class="nav-button" id="pincodetButton">
+                  <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+                  <span class="nav-label">Pincode</span>
+                </button>
+
+                <div class="dropdown-pincode-box" id="pincodeSection">
+                  <h1 class="dropdown-title">PIN Code Locator</h1>
+
+                  <div class="dropdown-input-group">
+                    <input type="text" id="pincodeInput1" placeholder="Enter PIN Code" maxlength="6">
+                    <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+                  </div>
+                  <div class="dropdown-message" id="message1"></div>
+                  <div class="dropdown-location-container" id="locationContainer" style="display: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png" alt="Location Icon"
+                      class="dropdown-location-icon">
+                    <span id="locationText1"></span>
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="navbar">
+          <div class="menu">
+            <a href="./src/alljewellery.html">All JEWELLERY</a>
+          </div>
+          <div class="menu">
+            <a href="./src/necklace.html">
+              NECKLACE <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./src/goldnecklace.html">GOLD</a>
+              <a href="./src/silvernecklace.html">SILVER</a>
+              <a href="./src/dimondnecklace.html">DIAMOND</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="./src/rings.html">
+              RINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./src/goldring.html">GOLD</a>
+              <a href="./src/silverring.html">SILVER</a>
+              <a href="./src/dimondring.html">DIAMOND</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="./src/earings.html">
+              EARINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./src/goldearings.html">GOLD</a>
+              <a href="./src/silverearings.html">SILVER</a>
+              <a href="./src/preciousearings.html">PRECIOUS</a>
+              <a href="./src/aesthenticearings.html">AESTHENITC</a>
+              <a href="./src/traditionalearings.html">TRADITIONAL</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="./src/braclet.html">
+              BRACLET <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./src/goldbraclet.html">GOLD</a>
+              <a href="./src/silverbraclet.html">SILVER</a>
+              <a href="./src/aesthenticbraclet.html">AESTHENITC</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="./src/gifting.html">GIFTING</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--offer silder-->
+
+    <div class="carousel-container">
+      <div class="carousel-slides">
+        <div class="carousel-slide">
+          <a href="./src/offer2.html"><img src="./jimages/slideimage/silderimages2.gif" alt="Slide 2"
+              class="carousel-image"></a>
+        </div>
+        <div class="carousel-slide">
+          <a href="./src/offer3.html"><img src="./jimages/slideimage/silderimages3.gif" alt="Slide 3"
+              class="carousel-image"></a>
+        </div>
+        <div class="carousel-slide">
+          <a href="./src/offer4.html"><img src="./jimages/slideimage/silderimages4.gif" alt="Slide 4"
+              class="carousel-image"></a>
+        </div>
+        <div class="carousel-slide">
+          <a href="./src/offer5.html"><img src="./jimages/slideimage/silderimages5.gif" alt="Slide 5"
+              class="carousel-image"></a>
+        </div>
+        <div class="carousel-slide">
+          <a href="./src/offer6.html"><img src="./jimages/slideimage/silderimages6.gif" alt="Slide 6"
+              class="carousel-image"></a>
+        </div>
+        <div class="carousel-slide">
+          <a href="./src/offer8.html"><img src="./jimages/slideimage/silderimages8.gif" alt="Slide 8"
+              class="carousel-image"></a>
+        </div>
+      </div>
+      <div class="carousel-navigation">
+        <button class="carousel-nav-button prev">&#10094;</button>
+        <button class="carousel-nav-button next">&#10095;</button>
+      </div>
+      <div class="carousel-indicators">
+        <button class="carousel-indicator active"></button>
+        <button class="carousel-indicator"></button>
+        <button class="carousel-indicator"></button>
+      </div>
+
+      <link rel="stylesheet" href="./style/offerslide.css" />
+      <script src="./script/offerslide.js"></script>
+    </div>
+
+    <!--images slider-->
+    <div class="slider-container">
+      <!-- Slides -->
+      <div class="slide">
+        <div class="category">
+          <a href="./src/goldnecklace.html"><img src="./jimages/necklace/gold/g3.jpg" alt="Gold Necklace" /></a>
+          <h3>Gold Necklace</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/silverbraclet.html"><img src="./jimages/bracelet/silver/s14.jpg" alt="Silver Bracelet"></a>
+          <h3>Silver Bracelet</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/goldearings.html"><img src="./jimages/earring/k4.jpg" alt="Gold Earring"></a>
+          <h3>Gold Earring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/aesthenticbraclet.html"><img src="./jimages/bracelet/aesthentic/e3.jpg"
+              alt="Aesthentic Bracelet"></a>
+          <h3>Aesthentic Bracelet</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/preciousearings.html"><img src="jimages/earring/precious/p34.jpeg" alt=" Precious Earring"></a>
+          <h3> Precious Earring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/silvernecklace.html"><img src="./jimages/necklace/silver/s1.jpg" alt="Silver Necklace"></a>
+          <h3>Silver Necklace</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/dimondring.html"><img src="./jimages/ring/r10.jpeg" alt="Diamond Ring"></a>
+          <h3>Diamond Ring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/aesthenticearings.html"><img src="./jimages/earring/aesthentic/a20.jpg"
+              alt="Aesthentic Earring"></a>
+          <h3>Aesthentic Earring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/goldring.html"><img src="./jimages/ring/gold/g1.jpg" alt="Gold Ring"></a>
+          <h3>Gold Ring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/dimondnecklace.html"><img src="./jimages/necklace/Dimond/d5.jpg" alt="Diamond Necklace" /></a>
+          <h3>Diamond Necklace</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/silverearings.html"><img src="./jimages/earring/silver/s25.jpg" alt="Silver Earring"></a>
+          <h3>Silver Earring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/goldbraclet.html"><img src="./jimages/bracelet/gold/g16.jpg" alt="Gold Bracelet"></a>
+          <h3>Gold Bracelet</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/silverring.html"><img src="./jimages/ring/silver/s18.jpg" alt="Silver Ring"></a>
+          <h3>Silver Ring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/traditionalearings.html"><img src="./jimages/earring/treditional/t10.jpg"
+              alt="Treditional Earring"></a>
+          <h3>Treditional Earring</h3>
+        </div>
+      </div>
+    </div>
+
+    <!--rabbit slider-->
+
+    <div class="rabbit-slider">
+      <a href="./src/rabbitcollection.html">
+        <marquee behavior="loop" direction="rtl">
+          <h1>Our Rabbit Collection Our Rabbit Collection Our Rabbit Collection Our Rabbit Collection Our Rabbit
+            Collection Our Rabbit Collection Our Rabbit Collection</h1>
+        </marquee>
+        <!-- <img src="./jimages/rabbit/rabb" alt="Rabbit"> -->
+        <video src="./jimages/rabbit/rabbitcollection.mp4" width="100%" loop autoplay></video>
+        <marquee behavior="loop" direction="ltr">
+          <h1>Our Rabbit Collection Our Rabbit Collection Our Rabbit Collection Our Rabbit Collection Our Rabbit
+            Collection Our Rabbit Collection Our Rabbit Collection</h1>
+        </marquee>
+      </a>
+    </div>
+    <!--most loved-->
+
+    <div class="Jewellery-section-main">
+      <h1><b>KITI SPECIAL</b></h1>
+
+      <div class="Jewellery-section-item-main">
+
+        <div class="Jewellery-item-main">
+          <a href="./src/bowcollection.html"><img src="./jimages/bow/bowcollection .jpg" alt=""></a>
+        </div>
+
+        <div class="Jewellery-item-main">
+          <a href="./src/butterflycollection.html"><img src="./jimages/butterfly/butterflycollection.jpg" alt=""></a>
+        </div>
+
+        <div class="Jewellery-item-main">
+          <a href="./src/flovalcollection.html"><img src="./jimages/floral/floralcollcetion.jpg" alt=""></a>
+        </div>
+      </div>
+
+      <link rel="stylesheet" href="./style/mostloved.css">
+    </div>
+
+    <!--Gender wise-->
+
+    <h1>GIFTING GUIDE</h1>
+    <div class="gallery-container">
+      <!--  <button class="nav-arrow arrow-backward" onclick="scrollLeft()">&#8592;</button>-->
+      <div class="gallery-track" id="gallery">
+        <div class="gallery-item">
+          <a href="./src/mother.html"><img src="./jimages/gender/mother.jpg" alt="Mother"></a>
+          <div class="gallery-caption">Mother</div>
+        </div>
+
+        <div class="gallery-item">
+          <a href="./src/sister.html"><img src="./jimages/gender/sister.jpg" alt="Sister"></a>
+          <div class="gallery-caption">Sister</div>
+        </div>
+
+        <div class="gallery-item">
+          <a href="./src/wife.html"><img src="./jimages/gender/wife.jpg" alt="Wife"></a>
+          <div class="gallery-caption">Wife</div>
+        </div>
+        <div class="gallery-item">
+          <a href="./src/friends.html"><img src="./jimages/gender/friends.jpg" alt="Friends"></a>
+          <div class="gallery-caption">Friends</div>
+        </div>
+      </div>
+      <!-- <button class="nav-arrow arrow-forward" onclick="scrollRight()">&#8594;</button>-->
+
+      <link rel="stylesheet" href="./style/genderwise.css">
+      <script src="./script/genderwise.js"></script>
+    </div>
+
+    <!--combo images slider-->
+
+    <marquee behavior="loop" direction="ltr">
+      <h2>Combo Collection Combo Collection Combo Collection</h2>
+    </marquee>
+
+    <div class="slider-container">
+      <!-- Slides -->
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/necklace/n1.jpg"
+              alt="Aesthentic Necklace" /></a>
+          <h3>Aesthentic Necklace</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/bracelet/b1.jpg" alt="Bracelet"></a>
+          <h3>Aesthentic Bracelet</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/earring/me7.jpg" alt="Bule Earring"></a>
+          <h3>Bule Earring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/ring/r1.jpg" alt="Red Ring"></a>
+          <h3>Red Ring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/bracelet/b2.jpg" alt="floral Bracelet"></a>
+          <h3>floral Bracelet</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/earring/me17.jpeg"
+              alt="Traditonal Earring "></a>
+          <h3>Traditonal Earring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/ring/r2.jpg" alt="purple Ring "></a>
+          <h3>purple Ring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/bracelet/b3.jpg" alt="perious Bracelet"></a>
+          <h3>perious Bracelet</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/earring/me16.jpeg"
+              alt="Aesthentic Earring"></a>
+          <h3>Aesthentic Earring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/ring/r3.jpg" alt="Brown Ring" /></a>
+          <h3>Brown Ring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/bracelet/b4.jpg" alt="Handmade Bracelet"></a>
+          <h3>Handmade Bracelet</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/earring/me22.jpeg" alt="Yellow Earring"></a>
+          <h3>Yellow Earring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/ring/r6.jpg" alt="pink Ring"></a>
+          <h3>pink Ring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/bracelet/b5.jpg" alt="Pink Bracelet"></a>
+          <h3>Pink Bracelet</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/ring/r7.jpg" alt="Aesthentic ring"></a>
+          <h3>Aesthentic ring</h3>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="category">
+          <a href="./src/combocollection.html"><img src="./jimages/combo/earring/me15.jpg" alt="Pink Earring"></a>
+          <h3>Pink Earring</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="back-to-top" id="backToTop">
+    <i class="fa-solid fa-diamond diamond-icon" title="Back To Top"></i>
+  </div>
+
+  <script src="./script/backhome.js"></script>
+  <script src="./script/S_cart.js" defer></script>
+  <script type="module" src="./script/Main_Login.js" defer></script>
+  <script src="./script/Simple_logic.js" defer></script>
+
+  <!-- Footer Section -->
+
+  <footer>
+    <div class="footer-container">
+
+      <!-- Footer Logo -->
+      <div class="col">
+        <a href="./index.html"><img src="./jimages/kitilogo/kk3.png" alt="Your Jewelry Brand Logo"></a>
+
+
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+      </div>
+
+      <!-- Explore Links -->
+      <div class="footer-links">
+        <h2>Explore</h2><br>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./src/aboutus.html">About Us</a></li>
+          <li><a href="./src/contactus.html">Contact Us</a></li>
+          <li><a href="./src/customerreviews.html">Customer Reviews</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Service Links -->
+      <div class="footer-links">
+        <h2>Customer Service</h2><br>
+        <ul>
+          <li><a href="./src/shipping&delivery.html">Shipping & Delivery</a></li>
+          <li><a href="./src/returns&exchanges.html">Returns & Exchanges</a></li>
+          <li><a href="./src/privacypolicy.html">Privacy Policy</a></li>
+          <li><a href="./src/terms&conditions.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-contact">
+        <h2>Get in Touch</h2>
+        <div class="contact-mail">
+          <p>Email: <a href="mailto:kitijewellery25@gmail.com">kitijewellery25@gmail.com</a></p>
+        </div>
+        <div class="contact-details">
+          <i class="fa fa-location"></i>
+          <p>F-201 , Krishna avenu Vesu, Surat</p>
+        </div>
+        <div class="contact-details">
+          <i class="fa fa-phone"></i>
+          <p>+91 63550 22182</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form">
+          <form action="">
+            <input type="text" placeholder="Email here...">
+            <button><i class="fa fa-paper-plane"></i></button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Newsletter Signup -->
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 [kiti-korean jwellery]. All rights reserved.</p>
+    </div>
+
+  </footer>
+
+  <script src="./script/pincode.js"></script>
+
+</body>
+
+</html>

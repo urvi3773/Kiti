@@ -1,0 +1,509 @@
+
+
+/* Responsive Design for Screens Up to 768px */
+@media (max-width: 768px) {
+  .navUp .navLogo {
+    width: 15%;
+    display: flex;
+    margin-left: -25px;
+    margin-right: 20px;
+  }
+
+  .navbar {
+    /* display: none; */
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar .menu {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  .navbar .menu a {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  .navbar .menu .dropdown {
+    position: absolute;
+    display: none; /* Dropdowns remain hidden unless hovered */
+    width: 100%; /* Full width for smaller screens */
+    box-shadow: none;
+    text-align: left;
+  }
+
+  .navbar .menu:hover .dropdown {
+    display: block;
+  }
+
+  .navbar .menu .dropdown a {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  .navbar .menu a .arrow {
+    margin-left: 5px;
+    font-size: 10px;
+  }
+
+  .Jewellery-section {
+    flex-direction: row; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+    gap: 10px;
+    padding: 10px;
+}
+
+    /* Resize Jewellery Items */
+    .Jewellery-item {
+        width: 100%; /* Full width for smaller screens */
+        max-width: 300px; /* Limit the maximum width */
+        padding: 10px;
+    }
+
+    /* Adjust Item Title Font Size */
+    .Jewellery-item h4 {
+        font-size: 14px;
+    }
+
+    /* Adjust Price Font Size */
+    .price {
+        font-size: 12px;
+    }
+
+    /* Resize Buttons */
+    .order-btn, .wishlist-btn {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+  .gallery-track {
+    grid-template-columns: repeat(1, 1fr); /* Single column for small screens */
+    gap: 15px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-caption {
+    font-size: 18px;
+    background-color: transparent;
+    color: black;
+  }
+
+  footer {
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap */
+    justify-content: center; /* Center-align all content */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Add space between sections */
+  }
+
+  .col {
+    flex: 1 1 100%; /* Each column takes full width */
+    max-width: 100%; /* Prevent columns from exceeding full width */
+    box-sizing: border-box; /* Include padding in width */
+    padding: 10px;
+    text-align: center; /* Center-align text and images */
+    margin: 30px;
+  }
+
+  .col .social {
+    padding-top: 10px;
+    size: 30px;
+    padding-right: 50px;
+  }
+
+
+  .col img {
+    width: 200%; /* Ensure images are responsive */
+    max-width: 250px; /* Set a maximum width for images */
+    display: block;
+    margin: 0 auto; /* Center images */
+    margin-top: -10%;
+  }
+
+  .footer-links {
+    margin: 8px 0;
+    padding: 0 5px;
+    text-align: center; /* Center-align footer links */
+  }
+
+  .footer-links ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+  }
+
+  .footer-links ul li {
+    margin-bottom: 10px; /* Add spacing between list items */
+  }
+
+  .footer-links ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* White link color */
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+
+  .footer-links ul li a:hover {
+    color: #ccc; /* Change color on hover */
+  }
+
+  .footer-contact {
+    margin: 20px 0;
+    text-align: center; /* Center-align contact details */
+    margin-top: -3.5%;
+  }
+
+  .footer-contact h2 {
+    font-size: 18px; /* Adjust font size */
+    color: #fff; /* White text color */
+    margin-bottom: 10px;
+  }
+
+  .footer-contact .contact-mail p a {
+    color: #fff; /* White link color */
+    text-decoration: none; /* Remove underline */
+  }
+
+  .footer-contact .contact-details p {
+    display: flex;
+    flex-direction: column; /* Stack icons and text vertically */
+    align-items: center; /* Center-align text and icons */
+    color: #fff; /* White text color */
+    gap: 5px; /* Add space between items */
+  }
+
+
+  .footer-bottom {
+    font-size: 12px; /* Smaller font size */
+    text-align: center; /* Center-align footer text */
+    color: #fff; /* White text color */
+  } 
+
+
+    .product-details-page {
+      flex-direction: column;
+    }
+  
+    .product-details-page img {
+      width: 100%;
+    }
+  
+    .details {
+      padding: 20px;
+    }
+  
+    .details h1 {
+      font-size: 2rem;
+    }
+  
+    .details .price {
+      font-size: 1.5rem;
+    }
+  
+    .order-btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  
+  
+  
+}
+
+  
+  /*1024px size laptop*/
+
+  /* For screens 1024px and below */
+@media (max-width: 1024px) {
+
+  .navUp .navLogo {
+    width: 20%; /* Adjust logo size for smaller screens */
+    display: flex;
+    margin-left: -15px;
+    margin-right: 15px;
+  }
+
+  .navbar {
+    flex-direction: row; /* Stack navbar items vertically on smaller screens */
+  }
+
+  .navbar .menu {
+    margin: 10px 0;
+    font-size: 16px; /* Adjust font size for readability */
+    margin-top: -5px;
+
+  }
+
+  .navbar .menu a {
+    font-size: 16px; /* Reduce font size for smaller screens */
+    padding: 8px 8px; /* Adjust padding for smaller buttons */
+  }
+
+  .navbar .menu .dropdown {
+    position: absolute; /* Make dropdown display normally */
+    display: none; /* Dropdowns remain hidden unless hovered */
+    width: 50%; /* Full width for dropdown on smaller screens */
+    box-shadow: none;
+    text-align: left;
+  }
+
+  .navbar .menu:hover .dropdown {
+    display: block;
+  }
+
+  .navbar .menu .dropdown a {
+    font-size: 14px; /* Adjust font size for dropdown links */
+    padding: 8px 10px;
+  }
+
+  .navbar .menu a .arrow {
+    margin-left: 5px;
+    font-size: 11px; /* Adjust arrow size for smaller screens */
+  }
+  
+  .row {
+    display: flex;
+    margin-top: 250px;
+    padding: 2rem 0;
+  }
+  
+  .row .form input {
+    background-color: #ffffff;
+    border: 0;
+    outline: none;
+    border-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: -650px;
+    width: 300px;
+    height: 30px;
+  }
+  
+  .form button {
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #fff;
+  }
+
+   /* Adjust Jewellery Section Padding and Gap */
+   .Jewellery-section {
+    gap: 15px;
+    padding: 15px;
+}
+
+  /* Resize Jewellery Items */
+  .Jewellery-item {
+      width: 300px; /* Reduce width for smaller screens */
+      padding: 20px;
+  }
+
+  /* Adjust Item Title Font Size */
+  .Jewellery-item h4 {
+      font-size: 16px;
+  }
+
+  /* Adjust Price Font Size */
+  .price {
+      font-size: 14px;
+  }
+
+  /* Resize Buttons */
+  .order-btn, .wishlist-btn {
+      padding: 8px 12px;
+      font-size: 12px;
+  }
+
+}
+/* Responsive Design for Screens Up to 425px */
+@media (max-width: 425px) {
+  .navUp .navLogo {
+    width: 20%; /* Adjust logo size for smaller screens */
+    display: flex;
+    margin-left: -15px; /* Adjust left margin */
+    margin-right: 10px; /* Adjust right margin */
+  }
+
+  .navbar {
+    flex-direction: column; /* Stack navbar items vertically */
+    align-items: center; /* Center-align navbar items */
+    padding: 8px;
+  }
+
+  .navbar .menu {
+    margin: 8px 0;
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .navbar .menu a {
+    font-size: 14px; /* Adjust font size */
+    padding: 5px 8px;
+  }
+
+  .navbar .menu .dropdown {
+    position: absolute;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    text-align: left;
+  }
+
+  .navbar .menu:hover .dropdown {
+    display: block;
+  }
+
+  .navbar .menu .dropdown a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  .navbar .menu a .arrow {
+    margin-left: 4px;
+    font-size: 8px;
+  }
+
+  .Jewellery-section {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+    gap: 10px;
+    padding: 8px;
+  }
+
+  /* Resize Jewellery Items */
+  .Jewellery-item {
+    width: 100%;
+    max-width: 280px; /* Limit the maximum width */
+    padding: 8px;
+  }
+
+  /* Adjust Item Title Font Size */
+  .Jewellery-item h4 {
+    font-size: 12px;
+  }
+
+  /* Adjust Price Font Size */
+  .price {
+    font-size: 10px;
+  }
+
+  /* Resize Buttons */
+  .order-btn, .wishlist-btn {
+    padding: 5px 8px;
+    font-size: 8px;
+  }
+
+  .gallery-track {
+    grid-template-columns: repeat(1, 1fr); /* Single column for small screens */
+    gap: 12px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-caption {
+    font-size: 16px;
+    background-color: transparent;
+    color: black;
+  }
+
+  footer {
+    height: auto;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .col {
+    flex: 1 1 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .col .social {
+    padding-top: 8px;
+    size: 25px;
+    padding-right: 40px;
+  }
+
+  .col img {
+    width: 150%; /* Ensure images are responsive */
+    max-width: 220px; /* Set a maximum width for images */
+    display: block;
+    margin: 0 auto;
+    margin-top: -5%;
+  }
+
+  .footer-links {
+    margin: 6px 0;
+    padding: 0 4px;
+    text-align: center;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links ul li a:hover {
+    color: #ccc;
+  }
+
+  .footer-contact {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .footer-contact h2 {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .footer-contact .contact-mail p a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-contact .contact-details p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    gap: 4px;
+  }
+
+  .footer-bottom {
+    font-size: 10px;
+    text-align: center;
+    color: #fff;
+  }
+}

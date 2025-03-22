@@ -1,0 +1,179 @@
+.navUp .dropdown-main-container {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+
+}
+
+.dropdown-container .location-icon i {
+    margin-top: 12px;
+}
+
+.dropdown-content-box {
+
+    /* animation */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
+    width: 300px;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid gainsboro;
+    box-shadow: 5px 5px 8px rgba(32, 32, 32, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+    z-index: 1;
+}
+
+.dropdown-container:hover .dropdown-content-box {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0s 0s;
+
+}
+
+.dropdown-main-container {
+    position: relative;
+}
+
+
+
+#pincodetButton {
+    font-size: 20px;
+    margin-top: 18%;
+}
+
+.dropdown-main-container .nav-button .nav-label {
+    font-size: 15px;
+    margin-top: 40%;
+}
+
+/* Dropdown Styles */
+.dropdown-pincode-box {
+    position: absolute;
+    top: 150%;
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    display: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-main-container:hover .dropdown-pincode-box {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown-pincode-box::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+
+.dropdown-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.dropdown-input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.dropdown-input-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px 0 0 8px;
+}
+
+.dropdown-input-group .dropdown-locate-button {
+    display: block;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    background: linear-gradient(to right, #f8a0e2 0%, #9733EE 51%, #DA22FF 100%);
+    background-size: 200% auto;
+    transition: 0.5s;
+
+    padding: 10px 15px;
+
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    border-radius: 10px;
+
+    &:hover {
+        /* change the direction of the change here */
+        background-position: right center;
+    }
+}
+
+
+
+.dropdown-message {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.dropdown-message.error {
+    color: red;
+}
+
+.dropdown-message.success {
+    color: green;
+}
+
+.dropdown-location-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.dropdown-location-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.location-icon .icon-popup {
+    display: none;
+    position: absolute;
+    bottom: -15px;
+    left: 7px;
+    transform: translateX(-50%);
+    color: black;
+    /* padding: 10px 10px; */
+    border-radius: 4px;
+    font-size: 16px;
+    /* white-space: nowrap; */
+    /* margin-left: 50px; */
+}
+
+.location-icon:hover .icon-popup {
+    display: block;
+}

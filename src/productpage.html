@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiti-The korean jwellery</title>
+  <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<style>
+  .product-details-page {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .product-details-page:hover {
+    transform: scale(1.02);
+  }
+
+  .product-details-page img {
+    width: 100%;
+    max-width: 50%;
+    object-fit: cover;
+    height: auto;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  .details {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .details h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #222;
+    font-weight: 700;
+  }
+
+  .details .price {
+    font-size: 2rem;
+    color: #d32f2f;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .order-btn {
+    background-color: #480f69;
+    color: white;
+    width: 60%;
+    padding: 15px 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .order-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .details h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #444;
+    font-weight: 600;
+  }
+
+  #productSpecifications {
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 500px;
+  }
+
+  .specifications h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+  }
+
+  .spec-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .spec-list li {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+  }
+
+  .spec-list li span {
+    font-weight: bold;
+    color: #222;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #5a2d82;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    background: white;
+    margin-top: 4px;
+  }
+
+  .btn i {
+    font-size: 20px;
+    color: #5a2d82;
+  }
+
+  .btn:hover {
+    background: #5a2d82;
+  }
+
+  .btn:hover i {
+    color: white;
+  }
+
+  .liked {
+    background: #ff4d6d !important;
+    border-color: #ff4d6d !important;
+  }
+
+  .liked i {
+    color: white !important;
+  }
+
+  .rating-reviews {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffa500;
+  }
+
+  .stock-status {
+    font-weight: bold;
+    color: green;
+    margin-top: 10px;
+  }
+
+  .size-variants {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .size-variants select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .delivery-estimate {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  .book-now-btn {
+    padding: 10px 15px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  .book-now-btn:hover {
+    background-color: #e65c00;
+  }
+</style>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <!-- NavBar -->
+      <nav>
+        <div class="marquee">
+          <marquee>
+            Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
+          </marquee>
+        </div>
+        <div class="navUp">
+          <!-- Logo -->
+          <div class="navLogo">
+            <a href="index.html"><img src="/jimages/kitilogo/kk3.png" alt="" height="130px" width="130px"></a>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <input type="text" class="search-input" />
+            <span class="search-placeholder"></span>
+          </div>
+
+          <!-- Navigation Icons -->
+          <div class="nav-container">
+            <div class="nav-icons">
+              <button class="nav-button" id="homeButton">
+                <a href="index.html"><i class="fa-solid fa-house fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Home</span>
+              </button>
+              <button class="nav-button" id="wishlistButton">
+                <a href="/wishlist.html"><i class="fa-regular fa-heart fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Wishlist</span>
+              </button>
+              <button class="nav-button" id="cartButton">
+                <a href="/S_addcart.html"><i class="fa-solid fa-cart-shopping fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Cart</span>
+              </button>
+            </div>
+
+            <div class="navbar-container">
+              <!-- Account Dropdown -->
+              <div class="navbar-item-account">
+                <button class="navbar-account-button">
+                  <i class="fa-regular fa-user fa-2x"></i>
+                  <span>Account</span>
+                </button>
+                <div class="dropdown-account">
+                  <h2 class="dropdown-header-account">MY ACCOUNT</h2>
+
+                  <div class="dropdown-buttons-account">
+                    <a href="/login.html"><button class="button-account button-login"
+                        onclick="window.location.href='login.html'">LOG IN</button></a>
+                    <a href="/register.html"><button class="button-account button-signup"
+                        onclick="window.location.href='signup.html'">SIGN UP</button></a>
+                  </div>
+                  <p class="dropdown-contact-text">
+                    CLICK HERE TO <a href="/contactus.html" class="dropdown-contact-link">CONTACT US</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown location -->
+
+            <div class="dropdown-main-container">
+              <div class="dropdown-container">
+                <div class="location-icon">
+                  <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+                  <div class="icon-popup">Pincode</div>
+                </div>
+                <div class="dropdown-content-box">
+                  <h1 class="dropdown-title">PIN Code Locator</h1>
+                  <div class="dropdown-input-group">
+                    <input type="text" id="pincodeInput" placeholder="Enter PIN Code" maxlength="6">
+                    <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+                  </div>
+                  <div class="dropdown-message" id="message"></div>
+                  <div class="dropdown-location-container" id="locationContainer" style="display: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png" alt="Location Icon"
+                      class="dropdown-location-icon">
+                    <span id="locationText"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="navbar">
+          <div class="menu">
+            <a href="alljewellery.html">All JEWELLERY</a>
+          </div>
+          <div class="menu">
+            <a href="necklace.html">
+              NECKLACE <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="goldnecklace.html">GOLD</a>
+              <a href="silvernecklace.html">SILVER</a>
+              <a href="dimondnecklace.html">DIAMOND</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="rings.html">
+              RINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="goldring.html">GOLD</a>
+              <a href="silverring.html">SILVER</a>
+              <a href="dimondring.html">DIAMOND</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="earings.html">
+              EARINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="goldearings.html">GOLD</a>
+              <a href="silverearings.html">SILVER</a>
+              <a href="preciousearings.html">PRECIOUS</a>
+              <a href="aesthenticearings.html">AESTHENITC</a>
+              <a href="traditionalearings.html">TRADITIONAL</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="braclet.html">
+              BRACLET <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="goldbraclet.html">GOLD</a>
+              <a href="silverbraclet.html">SILVER</a>
+              <a href="aesthenticbraclet.html">AESTHENITC</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="gifting.html">GIFTING</a>
+          </div>
+        </div>
+    </div>
+
+
+    <div id="productDetailsPage" class="product-details-page">
+      <img id="productImage" src="" alt="Product Image">
+      <div class="details">
+        <h1 id="productName">Product Name</h1>
+        <div id="productPrice" class="price">&#8377;0</div>
+        <p id="productDescription">Product Description</p>
+
+        <!-- Buttons Section -->
+        <div class="button-group">
+          <button class="order-btn add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+          <button class="order-btn book-now-btn" onclick="bookNow()">Book Now</button>
+          <div class="button-container">
+            <div class="btn" id="likeBtn">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="btn" id="shareBtn">
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Footer Section -->
+
+    <footer>
+      <div class="footer-container">
+
+        <!-- Footer Logo -->
+        <div class="col">
+          <a href="/e:/koreanjewellery/index.html"><img src="/e:/koreanjewellery/jimages/kitilogo/kk3.png"
+              alt="Your Jewelry Brand Logo"></a>
+
+
+          <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+
+        </div>
+
+
+        <!-- Explore Links -->
+        <div class="footer-links">
+          <h2>Explore</h2><br>
+          <ul>
+            <li><a href="/e:/koreanjewellery/home.html">Home</a></li>
+            <li><a href="/e:/koreanjewellery/aboutus.html">About Us</a></li>
+            <li><a href="/e:/koreanjewellery/contactus.html">Contact Us</a></li>
+            <li><a href="/e:/koreanjewellery/Customerreviews.html">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Service Links -->
+        <div class="footer-links">
+          <h2>Customer Service</h2><br>
+          <ul>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="/e:/koreanjewellery/returnpolicy.html">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-contact">
+          <h2>Get in Touch</h2>
+          <div class="contact-mail">
+            <p>Email: <a href="mailto:kitijewellery25@gmail.com">kitijewellery25@gmail.com</a></p>
+          </div>
+          <div class="contact-details">
+            <i class="fa fa-location"></i>
+            <p>F-201 , Krishna avenu Vesu, Surat</p>
+          </div>
+          <div class="contact-details">
+            <i class="fa fa-phone"></i>
+            <p>+91 63550 22182</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form">
+            <form action="">
+              <input type="text" placeholder="Email here...">
+              <button><i class="fa fa-paper-plane"></i></button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Newsletter Signup -->
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 [kiti-korean jwellery]. All rights reserved.</p>
+      </div>
+
+    </footer>
+
+
+
+    <script>
+      // On page load, retrieve product details from localStorage
+      window.onload = function () {
+        const name = localStorage.getItem('productName');
+        const price = localStorage.getItem('productPrice');
+        const description = localStorage.getItem('productDescription');
+        const image = localStorage.getItem('productImage');
+        const specifications = localStorage.getItem('productSpecifications');
+
+        if (name && price && description && image && specifications) {
+          document.getElementById('productName').innerText = name;
+          document.getElementById('productPrice').innerText = '₹' + price;
+          document.getElementById('productDescription').innerText = description;
+          document.getElementById('productImage').src = image;
+          document.getElementById('specificationsText').innerText = specifications;
+        } else {
+          document.getElementById('productDetailsPage').innerHTML = '<p>Product details not found.</p>';
+        }
+      }
+
+      function bookNow() {
+        alert("Booking process initiated!");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        fetchProductDetails();
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        fetchProductDetails();
+      });
+
+      function fetchProductDetails() {
+        // Simulated API response
+        const productData = {
+          name: "Stylish Jacket",
+          price: 1299,
+          description: "A comfortable and stylish winter jacket.",
+          rating: 4.5,
+          stock: "In Stock",
+          sizes: ["S", "M", "L", "XL"],
+          delivery: "3-5 days"
+        };
+
+        document.getElementById("productName").textContent = productData.name;
+        document.getElementById("productPrice").textContent = `₹${productData.price}`;
+        document.getElementById("productDescription").textContent = productData.description;
+        document.getElementById("productRating").textContent = `⭐ ${productData.rating}`;
+        document.getElementById("stockStatus").textContent = `Availability: ${productData.stock}`;
+        document.getElementById("deliveryDate").textContent = productData.delivery;
+
+        const sizeSelect = document.getElementById("sizeSelect");
+        productData.sizes.forEach(size => {
+          let option = document.createElement("option");
+          option.value = size;
+          option.textContent = size;
+          sizeSelect.appendChild(option);
+        });
+      }
+
+    </script>
+
+</body>
+
+</html>

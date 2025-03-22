@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiti-The korean jwellery</title>
+    <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./main.html" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <!-- NavBar -->
+            <nav>
+                <div class="marquee">
+                    <marquee>
+                        Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
+                    </marquee>
+                </div>
+                <div class="navUp">
+                    <!-- Logo -->
+                    <div class="navLogo">
+                        <a href="./index.html"><img src="./jimages/kitilogo/kk3.png" alt="" height="130px"
+                                width="130px"></a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <input type="text" class="search-input" />
+                        <span class="search-placeholder"></span>
+                    </div>
+
+                    <!-- Navigation Icons -->
+                    <div class="nav-container">
+                        <div class="nav-icons">
+                            <button class="nav-button" id="homeButton">
+                                <a href="./index.html"><i class="fa-solid fa-house fa-2x" class="nav-icon"></i></a>
+                                <span class="nav-label">Home</span>
+                            </button>
+                            <button class="nav-button" id="wishlistButton">
+                                <a href="./src/wishlist.html"><i class="fa-regular fa-heart fa-2x"
+                                        class="nav-icon"></i></a>
+                                <span class="nav-label">Wishlist</span>
+                            </button>
+                            <button class="nav-button" id="cartButton">
+                                <a href="./src/addcart.html"><i class="fa-solid fa-cart-shopping fa-2x"
+                                        class="nav-icon"></i></a>
+                                <span class="nav-label">Cart</span>
+                            </button>
+
+                            <div class="navbar-item-account">
+                                <button class="nav-button" id="accountButton">
+                                    <i class="fa-regular fa-user fa-2x" class="nav-icon"></i>
+                                    <span class="nav-label">Account</span>
+                                </button>
+
+                                <div class="dropdown-account">
+                                    <h2 class="dropdown-header-account">MY ACCOUNT</h2>
+
+                                    <div class="dropdown-buttons-account">
+                                        <a href="./src/login.html"><button class="button-login"
+                                                onclick="window.location.href='login.html'">LOG IN</button></a>
+                                        <a href="./src/register.html"><button class="button-signup"
+                                                onclick="window.location.href='signup.html'">SIGN UP</button></a>
+                                    </div>
+                                    <p class="dropdown-contact-text">
+                                        CLICK HERE TO <a href="./src/contactus.html"
+                                            class="dropdown-contact-link">CONTACT
+                                            US</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-main-container">
+                                <button class="nav-button" id="pincodetButton">
+                                    <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+                                    <span class="nav-label">Pincode</span>
+                                </button>
+
+                                <div class="dropdown-pincode-box" id="pincodeSection">
+                                    <h1 class="dropdown-title">PIN Code Locator</h1>
+                                    <div class="dropdown-input-group">
+                                        <input type="text" id="pincodeInput1" placeholder="Enter PIN Code"
+                                            maxlength="6">
+                                        <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+                                    </div>
+                                    <div class="dropdown-message" id="message1"></div>
+                                    <div class="dropdown-location-container" id="locationContainer"
+                                        style="display: none;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png"
+                                            alt="Location Icon" class="dropdown-location-icon">
+                                        <span id="locationText1"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>

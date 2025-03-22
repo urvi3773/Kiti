@@ -1,0 +1,128 @@
+.offer-silder a img {
+    margin-bottom: 5%;
+    width: 100%;
+    height: 600px;
+    margin-top:-50px;
+  }
+
+  .Offer-Jewellery-section {
+
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+  
+  .Offer-Jewellery-section h1 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 30px;
+    border: 1px solid  #674188;
+    background-color:rgb(103, 65, 136);
+    margin-left: 10%;
+    width: 700px;
+   
+  }
+  
+  .Offer-Jewellery-section h2 {
+    font-size: 1.7em;
+    color: #674188;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .Offer-Jewellery-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    height: 460px;
+    display: inline-block;
+    width: 20%;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 14px 28px #c8c0cc,
+    0 10px 10px #d7d4d9;
+    transition: .4s;
+  }
+  
+  .Offer-Jewellery-item:hover {
+    box-shadow: 0 3px 6px #d7d4d9,
+    0 3px 6px #c8c0cc;
+    transform: translate(0px, -8px);
+  }
+  
+  .Offer-Jewellery-item img {
+    width: 100%;
+    height: 300px;
+    border-radius: 100px;
+    text-align: center;
+    box-shadow: 0 3px 6px #78707d,
+    0 3px 6px #c8c0cc;
+    transform: translate(0px, -8px);
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .Offer-Jewellery-item h2 {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #555;
+  }
+  
+  .Offer-price {
+    font-size: 1.2em;
+    color: #480f69;
+    margin-bottom: 15px;
+  }
+  
+   .Offer-order-btn{
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  }
+  .Offer-order-btn{
+    background-color: white; 
+    color: black; 
+    border: 1px solid #27053a;
+    margin-bottom: 30px;
+  
+  }
+  .Offer-order-btn:hover {
+    background-color: #914abe;
+    color: white;
+  }
+    
+  .Offer-wishlist-btn {
+    background-color: #9d69bd;
+    color: white;
+    width: 40px;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Offer-wishlist-btn:hover {
+    background-color: #480f69 ;
+  }
+  

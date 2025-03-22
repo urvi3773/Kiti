@@ -1,0 +1,138 @@
+.page-title {
+  font-size: 50px;
+  font-weight: 700;
+  margin-left: 40px;
+}
+
+.filter-sort-bar {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  margin-left: 20px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background-color: #F8EDE3;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  width: 150px;
+  margin-left: 30px;
+  font-size: 18px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #E2BFD9;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.reset-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  height: 40px;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-left: 100px;
+}
+
+.reset-btn:hover {
+  background-color: #480f69;
+  color: white;
+}
+
+
+/* No Results Message */
+
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #ff0000;
+  margin-top: 20px;
+}
+
+.no-results.hidden {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .page-title {
+    font-size: 36px; /* Adjust font size for smaller screens */
+    margin-left: 20px; /* Reduce margin for better fit */
+  }
+
+  .filter-sort-bar {
+    flex-direction: row; /* Stack items vertically */
+    gap: 50px; /* Reduce gap between elements */
+    padding: 10px;
+    margin-left: 20px; /* Reduce left margin */
+    margin-top: 40px;
+    margin-bottom: 60px;
+
+  }
+
+  .dropdown-btn {
+    width: 130%; /* Full width for better usability */
+    height: 40px;
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .dropdown-content {
+    width: 100%; /* Match dropdown width to parent */
+    margin-left: 0; /* Remove left margin */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .reset-btn {
+    width: 10%; /* Full width for better usability */
+    margin-left: 0; /* Center align */
+    margin-top: 10px; /* Add spacing for stacked layout */
+    font-size: 16px; /* Adjust font size */
+   margin: 30px;
+  }
+
+  .no-results {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    margin-top: 15px;
+  }
+}

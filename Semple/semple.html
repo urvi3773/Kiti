@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<style>
+    .dropdown-input-group {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 5px;
+        margin-bottom: 15px;
+        background-color: #fff;
+    }
+
+    .dropdown-input-group input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .dropdown-input-group .dropdown-locate-button {
+        display: block;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        background: linear-gradient(to right, #f8a0e2 0%, #9733EE 51%, #DA22FF 100%);
+        background-size: 200% auto;
+        transition: 0.5s;
+
+        padding: 10px 15px;
+
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        border-radius: 10px;
+
+        &:hover {
+            /* change the direction of the change here */
+            background-position: right center;
+        }
+    }
+
+
+
+    .dropdown-message {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .dropdown-message.error {
+        color: red;
+    }
+
+    .dropdown-message.success {
+        color: green;
+    }
+
+    .dropdown-location-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .dropdown-location-icon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+
+    .location-icon .icon-popup {
+        display: none;
+        position: absolute;
+        bottom: -15px;
+        left: 7px;
+        transform: translateX(-50%);
+        color: black;
+        /* padding: 10px 10px; */
+        border-radius: 4px;
+        font-size: 16px;
+        /* white-space: nowrap; */
+        /* margin-left: 50px; */
+    }
+
+    .location-icon:hover .icon-popup {
+        display: block;
+    }
+</style>
+
+<body>
+    <div class="dropdown-input-group">
+        <input type="text" id="pincodeInput1" placeholder="Enter PIN Code" maxlength="6">
+        <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+    </div>
+
+    <div class="dropdown-message" id="message1"></div>
+    
+    <div class="dropdown-location-container" id="locationContainer" style="display: none;">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png" alt="Location Icon"
+            class="dropdown-location-icon">
+        <span id="locationText1"></span>
+    </div>
+    <!-- <script src="./script/pincode.js"></script> -->
+    <script src="./sample.js"></script>
+</body>
+
+</html>

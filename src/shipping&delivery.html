@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiti-The korean jwellery</title>
+  <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <script src="../script/backhome.js"></script>
+  <script src="../script/register.js"></script>
+  <script src="../script/fillter.js"></script>
+  <script src="../script/pincode.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <!-- NavBar -->
+      <nav>
+        <div class="marquee">
+          <marquee>
+            Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
+          </marquee>
+        </div>
+        <div class="navUp">
+          <!-- Logo -->
+          <div class="navLogo">
+            <a href="../index.html"><img src="../jimages/kitilogo/kk3.png" alt="" height="130px" width="130px"></a>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <input type="text" class="search-input" />
+            <span class="search-placeholder"></span>
+          </div>
+
+          <!-- Navigation Icons -->
+          <div class="nav-container">
+            <div class="nav-icons">
+              <button class="nav-button" id="homeButton">
+                <a href="../index.html"><i class="fa-solid fa-house fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Home</span>
+              </button>
+              <button class="nav-button" id="wishlistButton">
+                <a href="../wishlist.html"><i class="fa-regular fa-heart fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Wishlist</span>
+              </button>
+              <button class="nav-button" id="cartButton">
+                <a href="../addcart.html"><i class="fa-solid fa-cart-shopping fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Cart</span>
+              </button>
+            </div>
+
+            <div class="navbar-container">
+              <!-- Account Dropdown -->
+              <div class="navbar-item-account">
+                <button class="navbar-account-button">
+                  <i class="fa-regular fa-user fa-2x"></i>
+                  <span>Account</span>
+                </button>
+                <div class="dropdown-account">
+                  <h2 class="dropdown-header-account">MY ACCOUNT</h2>
+
+                  <div class="dropdown-buttons-account">
+                    <a href="../login.html"><button class="button-account button-login"
+                        onclick="window.location.href='../login.html'">LOG IN</button></a>
+                    <a href="../register.html"><button class="button-account button-signup"
+                        onclick="window.location.href='../signup.html'">SIGN UP</button></a>
+                  </div>
+                  <p class="dropdown-contact-text">
+                    CLICK HERE TO <a href="../contactus.html" class="dropdown-contact-link">CONTACT US</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown location -->
+
+            <div class="dropdown-main-container">
+              <div class="dropdown-container">
+                <div class="location-icon">
+                  <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+                  <div class="icon-popup">Pincode</div>
+                </div>
+                <div class="dropdown-content-box" id="pincodeSection">
+                  <h1 class="dropdown-title">PIN Code Locator</h1>
+                  <div class="dropdown-input-group">
+                    <input type="text" id="pincodeInput1" placeholder="Enter PIN Code" maxlength="6">
+                    <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+                  </div>
+                  <div class="dropdown-message" id="message1"></div>
+                  <div class="dropdown-location-container" id="locationContainer" style="display: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png" alt="Location Icon"
+                      class="dropdown-location-icon">
+                    <span id="locationText1"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="navbar">
+          <div class="menu">
+            <a href="../alljewellery.html">All JEWELLERY</a>
+          </div>
+          <div class="menu">
+            <a href="../necklace.html">
+              NECKLACE <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="../goldnecklace.html">GOLD</a>
+              <a href="../silvernecklace.html">SILVER</a>
+              <a href="../dimondnecklace.html">DIAMOND</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="../rings.html">
+              RINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="../goldring.html">GOLD</a>
+              <a href="../silverring.html">SILVER</a>
+              <a href="../dimondring.html">DIAMOND</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="../earings.html">
+              EARINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="../goldearings.html">GOLD</a>
+              <a href="../silverearings.html">SILVER</a>
+              <a href="../preciousearings.html">PRECIOUS</a>
+              <a href="../aesthenticearings.html">AESTHENITC</a>
+              <a href="../traditionalearings.html">TRADITIONAL</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="../braclet.html">
+              BRACLET <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="../goldbraclet.html">GOLD</a>
+              <a href="../silverbraclet.html">SILVER</a>
+              <a href="../aesthenticbraclet.html">AESTHENITC</a>
+            </div>
+          </div>
+          <div class="menu">
+            <a href="../gifting.html">GIFTING</a>
+          </div>
+        </div>
+    </div>
+
+    <div class="shipping-section">
+      <h1>Shipping & Delivery</h1>
+
+      <!-- Shipping Methods Section -->
+      <div class="section shipping-methods">
+        <h2>Shipping Methods</h2>
+        <ul>
+          <li><strong>Standard Shipping:</strong> Delivery within 5-7 business days. Price: ₹500.</li>
+          <li><strong>Express Shipping:</strong> Delivery within 2-3 business days. Price: ₹1500.</li>
+          <li><strong>Free Shipping:</strong> On orders above ₹5000.</li>
+          <li><strong>International Shipping:</strong> Available globally. Price varies by region.</li>
+        </ul>
+      </div>
+
+      <!-- Estimated Shipping Time Section -->
+      <div class="section shipping-time">
+        <h2>Estimated Shipping Time</h2>
+        <p>Orders will be processed within 1-2 business days. Estimated delivery times will vary based on location:</p>
+        <ul>
+          <li>Local Orders: 2-4 business days</li>
+          <li>National Orders: 5-7 business days</li>
+          <li>International Orders: 7-14 business days</li>
+        </ul>
+      </div>
+
+      <!-- Shipping Costs Section -->
+      <div class="section shipping-cost">
+        <h2>Shipping Costs</h2>
+        <p>Shipping fees are calculated during checkout based on the delivery method and location. You can get an
+          estimate before completing your purchase.</p>
+      </div>
+
+      <!-- Tracking Information Section -->
+      <div class="section tracking-info">
+        <h2>Tracking Information</h2>
+        <p>Once your order is shipped, you will receive a tracking number to track the delivery status. You can track
+          your order <a href="#">here</a>.</p>
+      </div>
+
+      <!-- Packaging Details Section -->
+      <div class="section packaging-details">
+        <h2>Packaging Details</h2>
+        <p>All items are securely packaged. We use eco-friendly materials where possible to reduce our carbon footprint.
+        </p>
+      </div>
+
+      <!-- Handling Time Section -->
+      <div class="section handling-time">
+        <h2>Handling Time</h2>
+        <p>Orders are processed and shipped within 1-3 business days. You will be notified of any delays.</p>
+      </div>
+
+      <!-- Delivery Locations Section -->
+      <div class="section delivery-locations">
+        <h2>Delivery Locations</h2>
+        <p>We deliver to most countries worldwide. Please check if your location is supported during checkout.</p>
+      </div>
+
+      <!-- Customs & Import Duties Section -->
+      <div class="section customs-info">
+        <h2>Customs & Import Duties</h2>
+        <p>International orders may be subject to customs duties or taxes based on your country's regulations. These
+          fees are the responsibility of the customer.</p>
+      </div>
+
+      <!-- Customer Support Section -->
+      <div class="section customer-support">
+        <h2>Customer Support</h2>
+        <p>If you have any questions regarding your shipment, please contact us at
+          <strong>support@kitikoreanstore.com</strong> or call us at <strong>+91 234 567 890</strong>.
+        </p>
+        <a href="mailto:support@kitikoreanstore.com" class="button">Contact Support</a>
+      </div>
+    </div>
+
+    <div class="back-to-top" id="backToTop">
+      <i class="fa-solid fa-diamond diamond-icon" title="Back To Top"></i>
+    </div>
+
+
+    <!-- Footer Section -->
+
+    <footer>
+      <div class="footer-container">
+
+        <!-- Footer Logo -->
+        <div class="col">
+          <a href="../index.html"><img src="../jimages/kitilogo/kk3.png" alt="Your Jewelry Brand Logo"></a>
+
+
+          <div class="social">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+
+        </div>
+
+
+        <!-- Explore Links -->
+        <div class="footer-links">
+          <h2>Explore</h2><br>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./aboutus.html">About Us</a></li>
+            <li><a href="./contactus.html">Contact Us</a></li>
+            <li><a href="./customerreviews.html">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Service Links -->
+        <div class="footer-links">
+          <h2>Customer Service</h2><br>
+          <ul>
+            <li><a href="./shipping&delivery.html">Shipping & Delivery</a></li>
+            <li><a href="./returns&exchanges.html">Returns & Exchanges</a></li>
+            <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="./terms&conditions.html">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-contact">
+          <h2>Get in Touch</h2>
+          <div class="contact-mail">
+            <p>Email: <a href="mailto:kitijewellery25@gmail.com">kitijewellery25@gmail.com</a></p>
+          </div>
+          <div class="contact-details">
+            <i class="fa fa-location"></i>
+            <p>F-201 , Krishna avenu Vesu, Surat</p>
+          </div>
+          <div class="contact-details">
+            <i class="fa fa-phone"></i>
+            <p>+91 63550 22182</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form">
+            <form action="">
+              <input type="text" placeholder="Email here...">
+              <button><i class="fa fa-paper-plane"></i></button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Newsletter Signup -->
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 [kiti-korean jwellery]. All rights reserved.</p>
+      </div>
+
+    </footer>
+
+    <script src="../script/S_cart.js" defer></script>
+    <script type="module" src="../script/Main_Login.js" defer></script>
+    <script src="../script/Simple_logic.js" defer></script>
+</body>
+
+</html>

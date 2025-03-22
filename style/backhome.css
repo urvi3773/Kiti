@@ -1,0 +1,39 @@
+/* Back-to-top Button Styles */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #E2BFD9; /* Button color */
+    color: black;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+#backToTop:hover {
+    background-color: #674188; /* Darker shade on hover */
+    color: white;
+    border: 2px solid black;
+}
+
+/* Diamond Icon */
+.diamond-icon {
+    font-size: 28px;
+}
+
+/* Show button when user scrolls down */
+#backToTop.show {
+    visibility: visible; /* Makes the button visible */
+    opacity: 1; /* Makes the button fully visible */
+}
+
+/* Optional: Add a fade-out effect when the button is hidden */
+#backToTop {
+    opacity: 0;
+}

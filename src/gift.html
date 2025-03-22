@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifting Page</title>
+    <style>
+        .gift-container {
+            max-width: 45%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gift-container h2 {
+            text-align: center;
+            color: #5a3e85;
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .gift-wraps {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .gift-wrap {
+            border: 2px solid white;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: #480f69;
+            transition: border 0.3s ease;
+        }
+
+        .gift-wrap p {
+            font-size: 18px;
+            color: white;
+            margin: 8px 0;
+            text-align: center;
+        }
+
+        .gift-wrap img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gift-wrap.selected {
+            border: 2px solid #480f69;
+        }
+
+        .note {
+            width: 98%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .recipient-section {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 20px;
+        }
+
+        .recipient-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .recipient-buttons button {
+            padding: 10px 15px;
+            width: 150px;
+            font-size: 20px;
+            border: none;
+            background-color: #eee;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .recipient-buttons button.selected {
+            background-color: #5a3e85;
+            color: #fff;
+        }
+
+        .proceed-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #5a3e85;
+            color: #fff;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .proceed-btn:hover {
+            background-color: #4a3170;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 2px solid #5a3e85;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+        }
+
+        .popup h3 {
+            color: #5a3e85;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #5a3e85;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #4a3170;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gift-container">
+        <h2>Choose Gift Wrap <span style="color: #5a3e85;">(Free)</span></h2>
+        <div class="gift-wraps">
+            <div class="gift-wrap" onclick="selectWrap(this)">
+                <img src="../jimages/wrap1.jpg" alt="Warm Hugs">
+                <p>Warm Hugs</p>
+            </div>
+            <div class="gift-wrap" onclick="selectWrap(this)">
+                <img src="../jimages/wrap2.jpg" alt="Purple Sun">
+                <p>Purple Sun</p>
+            </div>
+            <div class="gift-wrap" onclick="selectWrap(this)">
+                <img src="../jimages/wrap3.jpg" alt="Fairy Tales">
+                <p>Fairy Tales</p>
+            </div>
+        </div>
+
+        <h2>Add Personalised Note <span style="color: #5a3e85;">(Optional)</span></h2>
+        <textarea class="note" placeholder="Type something here..." maxlength="250"></textarea>
+
+        <div class="recipient-section">
+            <h2>Who is the gift for?</h2>
+            <div class="recipient-buttons">
+                <button onclick="selectRecipient(this)">Wife</button>
+                <button onclick="selectRecipient(this)">Mother</button>
+                <button onclick="selectRecipient(this)">Sister</button>
+                <button onclick="selectRecipient(this)">Friend</button>
+            </div>
+        </div>
+
+        <button class="proceed-btn" onclick="storeGiftData()">PROCEED TO PAYMENT</button>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h3>Gift Added Successfully!</h3>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
+
+        // Firebase configuration – replace with your actual config details
+        const firebaseConfig = {
+            apiKey: "AIzaSyBktOyKU7CXxe_obLk0WCbQImAIPSldd1s",
+            authDomain: "kiti-korean-store-c32ad.firebaseapp.com",
+            projectId: "kiti-korean-store-c32ad",
+            storageBucket: "kiti-korean-store-c32ad.firebasestorage.app",
+            messagingSenderId: "917456056873",
+            appId: "1:917456056873:web:389e0b5571f3277fb02238",
+            databaseURL: "https://kiti-korean-store-c32ad-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
+        let currentUser = null;
+
+        // Wait for authentication state to be determined
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                currentUser = user;
+                console.log("User authenticated:", currentUser);
+            } else {
+                console.error("No authenticated user available.");
+                // Optionally, redirect to login: window.location.href = "./login.html";
+            }
+        });
+
+        // Function to select gift wrap
+        window.selectWrap = function (element) {
+            document.querySelectorAll('.gift-wrap').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        // Function to select recipient
+        window.selectRecipient = function (button) {
+            document.querySelectorAll('.recipient-buttons button').forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+        }
+
+        // Function to close popup
+        window.closePopup = function () {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Function to store gift data in Firebase
+        function storeGiftData() {
+            // Get selected gift wrap text (if any)
+            const selectedWrapElem = document.querySelector('.gift-wrap.selected');
+            const giftWrap = selectedWrapElem ? selectedWrapElem.querySelector('p').innerText : "";
+            // Get personalised note
+            const note = document.querySelector('.note').value;
+            // Get selected recipient text (if any)
+            const selectedRecipient = document.querySelector('.recipient-buttons button.selected');
+            const recipient = selectedRecipient ? selectedRecipient.innerText : "";
+
+            const giftData = { giftWrap, note, recipient };
+            console.log("Storing gift data:", giftData);
+
+            if (!currentUser) {
+                console.error("No authenticated user.");
+                return;
+            }
+            const uid = currentUser.uid;
+            // Store gift data under "users/<uid>/giftData"
+            set(ref(db, "users/" + uid + "/giftData"), giftData)
+                .then(() => {
+                    console.log("Gift data stored successfully.");
+                    // Show confirmation popup
+                    document.getElementById('overlay').style.display = 'block';
+                    document.getElementById('popup').style.display = 'block';
+                })
+                .catch((error) => {
+                    console.error("Error storing gift data:", error);
+                });
+        }
+
+        // Expose storeGiftData to be used on the button click
+        window.storeGiftData = storeGiftData;
+    </script>
+</body>
+
+</html>

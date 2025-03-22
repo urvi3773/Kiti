@@ -1,0 +1,116 @@
+
+
+.customer-reviews-section {
+    background-color: #C8A1E0;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #480f69;
+}
+
+.customer-reviews-section h1{
+    color: #480f69;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.customer-reviews-section h2 {
+    color: #480f69;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.review-form, .reviews-display {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #480f69;
+    margin-bottom: 30px;
+}
+
+.review-form input, 
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #480f69;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.review-form button {
+    background-color: #480f69;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+
+.review-form button:hover {
+    background-color: #410c59;
+}
+
+.star-rating span {
+    font-size: 32px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+}
+
+.star-rating span.active {
+    color: #FFD700;
+    transform: scale(1.2);
+}
+
+.review {
+    border-bottom: 1px solid #480f69;
+    padding: 15px 0;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review .username {
+    font-weight: bold;
+    color: #480f69;
+    font-size: 18px;
+}
+
+.review .stars {
+    color: #FFD700;
+    margin: 5px 0;
+    font-size: 24px;
+}
+
+.review .review-text {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    .customer-reviews-section {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+
+    .review-form button {
+        font-size: 14px;
+    }
+}

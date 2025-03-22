@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Rating & Review</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .product-container {
+            display: grid;
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .rating-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin: 0 auto 10px;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .star {
+            font-size: 30px;
+            color: #ccc;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .star:hover,
+        .star.selected {
+            color: gold;
+            transform: scale(1.2);
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            resize: none;
+        }
+
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff4c4c;
+        }
+
+        .average-rating {
+            text-align: center;
+            font-size: 20px;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-container" id="product-container">
+        <!-- Product items will be dynamically added here -->
+    </div>
+
+    <script>
+        // Sample product data (this can be dynamic or fetched from a database)
+        const products = [
+            { name: "Product 1", image: "/e:/koreanjewellery/jimages/earring/precious/p31.jpeg" },
+            { name: "Product 2", image: "/e:/koreanjewellery/jimages/earring/precious/p32.jpeg" },
+            { name: "Product 3", image: "/e:/koreanjewellery/jimages/earring/precious/p33.jpeg" }
+        ];
+
+        // Store rating data for each product
+        const productRatings = {};
+
+        // Dynamically generate product cards
+        const productContainer = document.getElementById("product-container");
+
+        products.forEach(product => {
+            const productCard = document.createElement("div");
+            productCard.classList.add("rating-container");
+            productCard.setAttribute("data-product", product.name);
+
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <h2>${product.name}</h2>
+                <div class="average-rating">Average Rating: 0 ★</div>
+                <div class="stars">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <textarea placeholder="Write your review here..."></textarea>
+                <button onclick="submitReview('${product.name}')">Submit Review</button>
+            `;
+
+            productContainer.appendChild(productCard);
+
+            // Initialize rating data for this product
+            productRatings[product.name] = {
+                totalRatings: 0,
+                ratingSum: 0
+            };
+
+            // Add event listener for star rating
+            const stars = productCard.querySelectorAll('.star');
+            let selectedRating = 0;
+
+            stars.forEach(star => {
+                star.addEventListener('click', function () {
+                    selectedRating = this.getAttribute('data-value');
+                    stars.forEach(s => s.classList.remove('selected'));
+                    for (let i = 0; i < selectedRating; i++) {
+                        stars[i].classList.add('selected');
+                    }
+                });
+            });
+        });
+
+        function submitReview(productName) {
+            const container = document.querySelector(`[data-product="${productName}"]`);
+            const reviewText = container.querySelector('textarea').value;
+            const stars = container.querySelectorAll('.star.selected');
+            const selectedRating = stars.length;
+
+            if (selectedRating === 0) {
+                alert('Please select a star rating!');
+                return;
+            }
+            if (!reviewText.trim()) {
+                alert('Please write a review.');
+                return;
+            }
+
+            // Update rating data for the product
+            productRatings[productName].totalRatings++;
+            productRatings[productName].ratingSum += selectedRating;
+
+            // Update the average rating
+            updateAverageRating(productName);
+
+            alert(`Thank you for rating ${selectedRating} star(s) and leaving your review!`);
+            container.querySelector('textarea').value = '';
+            container.querySelectorAll('.star').forEach(s => s.classList.remove('selected'));
+        }
+
+        function updateAverageRating(productName) {
+            const data = productRatings[productName];
+            const average = (data.ratingSum / data.totalRatings).toFixed(1);
+            const container = document.querySelector(`[data-product="${productName}"]`);
+            container.querySelector('.average-rating').innerText = `Average Rating: ${average} ★`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now</title>
+    <style>
+        body {text-align: center;}
+        #enterDetails {float: left; width: 50%;  background-color: darkslategray; color: floralwhite;}
+        #findDetails {float: left; width: 50%; background-color: floralwhite; color: darkslategray;}
+        input {width: 120px;}
+    </style>
+</head>
+<body>
+    <div id="enterDetails">
+        <h1>Enter details</h1>
+
+        <h4>Name:</h4> 
+        <input id="enterName" type="text"> 
+
+        <h4>Email:</h4> 
+        <input id="enterEmail" type="text"> 
+
+        <h4>Phone:</h4> 
+        <input id="enterPhone" type="number"> <br><br>
+
+        <h4>Date:</h4> 
+        <input id="enterDate" type="date"> <br><br>
+
+        <button id="insert">INSERT</button>
+        <button id="update">UPDATE</button>
+        <button id="remove">REMOVE</button> <br><br>
+    </div>
+
+    <div id="findDetails">
+        <h1>Find by Name</h1>
+        <h4>Name</h4>
+        <input id="findName" type="text"> <br><br>
+        <button id="find">FIND</button>
+        <h3 id="findEmail" type="text"></h3>
+        <h3 id="findPhone" type="number"></h3>
+        <h3 id="finddate" type="date"></h3> <br><br>
+    </div>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDzngB2F729RiJwDiwZaL3cs-SrN9HCx98",
+          authDomain: "kiti-korean-jewellry.firebaseapp.com",
+          databaseURL: "https://kiti-korean-jewellry-default-rtdb.firebaseio.com",
+          projectId: "kiti-korean-jewellry",
+          storageBucket: "kiti-korean-jewellry.appspot.com",
+          messagingSenderId: "1028713346329",
+          appId: "1:1028713346329:web:e1bcc0d763da45a2098188",
+          measurementId: "G-9PFE04CTW2"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+            
+      
+        import {getDatabase, ref, get, set, child, update, remove}
+        from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js"
+              
+        const db = getDatabase();
+
+        var enterName = document.querySelector("#enterName");
+        var enterEmail = document.querySelector("#enterEmail");
+        var enterPhone = document.querySelector("#enterPhone");
+        var enterDate = document.querySelector("#enterDate");
+        var findName = document.querySelector("#findName");
+        var findEmail = document.querySelector("#findEmail");
+        var findPhone = document.querySelector("#findPhone");
+        var findDate = document.querySelector("#finddate");
+             
+
+        var insertBtn = document.querySelector("#insert");
+        var updateBtn = document.querySelector("#update");
+        var removeBtn = document.querySelector("#remove");
+        var findBtn = document.querySelector("#find");
+
+        function InsertData() {
+            set(ref(db, "People/"+ enterName.value),{
+                Name: enterName.value,
+                Email: enterEmail.value,
+                Phone: enterPhone.value,
+                Date: enterDate.value
+            })
+            .then(()=>{
+                alert("Data added successfully")
+            })
+            .catch((error)=>{
+                alert(error)
+            });
+        }
+ 
+        function FindData() {
+            const dbref = ref(db);
+
+            get(child(dbref, "People/" + findName.value))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    findName.innerHTML = "Name: " + snapshot.val().Name;
+                    findEmail.innerHTML = "Email: " + snapshot.val().Email;
+                } else {
+                    alert("No data found");
+                }
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+            
+        }
+
+        function UpdateData(){
+            update(ref(db, "People/"+ enterName.value),{
+                Name: enterName.value,
+                Email: enterEmail.value,
+                Phone: enterPhone.value,
+                Date: enterDate.value
+            })
+            .then(()=>{
+                alert("Data updated successfully");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        }
+
+        function RemoveData(){
+            remove(ref(db, "People/"+ enterName.value))
+            .then(()=>{
+                alert("Data deleted successfully");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        }
+
+
+        insertBtn.addEventListener('click', InsertData);
+        updateBtn.addEventListener('click', UpdateData);
+        removeBtn.addEventListener('click', RemoveData);
+        findBtn.addEventListener('click', FindData);
+
+      </script>
+</body>
+</html>

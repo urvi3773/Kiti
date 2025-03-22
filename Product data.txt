@@ -1,0 +1,70 @@
+Product 1
+Img: ../jimages/earring/aesthentic/a1.jpg
+Name: Classic Golden Pearl Earings
+Price: ₹5,899
+
+Product 2
+Img: ../jimages/bracelet/aesthentic/e47.jpg
+Name: Light Blue Pearl Bracelet
+Price: ₹9,999
+
+Product 3
+Img: ../jimages/earring/treditional/t10.jpg
+Name: Amethyst Earring
+Price: ₹12,000
+
+Product 4
+Img: ../jimages/necklace/dimond/d1.jpg
+Name: Gold Layered Pendant Necklace
+Price: ₹41,999
+
+Product 5
+Img: ../jimages/ring/dimond/d21.jpg
+Name: Gemstone Heart Ring
+Price: ₹75,599
+
+Product 6
+Img: /jimages/bracelet/gold/g20.jpg
+Name: Gold Ball Link Bracelet
+Price: ₹66,999
+
+Product 7
+Img: ../jimages/earring/gold/g15.jpg
+Name: Molten Hoop Earrings
+Price: ₹51,899
+
+Product 8
+Img: /jimages/necklace/gold/g15.jpg
+Name: Two-Tiered Gemstone Necklace
+Price: ₹66,789
+
+Product 9
+Img: ../jimages/ring/gold/g1.jpg
+Name: Eclipse Ringt
+Price: ₹69,999
+
+Product 10
+Img: /jimages/earring/precious/p26.jpg
+Name: Dark Heart Earrings
+Price: ₹21,599
+
+Product 11
+Img: ../jimages/ring/silver/s9.jpg
+Name: Stunning Butterfly Necklace
+Price: ₹4,599
+
+Product 12
+Img: ../jimages/necklace/silver/s25.jpg
+Name: Heart with Stone Necklace
+Price: ₹11,999
+
+Product 13
+Img: ../jimages/bracelet/silver/s2.jpg
+Name: Pearl Whisper Bracelet
+Price: ₹3,999
+
+Product 14
+Img: ../jimages/earring/silver/s9.jpg
+Name: Puffed Heart Necklace
+Price: ₹2,999
+
