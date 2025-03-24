@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Users - Admin Panel</title>
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
+        <link rel="stylesheet" href="crud.css">
+        <link rel="stylesheet" href="../Admin/adminstyle.css">
+        <style>
+            /* Additional styling for a colorful, responsive table */
+            .container {
+                display: flex;
+                flex-direction: row;
+                min-height: 100vh;
+            }
+
+            .main {
+                flex: 1;
+                padding: 20px;
+                background: #f9fafb;
+            }
+
+            .dashboard-navbar {
+                background: #fff;
+                padding: 10px 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 4px;
+            }
+
+            .dashboard-navbar h2 {
+                margin: 0;
+                font-size: 24px;
+                color: #333;
+            }
+
+            .crud-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+
+            .crud-header .btn {
+                background: #5c9ded;
+                color: #fff;
+                padding: 8px 12px;
+                border: none;
+                border-radius: 4px;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .crud-header .btn:hover {
+                background: #4a8ad4;
+            }
+
+            .table-container {
+                overflow-x: auto;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background: #fff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+
+            thead th {
+                background: #5c9ded;
+                color: #fff;
+                padding: 12px;
+                text-align: left;
+                font-size: 14px;
+            }
+
+            tbody td {
+                padding: 12px;
+                border-bottom: 1px solid #eee;
+                font-size: 14px;
+                color: #333;
+            }
+
+            tbody tr:nth-child(odd) {
+                background-color: #fafafa;
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: #f1f1f1;
+            }
+
+            /* Make Actions column take only needed space */
+            table th:last-child,
+            table td:last-child {
+                width: 120px;
+                white-space: nowrap;
+                text-align: center;
+            }
+
+            /* Button styling in table */
+            .btn.edit-btn,
+            .btn.delete-btn {
+                background: #ff6f61;
+                border: none;
+                color: #fff;
+                padding: 5px 8px;
+                margin: 2px;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn.edit-btn:hover {
+                background: #e65b50;
+            }
+
+            .btn.delete-btn:hover {
+                background: #d04a3d;
+            }
+
+            @media (max-width: 768px) {
+                table {
+                    min-width: 600px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Fixed Toggle Button -->
+        <button id="fixed-toggle">☰</button>
+        <div class="container">
+            <aside id="sidebar">
+                <!-- Fixed Toggle Button inside Sidebar -->
+                <button id="fixed-toggle">☰</button>
+                <div>
+                    <div class="sidebar-header">
+                        <div class="sidebar-title">Admin Panel</div>
+                        <div class="sidebar-subtitle">Kiti-Korean Store</div>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a href="../dashkbord.html" class="sidebar-link">
+                            <i class="lni lni-dashboard"></i><span>Dashboard</span>
+                        </a>
+                        <a href="../Product/product.html" class="sidebar-link">
+                            <i class="lni lni-shopping-basket"></i><span>Products</span>
+                        </a>
+                        <a href="./user.html" class="sidebar-link">
+                            <i class="lni lni-user"></i><span>Users</span>
+                        </a>
+                        <a href="../Product/orders.html" class="sidebar-link">
+                            <i class="lni lni-cart-full"></i><span>Orders</span>
+                        </a>
+                    </nav>
+                </div>
+                <div class="sidebar-footer">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-exit"></i><span>Logout</span>
+                    </a>
+                </div>
+            </aside>
+            <div class="main">
+                <div class="dashboard-navbar">
+                    <h2>Users</h2>
+                    <a href="./usercrud.html" class="btn">ADD USER</a>
+                </div>
+                <div class="content">
+                    <div class="table-container">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user-list">
+                                <!-- Rows will be populated by Firebase data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <footer>
+                    <div class="footer-wrap">
+                        <p>&copy; 2024 Kiti-Korean Jewellery</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- Import external JS module -->
+        <script type="module" src="./user.js"></script>
+        <script>
+            // Sidebar toggle handler
+            document.getElementById("fixed-toggle").addEventListener("click", function () {
+                document.getElementById("sidebar").classList.toggle("collapsed");
+                this.classList.toggle("collapsed");
+            });
+        </script>
+    </body>
+
+</html>

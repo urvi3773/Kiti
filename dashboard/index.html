@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Side Admin</title>
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="adminstyle.css" />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Side Admin</title>
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./Admin/adminstyle.css" />
 
-<body>
-    <div class="container">
-        <aside id="sidebar">
-            <!-- Fixed Toggle Button inside Sidebar -->
-            <button id="fixed-toggle">☰</button>
-            <div>
-                <div class="sidebar-header">
-                    <div class="sidebar-title">Admin Panel</div>
-                    <div class="sidebar-subtitle">Kiti-Korean Store</div>
+    </head>
+
+    <body>
+        <div class="container">
+            <aside id="sidebar">
+                <!-- Fixed Toggle Button inside Sidebar -->
+                <button id="fixed-toggle">☰</button>
+                <div>
+                    <div class="sidebar-header">
+                        <div class="sidebar-title">Admin Panel</div>
+                        <div class="sidebar-subtitle">Kiti-Korean Store</div>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a href="./dashkbord.html" class="sidebar-link">
+                            <i class="lni lni-dashboard"></i><span>Dashboard</span>
+                        </a>
+                        <a href="./Product/product.html" class="sidebar-link">
+                            <i class="lni lni-shopping-basket"></i><span>Products</span>
+                        </a>
+                        <a href="./User/user.html" class="sidebar-link">
+                            <i class="lni lni-user"></i><span>Users</span>
+                        </a>
+                        <a href="./Product/orders.html" class="sidebar-link">
+                            <i class="lni lni-cart-full"></i><span>Orders</span>
+                        </a>
+                    </nav>
                 </div>
-                <nav class="sidebar-nav">
-                    <a href="./dashkbord.html" class="sidebar-link">
-                        <i class="lni lni-dashboard"></i><span>Dashboard</span>
+                <div class="sidebar-footer">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-exit"></i><span>Logout</span>
                     </a>
-                    <a href="./product.html" class="sidebar-link">
-                        <i class="lni lni-shopping-basket"></i><span>Products</span>
-                    </a>
-                    <a href="./user.html" class="sidebar-link">
-                        <i class="lni lni-user"></i><span>Users</span>
-                    </a>
-                    <a href="./orders.html" class="sidebar-link">
-                        <i class="lni lni-cart-full"></i><span>Orders</span>
-                    </a>
-                </nav>
-            </div>
-            <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
-                    <i class="lni lni-exit"></i><span>Logout</span>
-                </a>
-            </div>
-        </aside>
-        <div class="main">
-            <div class="dashboard-navbar">
-                <div class="navbar-content">
-                    <ul class="main-nav">
-                        <li class="user-link">
-                            <a href="#">
-                                <img src="account.png" alt="Profile" class="avatar" />
-                            </a>
-                        </li>
-                    </ul>
                 </div>
-            </div>
-            <!-- Main Content Area -->
-            <section class="content">
-                <!-- Your dynamic admin content goes here -->
-            </section>
-            <!-- Footer -->
-            <footer>
-                <div class="footer-wrap">
-                    <p>&copy; 2024 Kiti-Korean Jewellery.</p>
+            </aside>
+            <div class="main">
+                <div class="dashboard-navbar">
+                    <div class="navbar-content">
+                        <ul class="main-nav">
+                            <li class="user-link">
+                                <a href="#">
+                                    <img src="./Img/account.png" alt="Profile" class="avatar" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </footer>
+                <!-- Main Content Area -->
+                <section class="content">
+                    <!-- Your dynamic admin content goes here -->
+                </section>
+                <!-- Footer -->
+                <footer>
+                    <div class="footer-wrap">
+                        <p>&copy; 2024 Kiti-Korean Jewellery.</p>
+                    </div>
+                </footer>
+            </div>
         </div>
-    </div>
-    <script>
-        const fixedToggle = document.getElementById("fixed-toggle");
-        fixedToggle.addEventListener("click", function () {
-            const sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("collapsed");
-            this.classList.toggle("collapsed");
-            // For mobile overlay mode: toggle 'active'
-            if (window.innerWidth < 480) {
-                sidebar.classList.toggle("active");
-            }
-        });
-    </script>
-</body>
+        <script>
+            const fixedToggle = document.getElementById("fixed-toggle");
+            fixedToggle.addEventListener("click", function () {
+                const sidebar = document.getElementById("sidebar");
+                sidebar.classList.toggle("collapsed");
+                this.classList.toggle("collapsed");
+                // For mobile overlay mode: toggle 'active'
+                if (window.innerWidth < 480) {
+                    sidebar.classList.toggle("active");
+                }
+            });
+        </script>
+    </body>
 
 </html>
