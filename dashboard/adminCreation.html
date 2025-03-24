@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Authentication - Admin Panel</title>
+    <link rel="stylesheet" href="adminstyle.css">
+    <style>
+        /* Container and global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .auth-container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            display: none;
+        }
+
+        form.active {
+            display: block;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #5c9ded;
+            box-shadow: 0 0 5px rgba(92, 157, 237, 0.5);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            background-color: #5c9ded;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4a8ad4;
+        }
+
+        .toggle-link {
+            margin-top: 15px;
+            text-align: center;
+            cursor: pointer;
+            color: #5c9ded;
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <!-- Login Form (active by default) -->
+        <form id="login-form" class="active">
+            <h2>Admin Login</h2>
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            <button type="submit" id="loginBtn">Login</button>
+            <div class="toggle-link" id="showSignup">Don't have an account? Sign up</div>
+        </form>
+        <!-- Sign-Up Form -->
+        <form id="signup-form">
+            <h2>Create Admin Account</h2>
+            <label for="Fname">First Name</label>
+            <input type="text" id="Fname" placeholder="First Name" required>
+            <label for="Lname">Last Name</label>
+            <input type="text" id="Lname" placeholder="Last Name" required>
+            <label for="signupEmail">Email</label>
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+            <label for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <button type="submit" id="SignUp_Btn">Create Admin</button>
+            <div class="toggle-link" id="showLogin">Already have an account? Login</div>
+        </form>
+    </div>
+    <script type="module" src="./adminCreation.js"></script>
+</body>
+
+</html>

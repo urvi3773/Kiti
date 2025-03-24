@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product CRUD - Admin Panel</title>
+    <link rel="stylesheet" href="productcrud.css" />
+    <link rel="stylesheet" href="adminstyle.css" />
+    <style>
+        /* Global Form Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f7f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        form#product-form {
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin: 20px 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form#product-form label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+
+        form#product-form input[type="text"],
+        form#product-form input[type="number"],
+        form#product-form input[type="file"],
+        form#product-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        form#product-form input[type="text"]:focus,
+        form#product-form input[type="number"]:focus,
+        form#product-form textarea:focus {
+            border-color: #5c9ded;
+            outline: none;
+        }
+
+        /* Big textarea */
+        form#product-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Button Styles */
+        form#product-form button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #5c9ded;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px 5px 0 0;
+        }
+
+        form#product-form button:hover {
+            background-color: #4a8ad4;
+        }
+
+        /* Notification Popup Styles */
+        #notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #444;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1000;
+        }
+
+        #notification.show {
+            opacity: 1;
+            animation: slideDown 0.5s ease;
+        }
+
+        /* Keyframes for fadeIn animation on form */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Keyframes for notification slide down */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Notification Popup -->
+    <div id="notification"></div>
+
+    <h2>Product CRUD Operations</h2>
+    <form id="product-form">
+        <label for="product-name">Product Name</label>
+        <input type="text" id="product-name" placeholder="Product Name" required />
+
+        <label for="product-price">Price (in INR)</label>
+        <input type="number" id="product-price" placeholder="Price" required />
+
+        <label for="product-description">Description</label>
+        <textarea id="product-description" placeholder="Enter product description..."></textarea>
+
+        <label for="product-image">Product Image</label>
+        <!-- The 'required' attribute is automatically removed in edit mode -->
+        <input type="file" id="product-image" accept="image/*" required />
+
+        <div style="text-align: right;">
+            <button type="submit" id="insert-btn">Insert</button>
+            <button type="button" id="update-btn">Update</button>
+            <button type="button" id="delete-btn">Delete</button>
+        </div>
+    </form>
+
+    <!-- Import external JavaScript file -->
+    <script type="module" src="productCrud.js"></script>
+</body>
+
+</html>

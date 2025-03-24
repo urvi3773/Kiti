@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Side Admin</title>
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="adminstyle.css" />
+
+    </head>
+
+    <body>
+        <!-- Fixed Toggle Button -->
+        <button id="fixed-toggle">☰</button>
+        <div class="container">
+            <aside id="sidebar">
+                <div>
+                    <div class="sidebar-header">
+                        <div class="sidebar-title">Admin Panel</div>
+                        <div class="sidebar-subtitle">Kiti-Korean Store</div>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a href="./dashkbord.html" class="sidebar-link"><i
+                                class="lni lni-dashboard"></i><span>Dashboard</span></a>
+                        <a href="./product.html" class="sidebar-link"><i
+                                class="lni lni-shopping-basket"></i><span>Products</span></a>
+                        <a href="./user.html" class="sidebar-link"><i class="lni lni-user"></i><span>Users</span></a>
+                        <a href="./orders.html" class="sidebar-link"><i
+                                class="lni lni-cart-full"></i><span>Orders</span></a>
+                    </nav>
+                </div>
+                <div class="sidebar-footer">
+                    <a href="#" class="sidebar-link"><i class="lni lni-exit"></i><span>Logout</span></a>
+                </div>
+            </aside>
+            <div class="main">
+                <div class="dashboard-navbar">
+                    <form action="#">
+                        <div class="nav-search" id="findDetails">
+                            <input type="text" class="search-query" id="Search_Name" placeholder="Search by Name..." />
+                            <button class="btn" id="Search_btn" type="button">Search</button>
+                        </div>
+                    </form>
+                    <div class="navbar-content">
+                        <ul class="main-nav">
+                            <li class="user-link">
+                                <a href="#">
+                                    <img src="account.png" alt="Profile" class="avatar">
+                                </a>
+                                <div class="user-link-dropdown">
+                                    <a href="#" class="dropdown-item">Profile</a>
+                                    <a href="#" class="dropdown-item">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer>
+                    <div class="footer-wrap">
+                        <p>&copy; 2024 [kiti-korean jwellery].</p>
+                    </div>
+                </footer>
+
+            </div>
+            <script>
+                const fixedToggle = document.getElementById("fixed-toggle");
+                fixedToggle.addEventListener("click", function () {
+                    const sidebar = document.getElementById("sidebar");
+                    sidebar.classList.toggle("collapsed");
+                    this.classList.toggle("collapsed");
+                });
+            </script>
+    </body>
+
+</html>

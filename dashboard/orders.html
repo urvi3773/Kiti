@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Orders - Admin Panel</title>
+        <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+        <style>
+            /* Use the same CSS as the other pages for consistency */
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                background-color: #f4f4f4;
+                color: #333;
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            .container {
+                display: flex;
+                width: 100%;
+            }
+
+            #fixed-toggle {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                z-index: 1000;
+                background: #1d1b31;
+                color: white;
+                border: none;
+                font-size: 2rem;
+                padding: 5px 10px;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                border-radius: 5px;
+            }
+
+            #fixed-toggle.collapsed {
+                transform: rotate(180deg);
+            }
+
+            #sidebar {
+                width: 200px;
+                background: #1d1b31;
+                color: white;
+                transition: width 0.3s ease;
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100vh;
+                padding: 20px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            #sidebar.collapsed {
+                width: 80px;
+            }
+
+            .sidebar-header {
+                text-align: center;
+                padding: 20px 10px;
+                margin-top: 20px;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .sidebar-title {
+                font-size: 1.8rem;
+                font-weight: bold;
+            }
+
+            .sidebar-subtitle {
+                font-size: 1.2rem;
+                color: #ccc;
+                margin-top: 4px;
+            }
+
+            #sidebar.collapsed .sidebar-title {
+                font-size: 1.2rem;
+            }
+
+            #sidebar.collapsed .sidebar-subtitle {
+                font-size: 1rem;
+            }
+
+            .sidebar-nav {
+                padding: 20px;
+            }
+
+            .sidebar-link {
+                display: flex;
+                align-items: center;
+                padding: 12px;
+                margin: 10px 0;
+                color: white;
+                transition: background 0.3s;
+                border-radius: 5px;
+                font-size: 1.1rem;
+            }
+
+            .sidebar-link i {
+                font-size: 20px;
+                margin-right: 12px;
+            }
+
+            .sidebar-link:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .sidebar-footer {
+                padding: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            #sidebar.collapsed .sidebar-link span {
+                display: none;
+            }
+
+            #sidebar.collapsed .sidebar-link {
+                justify-content: center;
+            }
+
+            .main {
+                flex: 1;
+                padding: 20px;
+                margin-left: 200px;
+                transition: margin-left 0.3s ease;
+            }
+
+            #sidebar.collapsed+.main {
+                margin-left: 80px;
+            }
+
+            .dashboard-navbar {
+                background: #fff;
+                padding: 15px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .content {
+                padding: 2rem;
+            }
+
+            footer {
+                margin-top: 20px;
+            }
+
+            .footer-wrap {
+                text-align: center;
+                padding: 15px;
+                background: #22223b;
+                color: white;
+                border-radius: 10px;
+                font-size: 1.1rem;
+                font-weight: 600;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="fixed-toggle">☰</button>
+        <div class="container">
+            <aside id="sidebar">
+                <div>
+                    <div class="sidebar-header">
+                        <div class="sidebar-title">Admin Panel</div>
+                        <div class="sidebar-subtitle">Kiti-Korean Store</div>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <a href="./dashkbord.html" class="sidebar-link"><i
+                                class="lni lni-dashboard"></i><span>Dashboard</span></a>
+                        <a href="./product.html" class="sidebar-link"><i
+                                class="lni lni-shopping-basket"></i><span>Products</span></a>
+                        <a href="./user.html" class="sidebar-link"><i class="lni lni-user"></i><span>Users</span></a>
+                        <a href="./orders.html" class="sidebar-link"><i
+                                class="lni lni-cart-full"></i><span>Orders</span></a>
+                    </nav>
+                </div>
+                <div class="sidebar-footer">
+                    <a href="#" class="sidebar-link"><i class="lni lni-exit"></i><span>Logout</span></a>
+                </div>
+            </aside>
+            <div class="main">
+                <div class="dashboard-navbar">
+                    <h2>Orders</h2>
+                </div>
+                <div class="content">
+                    <p>List of orders will be displayed here.</p>
+                </div>
+                <footer>
+                    <div class="footer-wrap">
+                        <p>&copy; 2024 [kiti-korean jwellery].</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script>
+            const fixedToggle = document.getElementById("fixed-toggle");
+            fixedToggle.addEventListener("click", function () {
+                const sidebar = document.getElementById("sidebar");
+                sidebar.classList.toggle("collapsed");
+                this.classList.toggle("collapsed");
+            });
+        </script>
+    </body>
+
+</html>

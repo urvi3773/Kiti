@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiti-The korean jwellery</title>
-    <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../main.css">
+    <script src="../script/fillter.js"></script>
+    <script src="https://kit.fontawesome.com/629e667018.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
@@ -54,23 +54,23 @@
                                         class="nav-icon"></i></a>
                                 <span class="nav-label">Cart</span>
                             </button>
-                        </div>
 
-                        <div class="navbar-container">
-                            <!-- Account Dropdown -->
                             <div class="navbar-item-account">
-                                <button class="navbar-account-button">
-                                    <i class="fa-regular fa-user fa-2x"></i>
-                                    <span>Account</span>
+                                <button class="nav-button" id="accountButton">
+                                    <i class="fa-regular fa-user fa-2x" class="nav-icon"></i>
+                                    <span class="nav-label">Account</span>
                                 </button>
+
                                 <div class="dropdown-account">
                                     <h2 class="dropdown-header-account">MY ACCOUNT</h2>
 
                                     <div class="dropdown-buttons-account">
-                                        <a href="./login.html"><button class="button-account button-login"
-                                                onclick="window.location.href='login.html'">LOG IN</button></a>
-                                        <a href="./register.html"><button class="button-account button-signup"
-                                                onclick="window.location.href='signup.html'">SIGN UP</button></a>
+                                        <a href="./login.html"><button class="button-login"
+                                                onclick="window.location.href='./login.html'">LOG
+                                                IN</button></a>
+                                        <a href="./register.html"><button class="button-signup"
+                                                onclick="window.location.href='./signup.html'">SIGN
+                                                UP</button></a>
                                     </div>
                                     <p class="dropdown-contact-text">
                                         CLICK HERE TO <a href="./contactus.html" class="dropdown-contact-link">CONTACT
@@ -78,35 +78,37 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Dropdown location -->
-
-                        <div class="dropdown-main-container">
-                            <div class="dropdown-container">
-                                <div class="location-icon">
+                            <div class="dropdown-main-container">
+                                <button class="nav-button" id="pincodetButton">
                                     <i class="fa-solid fa-location-crosshairs fa-lg"></i>
-                                    <div class="icon-popup">Pincode</div>
-                                </div>
-                                <div class="dropdown-content-box">
+                                    <span class="nav-label">Pincode</span>
+                                </button>
+
+                                <div class="dropdown-pincode-box" id="pincodeSection">
                                     <h1 class="dropdown-title">PIN Code Locator</h1>
+
                                     <div class="dropdown-input-group">
-                                        <input type="text" id="pincodeInput" placeholder="Enter PIN Code" maxlength="6">
+                                        <input type="text" id="pincodeInput1" placeholder="Enter PIN Code"
+                                            maxlength="6">
                                         <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
                                     </div>
-                                    <div class="dropdown-message" id="message"></div>
+                                    <div class="dropdown-message" id="message1"></div>
                                     <div class="dropdown-location-container" id="locationContainer"
                                         style="display: none;">
                                         <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png"
                                             alt="Location Icon" class="dropdown-location-icon">
-                                        <span id="locationText"></span>
+                                        <span id="locationText1"></span>
                                     </div>
+
+
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
-
 
                 <div class="navbar">
                     <div class="menu">
@@ -158,9 +160,8 @@
                         <a href="./gifting.html">GIFTING</a>
                     </div>
                 </div>
+            </nav>
         </div>
-
-
 
         <h1 class="page-title">Mother Collection</h1>
 
@@ -175,16 +176,8 @@
                 </div>
             </div>
 
-            <!-- Shop For Filter -->
-            <div class="dropdown dropdown-shop-for">
-                <button class="dropdown-btn">Shop For<span class="arrow">&#9662;</span></button>
-                <div class="dropdown-content">
-
-                    <!-- Reset Button -->
-                    <button class="reset-btn">Reset Filters</button>
-                </div>
-            </div>
-
+            <!-- Reset Button -->
+            <button class="reset-btn">Reset Filters</button>
         </div>
 
 
@@ -192,47 +185,47 @@
 
         <div class="Jewellery-section">
 
-            <div class="Jewellery-item" data-price="7,999" data-shop-for="mother" data-category="aesthentic Bracelet">
-                <img src="/jimages/bracelet/aesthentic/e3.jpg"></a>
+            <div class="Jewellery-item" data-price="7,999" data-shop-for="mother">
+                <img src="/jimages/bracelet/aesthentic/e3.jpg">
                 <h4>Moonstone Dream Bracelet</h4>
                 <div class="price">₹7,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="3,699" data-shop-for="mother" data-category="aesthentic Bracelet">
-                <img src="/jimages/bracelet/aesthentic/e7.jpg"></a>
+            <div class="Jewellery-item" data-price="3,699" data-shop-for="mother">
+                <img src="/jimages/bracelet/aesthentic/e7.jpg">
                 <h4>Bead Charm bracelet</h4>
                 <div class="price">₹3,699</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="6,499" data-shop-for="mother" data-category="aesthentic Bracelet">
-                <img src="/jimages/bracelet/aesthentic/e10.jpg"></a>
+            <div class="Jewellery-item" data-price="6,499" data-shop-for="mother">
+                <img src="/jimages/bracelet/aesthentic/e10.jpg">
                 <h4>Sunny Charm Bracelet</h4>
                 <div class="price">₹6,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="7,299" data-shop-for="mother" data-category="aesthentic Bracelet">
-                <img src="/jimages/bracelet/aesthentic/e14.jpg"></a>
+            <div class="Jewellery-item" data-price="7,299" data-shop-for="mother">
+                <img src="/jimages/bracelet/aesthentic/e14.jpg">
                 <h4>Garden Goddess Bracelet</h4>
                 <div class="price">₹7,299</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="5,599" data-shop-for="mother" data-category="aesthentic Bracelet">
-                <img src="/jimages/bracelet/aesthentic/e32.jpg"></a>
+            <div class="Jewellery-item" data-price="5,599" data-shop-for="mother">
+                <img src="/jimages/bracelet/aesthentic/e32.jpg">
                 <h4>Pearl Play Bracelet</h4>
                 <div class="price">₹5,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="6,199" data-shop-for="mother" data-category="aesthentic Bracelet">
+            <div class="Jewellery-item" data-price="6,199" data-shop-for="mother">
                 <img src="/jimages/bracelet/aesthentic/e18.jpeg"></a>
                 <h4> Pearl Charm Bracelet</h4>
                 <div class="price">₹6,199</div>
@@ -240,7 +233,7 @@
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="5,499" data-shop-for="mother" data-category="aesthentic Bracelet">
+            <div class="Jewellery-item" data-price="5,499" data-shop-for="mother">
                 <img src="/jimages/bracelet/aesthentic/e21.jpeg"></a>
                 <h4>Pearl & Stone Harmony Bracelet</h4>
                 <div class="price">₹5,499</div>
@@ -248,7 +241,7 @@
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="6,999" data-shop-for="mother" data-category="aesthentic Bracelet">
+            <div class="Jewellery-item" data-price="6,999" data-shop-for="mother">
                 <img src="/jimages/bracelet/aesthentic/e24.jpeg"></a>
                 <h4>Milky Way Meow Bracelet</h4>
                 <div class="price">₹6,999</div>
@@ -256,31 +249,31 @@
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="6,199" data-shop-for="mother" data-category="aesthentic Bracelet">
-                <img src="/jimages/bracelet/aesthentic/e35.jpg"></a>
+            <div class="Jewellery-item" data-price="6,199" data-shop-for="mother">
+                <img src="/jimages/bracelet/aesthentic/e35.jpg">
                 <h4>Retro pearl bracelet</h4>
                 <div class="price">₹6,199</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="4,199" data-shop-for="mother" data-category="aesthentic Bracelet">
-                <img src="/jimages/bracelet/aesthentic/e41.jpg"></a>
+            <div class="Jewellery-item" data-price="4,199" data-shop-for="mother">
+                <img src="/jimages/bracelet/aesthentic/e41.jpg">
                 <h4>Enamael & imitation pearl Bracelet</h4>
                 <div class="price">₹4,199</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
 
-            <div class="Jewellery-item" data-price="3,999" data-shop-for="mother" data-category="aesthentic Bracelet">
-                <img src="/jimages/bracelet/aesthentic/e44.jpg"></a>
+            <div class="Jewellery-item" data-price="3,999" data-shop-for="mother">
+                <img src="/jimages/bracelet/aesthentic/e44.jpg">
                 <h4>sunny yellow daisy Bracelet</h4>
                 <div class="price">₹3,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="11,999" data-shop-for="mother" data-category="aesthentic">
-                <img src="/jimages/earring/aesthentic/a2.jpg"></a>
+                <img src="/jimages/earring/aesthentic/a2.jpg">
                 <h4>Radiant Pearl Gold Earings</h4>
                 <div class="price">₹11,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -288,7 +281,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="8,599" data-shop-for="mother" data-category="aesthentic">
-                <img src="/jimages/earring/aesthentic/a5.jpg"></a>
+                <img src="/jimages/earring/aesthentic/a5.jpg">
                 <h4>Pearl-Enchanted Earrings</h4>
                 <div class="price">₹8,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -296,7 +289,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="11,599" data-shop-for="mother" data-category="aesthentic">
-                <img src="/jimages/earring/aesthentic/a9.jpg"></a>
+                <img src="/jimages/earring/aesthentic/a9.jpg">
                 <h4>Floral Elegance Drops Earrings</h4>
                 <div class="price">₹11,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -304,7 +297,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="14,999" data-shop-for="mother" data-category="aesthentic">
-                <img src="/jimages/earring/aesthentic/a13.jpg"></a>
+                <img src="/jimages/earring/aesthentic/a13.jpg">
                 <h4>Luxor Clasp Drops Earings</h4>
                 <div class="price">₹14,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -312,7 +305,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="10,999" data-shop-for="mother" data-category="aesthentic">
-                <img src="/jimages/earring/aesthentic/a20.jpg"></a>
+                <img src="/jimages/earring/aesthentic/a20.jpg">
                 <h4>Shimmering Sculptures Earrings</h4>
                 <div class="price">₹10,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -320,7 +313,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="8,999" data-shop-for="mother" data-category="aesthentic">
-                <img src="/jimages/earring/aesthentic/a23.jpg"></a>
+                <img src="/jimages/earring/aesthentic/a23.jpg">
                 <h4>Modern Geometric Dangles Earrings</h4>
                 <div class="price">₹8,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -488,7 +481,7 @@
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="7999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b3.jpg"></a>
+                <img src="/jimages/butterfly/b3.jpg">
                 <h4>HighSpark Sterling Gold Glimmer Ring</h4>
                 <div class="price">₹7999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -496,7 +489,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="19,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b9.jpg"></a>
+                <img src="/jimages/butterfly/b9.jpg">
                 <h4>Gold Plated Colourful Butterfly Korean Earrings</h4>
                 <div class="price">₹19,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -504,7 +497,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="27,499" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b14.jpg"></a>
+                <img src="/jimages/butterfly/b14.jpg">
                 <h4>Gold Edge Ribbon Earrings</h4>
                 <div class="price">₹27,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -512,7 +505,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="29,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b24.jpg"></a>
+                <img src="/jimages/butterfly/b24.jpg">
                 <h4>Turquoise Butterfly Necklace</h4>
                 <div class="price">₹29,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -520,7 +513,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="32,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b30.jpg"></a>
+                <img src="/jimages/butterfly/b30.jpg">
                 <h4>Sparkling Butterfly Bracelet</h4>
                 <div class="price">₹32,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -528,7 +521,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="19,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b36.jpg"></a>
+                <img src="/jimages/butterfly/b36.jpg">
                 <h4>Princess Charm jewelry set</h4>
                 <div class="price">₹19,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -536,7 +529,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="15,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b41.jpg"></a>
+                <img src="/jimages/butterfly/b41.jpg">
                 <h4>White Pearl and Butterfly Bracelet</h4>
                 <div class="price">₹15,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -544,7 +537,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="11,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b45.jpg"></a>
+                <img src="/jimages/butterfly/b45.jpg">
                 <h4>Butterfly Pearl Collection Bracelet</h4>
                 <div class="price">₹11,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -552,7 +545,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="8,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b49.jpg"></a>
+                <img src="/jimages/butterfly/b49.jpg">
                 <h4>Woven Wings bracelet</h4>
                 <div class="price">₹8,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -560,7 +553,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="899" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b54.jpg"></a>
+                <img src="/jimages/butterfly/b54.jpg">
                 <h4>butterfly tassel earrings</h4>
                 <div class="price">₹899</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -568,7 +561,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="3,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b58.jpg"></a>
+                <img src="/jimages/butterfly/b58.jpg">
                 <h4>Blue Butterfly Pendant Necklace</h4>
                 <div class="price">₹3,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -576,7 +569,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="6,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b63.jpg"></a>
+                <img src="/jimages/butterfly/b63.jpg">
                 <h4>Blue Radiance Collection</h4>
                 <div class="price">₹6,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -584,7 +577,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="3,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b68.jpg"></a>
+                <img src="/jimages/butterfly/b68.jpg">
                 <h4>Silver Butterfly Bliss</h4>
                 <div class="price">₹3,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -592,7 +585,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="3,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b72.jpg"></a>
+                <img src="/jimages/butterfly/b72.jpg">
                 <h4>Golden Butterfly Dream</h4>
                 <div class="price">₹3,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -600,7 +593,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="3,899" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b79.jpg"></a>
+                <img src="/jimages/butterfly/b79.jpg">
                 <h4>Whimsical Flutter Necklace</h4>
                 <div class="price">₹3,899</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -608,7 +601,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="4,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b83.jpg"></a>
+                <img src="/jimages/butterfly/b83.jpg">
                 <h4>Pearl Flutter Delight</h4>
                 <div class="price">₹4,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -616,7 +609,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2,499" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b87.jpg"></a>
+                <img src="/jimages/butterfly/b87.jpg">
                 <h4>Purple Gem Glimmer</h4>
                 <div class="price">₹2,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -624,7 +617,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="4,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b91.jpg"></a>
+                <img src="/jimages/butterfly/b91.jpg">
                 <h4>Lavender Butterfly Charm</h4>
                 <div class="price">₹4,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -632,7 +625,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b95.jpg"></a>
+                <img src="/jimages/butterfly/b95.jpg">
                 <h4>Golden Flutter Grace</h4>
                 <div class="price">₹2,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -640,7 +633,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2,499" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b100.jpg"></a>
+                <img src="/jimages/butterfly/b100.jpg">
                 <h4>Whimsical Pearl Charm</h4>
                 <div class="price">₹2,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -648,7 +641,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="1,999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b104.jpg"></a>
+                <img src="/jimages/butterfly/b104.jpg">
                 <h4>Ethereal Butterfly Charm</h4>
                 <div class="price">₹1,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -656,7 +649,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2,199" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b108.jpg"></a>
+                <img src="/jimages/butterfly/b108.jpg">
                 <h4>Radiant Winged Butterfly Sparkle</h4>
                 <div class="price">₹2,199</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -664,7 +657,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2,199" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b112.jpg"></a>
+                <img src="/jimages/butterfly/b112.jpg">
                 <h4>Luminous Wings</h4>
                 <div class="price">₹2,199</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -672,7 +665,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="799" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b116.jpg"></a>
+                <img src="/jimages/butterfly/b116.jpg">
                 <h4>Mystic Winged Luminous Butterflies</h4>
                 <div class="price">₹799</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -680,7 +673,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="999" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b124.jpg"></a>
+                <img src="/jimages/butterfly/b124.jpg">
                 <h4>Enchanted Garden Wings</h4>
                 <div class="price">₹999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -688,7 +681,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b128.jpg"></a>
+                <img src="/jimages/butterfly/b128.jpg">
                 <h4>Enchanted Wingscape</h4>
                 <div class="price">₹2,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -696,7 +689,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="3,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b129.jpg"></a>
+                <img src="/jimages/butterfly/b129.jpg">
                 <h4>Aurora Wing Enchanted Wingscape</h4>
                 <div class="price">₹3,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -704,7 +697,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b130.jpg"></a>
+                <img src="/jimages/butterfly/b130.jpg">
                 <h4>Gossamer Winged Jewel</h4>
                 <div class="price">₹2,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -712,14 +705,14 @@
             </div>
 
             <div class="Jewellery-item" data-price="3,599" data-shop-for="mother" data-category="butterfly collection">
-                <img src="/jimages/butterfly/b131.jpg"></a>
+                <img src="/jimages/butterfly/b131.jpg">
                 <h4>Enchanted Sunlit Wings</h4>
                 <div class="price">₹3,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="3,899" data-shop-for="mother" data-category="gold">
-                <img src="/jimages/combo/earring/me10.jpg"></a>
+                <img src="/jimages/combo/earring/me10.jpg">
                 <h4>Bow Pendant Necklace</h4>
                 <div class="price">₹3,899</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -727,14 +720,14 @@
             </div>
 
             <div class="Jewellery-item" data-price="4,599" data-shop-for="mother" data-category="gold">
-                <img src="/jimages/combo/earring/me5.jpg"></a>
+                <img src="/jimages/combo/earring/me5.jpg">
                 <h4>Stunning Butterfly Necklace</h4>
                 <div class="price">₹4,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="36,999" data-shop-for="mother" data-category="dimond necklace">
-                <img src="../jimages/necklace/dimond/d2.jpg"></a>
+                <img src="../jimages/necklace/dimond/d2.jpg">
                 <h4>Blue Gemstone Layered Pendant Necklace</h4>
                 <div class="price">₹36,999</div>
                 <a href="../src/addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -742,7 +735,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="51,599" data-shop-for="mother" data-category="dimond necklace">
-                <img src="../jimages/necklace/dimond/d5.jpg"></a>
+                <img src="../jimages/necklace/dimond/d5.jpg">
                 <h4>Marquise diamond necklace</h4>
                 <div class="price">₹51,599</div>
                 <a href="../src/addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -750,7 +743,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="12,999" data-shop-for="mother" data-category="dimond necklace">
-                <img src="../jimages/necklace/dimond/d8.jpg"></a>
+                <img src="../jimages/necklace/dimond/d8.jpg">
                 <h4>Celestial Necklace</h4>
                 <div class="price">₹12,999</div>
                 <a href="../src/addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -758,14 +751,14 @@
             </div>
 
             <div class="Jewellery-item" data-price="37,999" data-shop-for="mother" data-category="dimond necklace">
-                <img src="../jimages/necklace/dimond/d12.jpg"></a>
+                <img src="../jimages/necklace/dimond/d12.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹37,999</div>
                 <a href="../src/addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="../src/wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="54,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d1.jpg"></a>
+                <img src="../jimages/ring/dimond/d1.jpg">
                 <h4>Starflower Ring</h4>
                 <div class="price">₹54,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -773,7 +766,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="89,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d5.jpg"></a>
+                <img src="../jimages/ring/dimond/d5.jpg">
                 <h4>Dual Tone Dream Ring</h4>
                 <div class="price">₹89,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -781,7 +774,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="64,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d8.jpg"></a>
+                <img src="../jimages/ring/dimond/d8.jpg">
                 <h4>Emerald Cut Grace Ring</h4>
                 <div class="price">₹64,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -789,7 +782,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="84,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d11.jpg"></a>
+                <img src="../jimages/ring/dimond/d11.jpg">
                 <h4>Delicate Ring</h4>
                 <div class="price">₹84,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -797,7 +790,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="99,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d14.jpg"></a>
+                <img src="../jimages/ring/dimond/d14.jpg">
                 <h4>Rose Quartz Ring</h4>
                 <div class="price">₹99,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -805,7 +798,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="91,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d19.jpg"></a>
+                <img src="../jimages/ring/dimond/d19.jpg">
                 <h4>Sapphire Butterfly Ring</h4>
                 <div class="price">₹91,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -813,7 +806,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="69,599" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d22.jpg"></a>
+                <img src="../jimages/ring/dimond/d22.jpg">
                 <h4>Grace Delicate Diamond Ring</h4>
                 <div class="price">₹69,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -821,7 +814,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="98,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d24.jpg"></a>
+                <img src="../jimages/ring/dimond/d24.jpg">
                 <h4>Custom Marquise Diamond Ring</h4>
                 <div class="price">₹98,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -829,7 +822,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="94,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d27.jpg"></a>
+                <img src="../jimages/ring/dimond/d27.jpg">
                 <h4>Pink Stone V Ring</h4>
                 <div class="price">₹94,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -837,7 +830,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="52,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d29.jpg"></a>
+                <img src="../jimages/ring/dimond/d29.jpg">
                 <h4>Custom Marquise Diamond Ring</h4>
                 <div class="price">₹52,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -845,7 +838,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="83,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d32.jpg"></a>
+                <img src="../jimages/ring/dimond/d32.jpg">
                 <h4>Pear Shape Stone Ring</h4>
                 <div class="price">₹83,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -853,7 +846,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="72,599" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d34.jpg"></a>
+                <img src="../jimages/ring/dimond/d34.jpg">
                 <h4>Marquise Gemstone Ring</h4>
                 <div class="price">₹72,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -861,7 +854,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="69,599" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d37.jpg"></a>
+                <img src="../jimages/ring/dimond/d37.jpg">
                 <h4>Heart's Delight Ring</h4>
                 <div class="price">₹69,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -869,7 +862,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="99,999" data-shop-for="mother" data-category="diamond">
-                <img src="../jimages/ring/dimond/d39.jpg"></a>
+                <img src="../jimages/ring/dimond/d39.jpg">
                 <h4>Radiant Simplicity Ring</h4>
                 <div class="price">₹99,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1051,7 +1044,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="63,199" data-shop-for="mother" data-category="gold">
-                <img src="/jimages/bracelet/gold/g21.jpg"></a>
+                <img src="/jimages/bracelet/gold/g21.jpg">
                 <h4>Gold Link Heart Bracelet</h4>
                 <div class="price">₹63,199</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1059,7 +1052,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="34,999" data-shop-for="mother" data-category="gold">
-                <img src="/jimages/bracelet/gold/g3.jpg"></a>
+                <img src="/jimages/bracelet/gold/g3.jpg">
                 <h4>Crystal and Rose Gold Slider Bracelet</h4>
                 <div class="price">₹34,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1067,7 +1060,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="29,899" data-shop-for="mother" data-category="gold">
-                <img src="/jimages/bracelet/gold/g6.jpg"></a>
+                <img src="/jimages/bracelet/gold/g6.jpg">
                 <h4>Gold Leaf Bracelet</h4>
                 <div class="price">₹29,899</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1075,7 +1068,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="36,999" data-shop-for="mother" data-category="gold">
-                <img src="/jimages/bracelet/gold/g11.jpg"></a>
+                <img src="/jimages/bracelet/gold/g11.jpg">
                 <h4>Personalized Letter Disc Bracelet</h4>
                 <div class="price">₹36,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1083,14 +1076,14 @@
             </div>
 
             <div class="Jewellery-item" data-price="66,999" data-shop-for="mother" data-category="gold">
-                <img src="/jimages/bracelet/gold/g20.jpg"></a>
+                <img src="/jimages/bracelet/gold/g20.jpg">
                 <h4>Gold Ball Link Bracelet</h4>
                 <div class="price">₹66,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="34,999" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/gold/g7.jpg"></a>
+                <img src="../jimages/earring/gold/g7.jpg">
                 <h4>Moon Pearl Earrings</h4>
                 <div class="price">₹34,999</div>
                 <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1098,7 +1091,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="34,999" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/gold/g11.jpg"></a>
+                <img src="../jimages/earring/gold/g11.jpg">
                 <h4>Engraved Rectangle Hoop Earrings</h4>
                 <div class="price">₹34,999</div>
                 <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1106,7 +1099,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="56,499" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/gold/g17.jpg"></a>
+                <img src="../jimages/earring/gold/g17.jpg">
                 <h4>Celestial Earrings</h4>
                 <div class="price">₹56,499</div>
                 <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1114,7 +1107,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="33,799" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/gold/g21.jpg"></a>
+                <img src="../jimages/earring/gold/g21.jpg">
                 <h4>Gold Leaf and Pearl Earrings</h4>
                 <div class="price">₹33,799</div>
                 <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1122,7 +1115,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="47,699" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/gold/g25.jpg"></a>
+                <img src="../jimages/earring/gold/g25.jpg">
                 <h4>Pink Heart and Green Emarald Earrings</h4>
                 <div class="price">₹47,699</div>
                 <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1130,7 +1123,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="41,599" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/gold/g31.jpg"></a>
+                <img src="../jimages/earring/gold/g31.jpg">
                 <h4>Floral Heart Earrings</h4>
                 <div class="price">₹41,599</div>
                 <a href="../addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1192,7 +1185,7 @@
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="18,599" data-shop-for="mother" data-category="preciousearings">
-                <img src="/jimages/earring/precious/p6.jpg"></a>
+                <img src="/jimages/earring/precious/p6.jpg">
                 <h4>Pink Flower Bow Earrings</h4>
                 <div class="price">₹18,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1200,7 +1193,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="12,999" data-shop-for="mother" data-category="preciousearings">
-                <img src="/jimages/earring/precious/p10.jpg"></a>
+                <img src="/jimages/earring/precious/p10.jpg">
                 <h4>Pink Floral Earrings</h4>
                 <div class="price">₹12,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1208,7 +1201,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="24,999" data-shop-for="mother" data-category="preciousearings">
-                <img src="/jimages/earring/precious/p15.jpg"></a>
+                <img src="/jimages/earring/precious/p15.jpg">
                 <h4>Sparkling Heart and Hoop Earrings</h4>
                 <div class="price">₹24,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1216,7 +1209,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="23,699" data-shop-for="mother" data-category="preciousearings">
-                <img src="/jimages/earring/precious/p21.jpg"></a>
+                <img src="/jimages/earring/precious/p21.jpg">
                 <h4>Floral Pearl Earrings</h4>
                 <div class="price">₹23,699</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1239,7 +1232,7 @@
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="43,499" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r3.jpg"></a>
+                <img src="/jimages/rabbit/r3.jpg">
                 <h4>Floral Bunny Earrings</h4>
                 <div class="price">₹43,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1247,7 +1240,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="23,599" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r7.jpg"></a>
+                <img src="/jimages/rabbit/r7.jpg">
                 <h4>Pave Bunny Rings</h4>
                 <div class="price">₹23,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1255,7 +1248,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="47,499" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r15.jpg"></a>
+                <img src="/jimages/rabbit/r15.jpg">
                 <h4>Gold Plated Rabbit Ring</h4>
                 <div class="price">₹47,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1263,7 +1256,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="15,999" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r23.jpg"></a>
+                <img src="/jimages/rabbit/r23.jpg">
                 <h4>Dangling Bunny Earrings</h4>
                 <div class="price">₹15,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1271,7 +1264,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="23,499" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r32.jpg"></a>
+                <img src="/jimages/rabbit/r32.jpg">
                 <h4>Pink Floral Rabbit Earrings</h4>
                 <div class="price">₹23,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1279,7 +1272,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="5,299" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r36.jpg"></a>
+                <img src="/jimages/rabbit/r36.jpg">
                 <h4>Enchanted Forest Rabbit Earrings</h4>
                 <div class="price">₹5,299</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1287,7 +1280,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="6,499" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r39.jpg"></a>
+                <img src="/jimages/rabbit/r39.jpg">
                 <h4>Flowered Rabbit Earrings</h4>
                 <div class="price">₹6,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1295,7 +1288,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="1,799" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r43.jpg"></a>
+                <img src="/jimages/rabbit/r43.jpg">
                 <h4>Dark Rabbit with Bow Earrings</h4>
                 <div class="price">₹1,799</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1303,7 +1296,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="4,899" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r48.jpg"></a>
+                <img src="/jimages/rabbit/r48.jpg">
                 <h4>Silver Rabbit Bracelet</h4>
                 <div class="price">₹4,899</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1311,7 +1304,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="49,199" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r54.jpg"></a>
+                <img src="/jimages/rabbit/r54.jpg">
                 <h4>Rabbit with Red Eye Pendant and Pearl</h4>
                 <div class="price">₹49,199</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1319,7 +1312,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="33,699" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r56.jpg"></a>
+                <img src="/jimages/rabbit/r56.jpg">
                 <h4>Red Rabbit Bracelet</h4>
                 <div class="price">₹33,699</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1327,7 +1320,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="15,999" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r62.jpg"></a>
+                <img src="/jimages/rabbit/r62.jpg">
                 <h4>Pink Bunny Cord Bracelet</h4>
                 <div class="price">₹1,399</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1335,7 +1328,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="15,999" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r66.jpg"></a>
+                <img src="/jimages/rabbit/r66.jpg">
                 <h4>Magician's Rabbit Earrings</h4>
                 <div class="price">₹61,299</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1343,7 +1336,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="29,299" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r70.jpg"></a>
+                <img src="/jimages/rabbit/r70.jpg">
                 <h4>Bunny Mushroom Earrings</h4>
                 <div class="price">₹29,299</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1351,7 +1344,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="33,499" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r79.jpg"></a>
+                <img src="/jimages/rabbit/r79.jpg">
                 <h4>Bunny Ear Stone Ring</h4>
                 <div class="price">₹33,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1359,7 +1352,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="47,999" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r82.jpg"></a>
+                <img src="/jimages/rabbit/r82.jpg">
                 <h4>Sparkling Rabbit with Pearl Earrings</h4>
                 <div class="price">₹47,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1367,7 +1360,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="1,499" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r83.jpg"></a>
+                <img src="/jimages/rabbit/r83.jpg">
                 <h4>Snow Bunny Earrings</h4>
                 <div class="price">₹1,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1375,14 +1368,14 @@
             </div>
 
             <div class="Jewellery-item" data-price="4,899" data-shop-for="mother" data-category="rabbitcollcetion">
-                <img src="/jimages/rabbit/r89.jpg"></a>
+                <img src="/jimages/rabbit/r89.jpg">
                 <h4>Lunar Bloom Earrings</h4>
                 <div class="price">₹4,899</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
                 <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
             </div>
             <div class="Jewellery-item" data-price="7,499" data-shop-for="mother" data-category="silver">
-                <img src="jimages/earring/silver/s2.jpg"></a>
+                <img src="jimages/earring/silver/s2.jpg">
                 <h4>Sterling Silver Lariat Necklace</h4>
                 <div class="price">₹7,499</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1391,7 +1384,7 @@
 
 
             <div class="Jewellery-item" data-price="3,899" data-shop-for="mother" data-category="gold">
-                <img src="jimages/earring/silver/s5.jpg"></a>
+                <img src="jimages/earring/silver/s5.jpg">
                 <h4>Bow Pendant Necklace</h4>
                 <div class="price">₹3,899</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1400,7 +1393,7 @@
 
 
             <div class="Jewellery-item" data-price="4,599" data-shop-for="mother" data-category="gold">
-                <img src="jimages/earring/silver/s8.jpg"></a>
+                <img src="jimages/earring/silver/s8.jpg">
                 <h4>Stunning Butterfly Necklace</h4>
                 <div class="price">₹4,599</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1409,7 +1402,7 @@
 
 
             <div class="Jewellery-item" data-price="2999" data-shop-for="mother" data-category="gold">
-                <img src="jimages/earring/silver/s12.jpg"></a>
+                <img src="jimages/earring/silver/s12.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1417,7 +1410,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2999" data-shop-for="mother" data-category="gold">
-                <img src="jimages/earring/silver/s14.jpg"></a>
+                <img src="jimages/earring/silver/s14.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1425,7 +1418,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2999" data-shop-for="mother" data-category="gold">
-                <img src="jimages/earring/silver/s16.jpg"></a>
+                <img src="jimages/earring/silver/s16.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1433,7 +1426,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2999" data-shop-for="mother" data-category="gold">
-                <img src="jimages/earring/silver/s18.jpg"></a>
+                <img src="jimages/earring/silver/s18.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1441,7 +1434,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2999" data-shop-for="mother" data-category="gold">
-                <img src="jimages/earring/silver/s20.jpg"></a>
+                <img src="jimages/earring/silver/s20.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1449,7 +1442,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2999" data-shop-for="mother" data-category="gold">
-                <img src="jimages/earring/silver/s22.jpg"></a>
+                <img src="jimages/earring/silver/s22.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1457,7 +1450,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2999" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/silver/s24.jpg"></a>
+                <img src="../jimages/earring/silver/s24.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1465,16 +1458,7 @@
             </div>
 
             <div class="Jewellery-item" data-price="2,999" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/silver/s26.jpg"></a>
-                <h4>Puffed Heart Necklace</h4>
-                <div class="price">₹2,999</div>
-                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
-                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
-            </div>
-
-
-            <div class="Jewellery-item" data-price="2,999" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/silver/s28.jpg"></a>
+                <img src="../jimages/earring/silver/s26.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1483,7 +1467,16 @@
 
 
             <div class="Jewellery-item" data-price="2,999" data-shop-for="mother" data-category="gold">
-                <img src="../jimages/earring/silver/s30.jpg"></a>
+                <img src="../jimages/earring/silver/s28.jpg">
+                <h4>Puffed Heart Necklace</h4>
+                <div class="price">₹2,999</div>
+                <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
+                <a href="wishlist.html"><button class="wishlist-btn">&#10084;</button></a>
+            </div>
+
+
+            <div class="Jewellery-item" data-price="2,999" data-shop-for="mother" data-category="gold">
+                <img src="../jimages/earring/silver/s30.jpg">
                 <h4>Puffed Heart Necklace</h4>
                 <div class="price">₹2,999</div>
                 <a href="addcart.html"><button class="order-btn">Add Cart</button></a>
@@ -1491,19 +1484,24 @@
             </div>
 
         </div>
+
+        <div class="no-results hidden">No results found.</div>
+
 
         <div class="back-to-top" id="backToTop">
             <i class="fa-solid fa-diamond diamond-icon" title="Back To Top"></i>
         </div>
 
-        <!-- Footer Section -->
+    </div>
 
-        <footer>
-            <div class="footer-container">
+    <!-- Footer Section -->
 
-                <!-- Footer Logo -->
-                <div class="col">
-                    <a href="../index.html"><img src="../jimages/kitilogo/kk3.png" alt="Your Jewelry Brand Logo"></a>
+    <footer>
+        <div class="footer-container">
+
+            <!-- Footer Logo -->
+            <div class="col">
+                <a href="../index.html"><img src="../jimages/kitilogo/kk3.png" alt="Your Jewelry Brand Logo">
 
 
                     <div class="social">
@@ -1514,66 +1512,68 @@
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
 
-                </div>
-
-
-                <!-- Explore Links -->
-                <div class="footer-links">
-                    <h2>Explore</h2><br>
-                    <ul>
-                        <li><a href="./home.html">Home</a></li>
-                        <li><a href="./aboutus.html">About Us</a></li>
-                        <li><a href="./contactus.html">Contact Us</a></li>
-                        <li><a href="./Customerreviews.html">Customer Reviews</a></li>
-                    </ul>
-                </div>
-
-                <!-- Customer Service Links -->
-                <div class="footer-links">
-                    <h2>Customer Service</h2><br>
-                    <ul>
-                        <li><a href="#">Shipping & Delivery</a></li>
-                        <li><a href="#">Returns & Exchanges</a></li>
-                        <li><a href="./returnpolicy.html">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-contact">
-                    <h2>Get in Touch</h2>
-                    <div class="contact-mail">
-                        <p>Email: <a href="mailto:kitijewellery25@gmail.com">kitijewellery25@gmail.com</a></p>
-                    </div>
-                    <div class="contact-details">
-                        <i class="fa fa-location"></i>
-                        <p>F-201 , Krishna avenu Vesu, Surat</p>
-                    </div>
-                    <div class="contact-details">
-                        <i class="fa fa-phone"></i>
-                        <p>+91 63550 22182</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form">
-                        <form action="">
-                            <input type="text" placeholder="Email here...">
-                            <button><i class="fa fa-paper-plane"></i></button>
-                        </form>
-                    </div>
-
-                </div>
-
-                <!-- Newsletter Signup -->
-
             </div>
 
-            <div class="footer-bottom">
-                <p>© 2024 [kiti-korean jwellery]. All rights reserved.</p>
+
+            <!-- Explore Links -->
+            <div class="footer-links">
+                <h2>Explore</h2><br>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <li><a href="./contactus.html">Contact Us</a></li>
+                    <li><a href="./customerreviews.html">Customer Reviews</a></li>
+                </ul>
             </div>
 
-        </footer>
+            <!-- Customer Service Links -->
+            <div class="footer-links">
+                <h2>Customer Service</h2><br>
+                <ul>
+                    <li><a href="./shipping&delivery.html">Shipping & Delivery</a></li>
+                    <li><a href="./returns&exchanges.html">Returns & Exchanges</a></li>
+                    <li><a href="./privacypolicy.html">Privacy Policy</a></li>
+                    <li><a href="./terms&conditions.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h2>Get in Touch</h2>
+                <div class="contact-mail">
+                    <p>Email: <a href="mailto:kitijewellery25@gmail.com">kitijewellery25@gmail.com</a></p>
+                </div>
+                <div class="contact-details">
+                    <i class="fa fa-location"></i>
+                    <p>F-201 , Krishna avenu Vesu, Surat</p>
+                </div>
+                <div class="contact-details">
+                    <i class="fa fa-phone"></i>
+                    <p>+91 63550 22182</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form">
+                    <form id="messageForm" action="">
+                        <input type="text" id="userEmail" placeholder="Message here..." required>
+                        <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 [kiti-korean jwellery]. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./script/pincode.js"></script>
+    <script src="./script/backhome.js"></script>
+    <script src="./script/S_cart.js" defer></script>
+    <script type="module" src="./script/Main_Login.js" defer></script>
+    <script src="./script/Simple_logic.js" defer></script>
+
 
 </body>
 

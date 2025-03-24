@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User CRUD - Admin Panel</title>
+    <link rel="stylesheet" href="productcrud.css">
+    <link rel="stylesheet" href="adminstyle.css">
+    <style>
+        /* Global styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeInDown 1s ease;
+        }
+
+        /* Form container styling */
+        form#user-form {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form#user-form label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+
+        form#user-form input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        form#user-form input:focus {
+            border-color: #5c9ded;
+            box-shadow: 0 0 5px rgba(92, 157, 237, 0.5);
+            outline: none;
+        }
+
+        /* Button styling */
+        form#user-form button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #5c9ded;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px 5px 0 0;
+        }
+
+        form#user-form button:hover {
+            background-color: #4a8ad4;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            form#user-form {
+                padding: 20px;
+            }
+
+            form#user-form button {
+                width: 100%;
+                margin: 10px 0 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>User CRUD Operations</h2>
+    <form id="user-form">
+        <label for="user-name">Name</label>
+        <input type="text" id="user-name" placeholder="User Name" required>
+
+        <label for="user-email">Email</label>
+        <input type="email" id="user-email" placeholder="Email" required>
+
+        <label for="user-phone">Phone</label>
+        <input type="text" id="user-phone" placeholder="Phone Number" required>
+
+        <div style="text-align: right;">
+            <button type="submit" id="insert-btn">Insert</button>
+            <button type="button" id="update-btn">Update</button>
+            <button type="button" id="delete-btn">Delete</button>
+        </div>
+    </form>
+
+    <script>
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        let selectedUserIndex = localStorage.getItem('selectedUserIndex');
+
+        if (selectedUserIndex !== null) {
+            selectedUserIndex = parseInt(selectedUserIndex, 10);
+            const user = users[selectedUserIndex];
+            if (user) {
+                document.getElementById('user-name').value = user.name;
+                document.getElementById('user-email').value = user.email;
+                document.getElementById('user-phone').value = user.phone;
+            }
+            // We keep the selected index until update/delete is successful.
+        }
+
+        const userForm = document.getElementById('user-form');
+
+        userForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value;
+            const email = document.getElementById('user-email').value;
+            const phone = document.getElementById('user-phone').value;
+
+            if (selectedUserIndex === null) {
+                users.push({ name, email, phone });
+            } else {
+                users[selectedUserIndex] = { name, email, phone };
+            }
+            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.removeItem('selectedUserIndex');
+            window.location.href = 'user.html';
+        });
+
+        document.getElementById('update-btn').addEventListener('click', function () {
+            if (selectedUserIndex === null) {
+                alert('Select a user to update by clicking "Edit" on the User List page.');
+            } else {
+                userForm.dispatchEvent(new Event('submit'));
+            }
+        });
+
+        document.getElementById('delete-btn').addEventListener('click', function () {
+            if (selectedUserIndex === null) {
+                alert('Select a user to delete by clicking "Edit" on the User List page.');
+            } else {
+                if (confirm('Are you sure you want to delete this user?')) {
+                    users.splice(selectedUserIndex, 1);
+                    localStorage.setItem('users', JSON.stringify(users));
+                    localStorage.removeItem('selectedUserIndex');
+                    window.location.href = 'user.html';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
