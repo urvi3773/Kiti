@@ -4,24 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Users - Admin Panel</title>
-    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet">
-    <link rel="stylesheet" href="crud.css">
-    <link rel="stylesheet" href="adminstyle.css">
+    <title>Products - Admin Panel</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Admin/adminstyle.css" />
     <style>
-        /* Additional styling for a colorful, responsive table */
+        /* Container styling */
         .container {
             display: flex;
             flex-direction: row;
             min-height: 100vh;
         }
 
+        /* Main content styling */
         .main {
             flex: 1;
             padding: 20px;
             background: #f9fafb;
         }
 
+        /* Navbar styling */
         .dashboard-navbar {
             background: #fff;
             padding: 10px 20px;
@@ -30,12 +31,7 @@
             border-radius: 4px;
         }
 
-        .dashboard-navbar h2 {
-            margin: 0;
-            font-size: 24px;
-            color: #333;
-        }
-
+        /* Content section header */
         .crud-header {
             display: flex;
             justify-content: space-between;
@@ -43,8 +39,14 @@
             margin-bottom: 15px;
         }
 
+        .crud-header h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
         .crud-header .btn {
-            background: #5c9ded;
+            background: #22223b;
             color: #fff;
             padding: 8px 12px;
             border: none;
@@ -57,10 +59,7 @@
             background: #4a8ad4;
         }
 
-        .table-container {
-            overflow-x: auto;
-        }
-
+        /* Responsive Table Styles */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -84,6 +83,7 @@
             color: #333;
         }
 
+        /* Alternate row colors */
         tbody tr:nth-child(odd) {
             background-color: #fafafa;
         }
@@ -92,15 +92,15 @@
             background-color: #f1f1f1;
         }
 
-        /* Make Actions column take only needed space */
+        /* Action column: restrict width and prevent wrapping */
         table th:last-child,
         table td:last-child {
-            width: 120px;
+            width: 100px;
             white-space: nowrap;
             text-align: center;
         }
 
-        /* Button styling in table */
+        /* Buttons in Action column */
         .btn.edit-btn,
         .btn.delete-btn {
             background: #ff6f61;
@@ -121,7 +121,12 @@
             background: #d04a3d;
         }
 
+        /* Horizontal scroll for small screens */
         @media (max-width: 768px) {
+            .content div[style*="overflow-x"] {
+                overflow-x: auto;
+            }
+
             table {
                 min-width: 600px;
             }
@@ -133,20 +138,23 @@
     <!-- Fixed Toggle Button -->
     <button id="fixed-toggle">☰</button>
     <div class="container">
+        <!-- Sidebar -->
         <aside id="sidebar">
+            <!-- Fixed Toggle Button inside Sidebar -->
+            <button id="fixed-toggle">☰</button>
             <div>
                 <div class="sidebar-header">
                     <div class="sidebar-title">Admin Panel</div>
                     <div class="sidebar-subtitle">Kiti-Korean Store</div>
                 </div>
                 <nav class="sidebar-nav">
-                    <a href="./dashkbord.html" class="sidebar-link">
+                    <a href="../dashkbord.html" class="sidebar-link">
                         <i class="lni lni-dashboard"></i><span>Dashboard</span>
                     </a>
-                    <a href="./product.html" class="sidebar-link">
+                    <a href="../Product/product.html" class="sidebar-link">
                         <i class="lni lni-shopping-basket"></i><span>Products</span>
                     </a>
-                    <a href="./user.html" class="sidebar-link">
+                    <a href="../User/user.html" class="sidebar-link">
                         <i class="lni lni-user"></i><span>Users</span>
                     </a>
                     <a href="./orders.html" class="sidebar-link">
@@ -160,45 +168,57 @@
                 </a>
             </div>
         </aside>
+
+        <!-- Main Content -->
         <div class="main">
+            <!-- Navbar -->
             <div class="dashboard-navbar">
-                <h2>Users</h2>
-                <a href="usercrud.html" class="btn">ADD USER</a>
+                <form action="#">
+                    <div class="nav-search" id="findDetails">
+                        <input type="text" class="search-query" id="searchInput" placeholder="Search by Name..." />
+                        <button class="btn" type="button" onclick="searchProduct()">Search</button>
+                    </div>
+                </form>
             </div>
+
+            <!-- Content Section -->
             <div class="content">
-                <div class="table-container">
-                    <table class="table table-striped">
+                <div class="crud-header">
+                    <h2>Products Info</h2>
+                    <a href="./productcrud.html" class="btn">ADD PRODUCTS</a>
+                </div>
+
+                <!-- Product Table -->
+                <div style="overflow-x:auto;">
+                    <table>
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Actions</th>
+                                <th>Description</th>
+                                <th>Price (₹)</th>
+                                <th>Image</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="user-list">
-                            <!-- Rows will be populated by Firebase data -->
+                        <tbody id="product-list">
+                            <!-- Product rows will be inserted dynamically -->
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            <!-- Footer -->
             <footer>
                 <div class="footer-wrap">
-                    <p>&copy; 2024 Kiti-Korean Jewellery</p>
+                    <p>&copy; 2025 Kiti-Korean Jewellery</p>
                 </div>
             </footer>
         </div>
     </div>
-    <!-- Import external JS module -->
-    <script type="module" src="userFirebase.js"></script>
-    <script>
-        // Sidebar toggle handler
-        document.getElementById("fixed-toggle").addEventListener("click", function () {
-            document.getElementById("sidebar").classList.toggle("collapsed");
-            this.classList.toggle("collapsed");
-        });
-    </script>
+
+    <!-- Import the product listing JavaScript module -->
+    <script type="module" src="productList.js"></script>
 </body>
 
 </html>

@@ -64,7 +64,7 @@ body {
     transition: all .25s ease-in-out;
 }
 
-#sidebar input[type="checkbox"]:checked~.sidebar-nav {
+#sidebar input[type="checkbox"]:checked ~ .sidebar-nav {
     width: 150px;
     min-width: 150px;
 }
@@ -87,7 +87,7 @@ a.sidebar-link:hover {
     border-left: 3px solid #3b7ddd;
 }
 
-#sidebar input[type="checkbox"]:not(:checked)~* .sidebar-link span {
+#sidebar input[type="checkbox"]:not(:checked) ~ * .sidebar-link span {
     display: none;
 }
 
@@ -120,7 +120,11 @@ a.sidebar-link:hover {
 
 .dashboard-navbar .main-nav {
     margin-left: auto;
+    list-style: none;
+    padding: 0;
+    display: flex;
 }
+
 
 .user-link {
     position: relative;
