@@ -360,4 +360,3 @@ if (document.getElementById("forgotPasswordForm")) {
 if (document.getElementById("messageForm")) {
   EmailJS_Message();
 }
-
