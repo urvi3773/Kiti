@@ -1,8 +1,6 @@
-// FINAL.JS - Combined authentication and admin access check
+// final.js - Combined functionality for authentication, local storage, form toggle, and admin access check
 
-import {
-    initializeApp
-} from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -34,9 +32,9 @@ const auth = getAuth(app);
 const db = getDatabase(app);
 
 // Initialize EmailJS (Replace with your actual EmailJS user ID)
-// emailjs.init("-GVroUY5ZtAIpTO8F");
+emailjs.init("-GVroUY5ZtAIpTO8F");
 
-// Key for storing last user index locally
+// Local storage key for storing last user index
 const LOCAL_INDEX_KEY = "lastUserIndex";
 
 // Helper: Store user data locally
@@ -44,7 +42,7 @@ function storeUserLocally(userData) {
     localStorage.setItem("currentUser", JSON.stringify(userData));
 }
 
-// Helper: Retrieve last user index from localStorage or from the DB (if not cached)
+// Helper: Retrieve last user index from localStorage or from DB if not cached
 function getLastUserIndex() {
     let localIndex = localStorage.getItem(LOCAL_INDEX_KEY);
     if (localIndex !== null) {
@@ -58,32 +56,44 @@ function getLastUserIndex() {
     });
 }
 
-// Check Admin Access: if user is not admin, redirect to adminCreation.html
-function checkAdminAccess() {
-    const user = auth.currentUser;
-    if (!user) {
-        // No user is logged in, redirect to adminCreation.html
-        window.location.href = "./Admin/adminCreation.html";
-        return;
-    }
-    // Assume admin data is stored under "admins/<uid>"
-    const adminRef = ref(db, "admins/" + user.uid);
-    get(adminRef).then(snapshot => {
-        if (!snapshot.exists()) {
-            // If no admin record, user is not an admin – redirect.
-            window.location.href = "./Admin/adminCreation.html";
-        }
-    }).catch((error) => {
-        console.error("Error checking admin access:", error);
-        // On error, you may choose to redirect as well
-        window.location.href = "./Admin/adminCreation.html";
-    });
-}
+// Toggle forms for adminCreation.html
+document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+    const showSignup = document.getElementById("showSignup");
+    const showLogin = document.getElementById("showLogin");
 
-// Signup Function for Regular Users (stores user under "users" with sequential index)
+    // Ensure initial state: login form visible, signup form hidden
+    if (loginForm && signupForm) {
+        loginForm.classList.add("active");
+        signupForm.classList.remove("active");
+    }
+
+    if (showSignup) {
+        showSignup.addEventListener("click", () => {
+            if (loginForm && signupForm) {
+                loginForm.classList.remove("active");
+                signupForm.classList.add("active");
+            }
+        });
+    }
+
+    if (showLogin) {
+        showLogin.addEventListener("click", () => {
+            if (loginForm && signupForm) {
+                signupForm.classList.remove("active");
+                loginForm.classList.add("active");
+            }
+        });
+    }
+});
+
+// Signup Function (for regular users)
+// Stores new user under "users/<sequentialIndex>" and caches data locally
 function Sign_up() {
     const signupBtn = document.querySelector("#SignUp_Btn");
     if (!signupBtn) return;
+
     signupBtn.addEventListener("click", function (e) {
         e.preventDefault();
 
@@ -93,36 +103,40 @@ function Sign_up() {
         const phoneNumber = document.querySelector("#phoneNumber").value.trim();
         const password = document.querySelector("#password").value;
 
-        // Get selected gender
-        const genderOptions = document.querySelectorAll('input[name="gender"]');
+        // Retrieve gender if available (for Create Admin Account form)
         let gender = null;
-        for (const option of genderOptions) {
-            if (option.checked) {
-                gender = option.value;
-                break;
+        const genderOptions = document.querySelectorAll('input[name="gender"]');
+        if (genderOptions.length) {
+            for (const option of genderOptions) {
+                if (option.checked) {
+                    gender = option.value;
+                    break;
+                }
             }
         }
 
-        if (!F_name || !L_name || !email || !phoneNumber || !password || !gender) {
-            alert("Please fill all fields before signing up!");
+        // Check that all required fields are filled:
+        // (If there are gender options, ensure one is selected)
+        if (!F_name || !L_name || !email || !phoneNumber || !password || (genderOptions.length && !gender)) {
+            alert("Please fill in all fields in the Create Admin Account form!");
             return;
         }
 
-        // Validate fields with regex
+        // Field validations
         const nameRegex = /^[A-Za-z\s]+$/;
         const phoneRegex = /^[0-9]{10}$/;
         const passwordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
 
         if (!nameRegex.test(F_name)) {
-            alert("First name must contain only letters (and spaces).");
+            alert("First name must contain only letters and spaces.");
             return;
         }
         if (!nameRegex.test(L_name)) {
-            alert("Last name must contain only letters (and spaces).");
+            alert("Last name must contain only letters and spaces.");
             return;
         }
         if (!passwordRegex.test(password)) {
-            alert("Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, and a number.");
+            alert("Password must be at least 8 characters and include uppercase, lowercase, and a number.");
             return;
         }
         if (!phoneRegex.test(phoneNumber)) {
@@ -130,7 +144,7 @@ function Sign_up() {
             return;
         }
 
-        // Create user with Firebase Auth
+        // Create user with Firebase Authentication
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
@@ -146,7 +160,7 @@ function Sign_up() {
                             lastName: L_name,
                             email: email,
                             phoneNumber: phoneNumber,
-                            gender: gender,
+                            ...(gender && { gender: gender }),
                             index: newIndex
                         };
                         storeUserLocally(userData);
@@ -168,6 +182,7 @@ function Sign_up() {
 function Sign_in() {
     const submitBtn = document.querySelector("#Submit");
     if (!submitBtn) return;
+
     submitBtn.addEventListener("click", function (e) {
         e.preventDefault();
         const email = document.querySelector("#userInput").value.trim();
@@ -196,6 +211,7 @@ function Sign_in() {
 function Forgot_password() {
     const forgotForm = document.getElementById("forgotPasswordForm");
     if (!forgotForm) return;
+
     forgotForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const email = document.getElementById("resetEmail").value.trim();
@@ -205,7 +221,7 @@ function Forgot_password() {
         }
         sendPasswordResetEmail(auth, email)
             .then(() => {
-                alert("Password reset email sent. Please check your inbox.");
+                alert("Password reset email sent. Check your inbox.");
                 forgotForm.reset();
             })
             .catch((error) => {
@@ -215,11 +231,12 @@ function Forgot_password() {
     });
 }
 
-// EmailJS Message Submission Function
+// EmailJS Message Function
 // function EmailJS_Message() {
 //     const form = document.getElementById("messageForm");
 //     if (!form) return;
 //     const button = form.querySelector("button[type='submit']");
+
 //     form.addEventListener("submit", function (e) {
 //         e.preventDefault();
 //         const emailValue = document.getElementById("userEmail").value.trim();
@@ -251,6 +268,27 @@ function Forgot_password() {
 //     });
 // }
 
+// Admin Access Check:
+// On pages (except adminCreation.html), verify if the current user is an admin.
+// If not, redirect to adminCreation.html.
+if (!window.location.href.includes("adminCreation.html")) {
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            const adminRef = ref(db, "admins/" + user.uid);
+            get(adminRef).then(snapshot => {
+                if (!snapshot.exists()) {
+                    window.location.href = "./adminCreation.html";
+                }
+            }).catch((error) => {
+                console.error("Error checking admin access:", error);
+                window.location.href = "./adminCreation.html";
+            });
+        } else {
+            window.location.href = "./adminCreation.html";
+        }
+    });
+}
+
 // Initialize event listeners if elements exist
 if (document.querySelector("#SignUp_Btn")) {
     Sign_up();
@@ -263,28 +301,4 @@ if (document.getElementById("forgotPasswordForm")) {
 }
 if (document.getElementById("messageForm")) {
     EmailJS_Message();
-}
-
-// Check admin access on pages that require admin privileges
-// For example, if the current page is not adminCreation.html, then verify admin status
-if (!window.location.href.includes("adminCreation.html")) {
-    // Wait for auth to be ready
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-            // Check if user is admin by looking under "admins/<uid>"
-            const adminRef = ref(db, "admins/" + user.uid);
-            get(adminRef).then(snapshot => {
-                if (!snapshot.exists()) {
-                    // Not an admin: redirect to adminCreation.html
-                    window.location.href = "./Admin/adminCreation.html";
-                }
-            }).catch((error) => {
-                console.error("Error checking admin access:", error);
-                window.location.href = "./Admin/adminCreation.html";
-            });
-        } else {
-            // No user logged in, redirect to adminCreation.html (or a login page)
-            window.location.href = "./Admin/adminCreation.html";
-        }
-    });
 }
