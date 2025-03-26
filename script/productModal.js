@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         // Modal content: Two-column layout – Left: product details & action buttons; Right: review form & reviews list.
         modal.innerHTML = `
-      <div class="modal-content" style="background: #fff; border-radius: 8px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; padding: 20px; margin: 20px; animation: fadeIn 0.5s;">
+      <div class="modal-content" style="background: #fff; border-radius: 8px; max-width: 50%; width: 90%; max-height: 90vh; overflow-y: auto; padding: 20px; margin: 20px; animation: fadeIn 0.5s;">
         <span class="close-button" style="cursor: pointer; float: right; font-size: 1.5rem; margin: 15px;">&times;</span>
         <div class="modal-columns" style="display: flex; gap: 20px; flex-wrap: wrap;">
           <!-- Left Column: Product Details & Action Buttons -->
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <!-- Review Form (Top) -->
             <div id="reviewFormContainer" style="margin-bottom: 20px;"></div>
             <!-- Reviews List (Bottom) -->
-            <div id="reviewsList" class="reviews-list" style="max-height: 250px; overflow-y: auto; border: 1px solid #ddd; padding: 15px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); animation: slideIn 0.5s;">
+            <div id="reviewsList" class="reviews-list" style="max-height: 60%; overflow-y: auto; border: 1px solid #ddd; padding: 15px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); animation: slideIn 0.5s;">
               <!-- Reviews will be rendered here -->
             </div>
             <!-- Review Summary -->
