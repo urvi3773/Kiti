@@ -27,142 +27,142 @@
     <!-- NavBar -->
     <nav>
         <div class="marquee">
-            <marquee>
-                Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
-            </marquee>
+          <marquee>
+            Don't out on the Gold Rush. Post-Budget, enjoy fantastic prices!
+          </marquee>
         </div>
         <div class="navUp">
-            <!-- Logo -->
-            <div class="navLogo">
-                <a href="../index.html"><img src="../jimages/kitilogo/kk3.png" alt="" height="130px" width="130px"></a>
+          <!-- Logo -->
+          <div class="navLogo">
+            <a href="../index.html"><img src="../jimages/kitilogo/kk3.png" alt="" height="130px" width="130px"></a>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <input type="text" class="search-input" />
+            <span class="search-placeholder"></span>
+          </div>
+
+          <!-- Navigation Icons -->
+          <div class="nav-container">
+            <div class="nav-icons">
+              <button class="nav-button" id="homeButton">
+                <a href="../index.html"><i class="fa-solid fa-house fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Home</span>
+              </button>
+              <button class="nav-button" id="wishlistButton">
+                <a href="./wishlist.html"><i class="fa-regular fa-heart fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Wishlist</span>
+              </button>
+              <button class="nav-button" id="cartButton">
+                <a href="./S_addcart.html"><i class="fa-solid fa-cart-shopping fa-2x" class="nav-icon"></i></a>
+                <span class="nav-label">Cart</span>
+              </button>
+
+              <div class="navbar-item-account">
+                <button class="nav-button" id="accountButton">
+                  <i class="fa-regular fa-user fa-2x" class="nav-icon"></i>
+                  <span class="nav-label">Account</span>
+                </button>
+
+                <div class="dropdown-account">
+                  <h2 class="dropdown-header-account">MY ACCOUNT</h2>
+
+                  <div class="dropdown-buttons-account">
+                    <a href="./login.html"><button class="button-login"
+                        onclick="window.location.href='./login.html'">LOG
+                        IN</button></a>
+                    <a href="./register.html"><button class="button-signup"
+                        onclick="window.location.href='./signup.html'">SIGN
+                        UP</button></a>
+                  </div>
+                  <p class="dropdown-contact-text">
+                    CLICK HERE TO <a href="./contactus.html" class="dropdown-contact-link">CONTACT
+                      US</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="dropdown-main-container">
+                <button class="nav-button" id="pincodetButton">
+                  <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+                  <span class="nav-label">Pincode</span>
+                </button>
+
+                <div class="dropdown-pincode-box" id="pincodeSection">
+                  <h1 class="dropdown-title">PIN Code Locator</h1>
+
+                  <div class="dropdown-input-group">
+                    <input type="text" id="pincodeInput1" placeholder="Enter PIN Code" maxlength="6">
+                    <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
+                  </div>
+                  <div class="dropdown-message" id="message1"></div>
+                  <div class="dropdown-location-container" id="locationContainer" style="display: none;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png" alt="Location Icon"
+                      class="dropdown-location-icon">
+                    <span id="locationText1"></span>
+                  </div>
+
+
+                </div>
+              </div>
+
             </div>
 
-            <!-- Search Bar -->
-            <div class="search-container">
-                <input type="text" class="search-input" />
-                <span class="search-placeholder"></span>
-            </div>
-
-            <!-- Navigation Icons -->
-            <div class="nav-container">
-                <div class="nav-icons">
-                    <button class="nav-button" id="homeButton">
-                        <a href="../index.html"><i class="fa-solid fa-house fa-2x nav-icon"></i></a>
-                        <span class="nav-label">Home</span>
-                    </button>
-                    <button class="nav-button" id="wishlistButton">
-                        <a href="../src/wishlist.html"><i class="fa-regular fa-heart fa-2x nav-icon"></i></a>
-                        <span class="nav-label">Wishlist</span>
-                    </button>
-                    <button class="nav-button" id="cartButton">
-                        <a href="../src/S_addcart.html"><i class="fa-solid fa-cart-shopping fa-2x nav-icon"></i></a>
-                        <span class="nav-label">Cart</span>
-                    </button>
-                </div>
-
-                <div class="navbar-container">
-                    <!-- Account Dropdown -->
-                    <div class="navbar-item-account">
-                        <button class="navbar-account-button">
-                            <i class="fa-regular fa-user fa-2x"></i>
-                            <span>Account</span>
-                        </button>
-                        <div class="dropdown-account">
-                            <h2 class="dropdown-header-account">MY ACCOUNT</h2>
-
-                            <div class="dropdown-buttons-account">
-                                <a href="../src/login.html"><button class="button-account button-login"
-                                        onclick="window.location.href='login.html'">LOG IN</button></a>
-                                <a href="../src/register.html"><button class="button-account button-signup"
-                                        onclick="window.location.href='signup.html'">SIGN UP</button></a>
-                            </div>
-                            <p class="dropdown-contact-text">
-                                CLICK HERE TO <a href="../src/contactus.html" class="dropdown-contact-link">CONTACT
-                                    US</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dropdown location -->
-
-                <div class="dropdown-main-container">
-                    <div class="dropdown-container">
-                        <div class="location-icon">
-                            <i class="fa-solid fa-location-crosshairs fa-lg"></i>
-                            <div class="icon-popup">Pincode</div>
-                        </div>
-                        <div class="dropdown-content-box">
-                            <h1 class="dropdown-title">PIN Code Locator</h1>
-                            <div class="dropdown-input-group">
-                                <input type="text" id="pincodeInput" placeholder="Enter PIN Code" maxlength="6">
-                                <button class="dropdown-locate-button" onclick="checkPincode()">Locate</button>
-                            </div>
-                            <div class="dropdown-message" id="message"></div>
-                            <div class="dropdown-location-container" id="locationContainer" style="display: none;">
-                                <img src="https://cdn-icons-png.flaticon.com/512/149/149059.png" alt="Location Icon"
-                                    class="dropdown-location-icon">
-                                <span id="locationText"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-
 
         <div class="navbar">
-            <div class="menu">
-                <a href="../src/alljewellery.html">All JEWELLERY</a>
+          <div class="menu">
+            <a href="./alljewellery.html">All JEWELLERY</a>
+          </div>
+          <div class="menu">
+            <a href="./necklace.html">
+              NECKLACE <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./goldnecklace.html">GOLD</a>
+              <a href="./silvernecklace.html">SILVER</a>
+              <a href="./dimondnecklace.html">DIAMOND</a>
             </div>
-            <div class="menu">
-                <a href="../src/necklace.html">
-                    NECKLACE <span class="arrow">&#9650;</span>
-                </a>
-                <div class="dropdown">
-                    <a href="../src/goldnecklace.html">GOLD</a>
-                    <a href="../src/silvernecklace.html">SILVER</a>
-                    <a href="../src/dimondnecklace.html">DIAMOND</a>
-                </div>
+          </div>
+          <div class="menu">
+            <a href="./rings.html">
+              RINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./goldring.html">GOLD</a>
+              <a href="./silverring.html">SILVER</a>
+              <a href="./dimondring.html">DIAMOND</a>
             </div>
-            <div class="menu">
-                <a href="../src/rings.html">
-                    RINGS <span class="arrow">&#9650;</span>
-                </a>
-                <div class="dropdown">
-                    <a href="./goldring.html">GOLD</a>
-                    <a href="./silverring.html">SILVER</a>
-                    <a href="./dimondring.html">DIAMOND</a>
-                </div>
+          </div>
+          <div class="menu">
+            <a href="./earings.html">
+              EARINGS <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./goldearings.html">GOLD</a>
+              <a href="./silverearings.html">SILVER</a>
+              <a href="./preciousearings.html">PRECIOUS</a>
+              <a href="./aesthenticearings.html">AESTHENITC</a>
+              <a href="./traditionalearings.html">TRADITIONAL</a>
             </div>
-            <div class="menu">
-                <a href="./earings.html">
-                    EARINGS <span class="arrow">&#9650;</span>
-                </a>
-                <div class="dropdown">
-                    <a href="./goldearings.html">GOLD</a>
-                    <a href="./silverearings.html">SILVER</a>
-                    <a href="./preciousearings.html">PRECIOUS</a>
-                    <a href="./aesthenticearings.html">AESTHENITC</a>
-                    <a href="./traditionalearings.html">TRADITIONAL</a>
-                </div>
+          </div>
+          <div class="menu">
+            <a href="./braclet.html">
+              BRACLET <span class="arrow">&#9650;</span>
+            </a>
+            <div class="dropdown">
+              <a href="./goldbraclet.html">GOLD</a>
+              <a href="./silverbraclet.html">SILVER</a>
+              <a href="./aesthenticbraclet.html">AESTHENITC</a>
             </div>
-            <div class="menu">
-                <a href="../src/braclet.html">
-                    BRACLET <span class="arrow">&#9650;</span>
-                </a>
-                <div class="dropdown">
-                    <a href="../src/goldbraclet.html">GOLD</a>
-                    <a href="../src/silverbraclet.html">SILVER</a>
-                    <a href="../src/aesthenticbraclet.html">AESTHENITC</a>
-                </div>
-            </div>
-            <div class="menu">
-                <a href="../src/gifting.html">GIFTING</a>
-            </div>
+          </div>
+          <div class="menu">
+            <a href="./gifting.html">GIFTING</a>
+          </div>
         </div>
-    </nav>
-
+      </nav>
     <!-- Main -->
 
     <main>
